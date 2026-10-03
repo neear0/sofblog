@@ -70,7 +70,7 @@
     });
     // start at the logo's pen dot, so the line begins where the brand ends
     const mark = document.querySelector('.brand__mark');
-    if (mark) { const r = mark.getBoundingClientRect(); pts.unshift({ x: r.left + r.width * 0.79, y: r.top + r.height * 0.83 + scrollY }); }
+    if (mark) { const r = mark.getBoundingClientRect(); pts.unshift({ x: r.left + r.width * 0.79, y: r.top + r.height * 0.854 + scrollY }); }
     // route like a tram line: run down a margin lane, hop sideways only at a stop
     const gut = parseFloat(getComputedStyle(document.body).getPropertyValue('--gutter')) || 40;
     const laneL = Math.max(6, gut * 0.42), laneR = W - Math.max(6, gut * 0.42);

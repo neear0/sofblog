@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>sofblog — návrhy</title>
-  <meta name="description" content="Šesť dizajnových smerov pre nový blog: LOM, Šuplík, odtlačok, PANEL, Linka a Perón.">
+  <meta name="description" content="Šesť dizajnových smerov pre nový blog: QUARRY, Šuplík, Odtlačok, BLOCK, Thread a Perón.">
   <meta name="theme-color" content="#ebebe7">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='4' y='4' width='12' height='40' fill='%23121314'/%3E%3Crect x='18' y='4' width='12' height='40' fill='%23FF48B0'/%3E%3Crect x='32' y='4' width='12' height='40' fill='%230B0B0C'/%3E%3C/svg%3E">
   <style>
@@ -69,10 +69,10 @@
     .opt__cta::after { content: ''; width: 28px; height: 1px; background: currentColor; transition: width var(--dur) var(--ease-out); }
     .opt:hover .opt__cta::after, .opt:focus-visible .opt__cta::after { width: 56px; }
 
-    /* LOM */
-    .opt--lom { background: #121314 url(lom/assets/stone-albedo.jpg) center / 420px; background-blend-mode: luminosity; color: #e9e6de; }
+    /* QUARRY */
+    .opt--lom { background: #121314 url(quarry/assets/stone-albedo.jpg) center / 420px; background-blend-mode: luminosity; color: #e9e6de; }
     .opt--lom::before { content: ''; position: absolute; inset: 0; background: radial-gradient(90% 60% at 40% 40%, rgba(18,19,20,0.25), rgba(18,19,20,0.92) 75%); }
-    .opt--lom .opt__word { font: 400 clamp(5rem, 11vw, 11rem)/0.8 'Marcellus', serif; letter-spacing: 0.02em; color: transparent; text-shadow: 0 -2px 1px rgba(0,0,0,0.7), 0 2px 1px rgba(255,255,255,0.2); -webkit-text-stroke: 0; background: url(lom/assets/stone-albedo.jpg) center / 420px, #8d887e; background-blend-mode: luminosity; -webkit-background-clip: text; background-clip: text; filter: brightness(1.15); }
+    .opt--lom .opt__word { font: 400 clamp(3rem, 5.6vw, 6rem)/0.9 'Marcellus', serif; letter-spacing: 0.02em; color: transparent; text-shadow: 0 -2px 1px rgba(0,0,0,0.7), 0 2px 1px rgba(255,255,255,0.2); -webkit-text-stroke: 0; background: url(quarry/assets/stone-albedo.jpg) center / 420px, #8d887e; background-blend-mode: luminosity; -webkit-background-clip: text; background-clip: text; filter: brightness(1.15); }
 
     /* Šuplík */
     .opt--sup { background: #e7e8e0; color: #3255a4; box-shadow: inset 0 0 0 2px #3255a4; }
@@ -86,7 +86,7 @@
     .opt--mod::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,12,0.25), rgba(11,11,12,0.95) 62%); }
     .opt--mod .opt__word { font: 600 clamp(3.2rem, 5.6vw, 5.8rem)/0.9 'Fraunces', serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.03em; }
 
-    /* PANEL */
+    /* BLOCK */
     .opt--pan { background: #c9c8c2; color: #0d0d0c; box-shadow: inset 0 0 0 3px #0d0d0c; }
     .opt--pan .opt__word { font: 900 clamp(4.6rem, 10vw, 10rem)/0.78 'Archivo', sans-serif; font-stretch: 62%; letter-spacing: -0.01em; }
     .opt--pan .opt__word span { font-stretch: 62%; transition: font-stretch var(--dur) var(--ease-out); }
@@ -94,7 +94,7 @@
     .opt--pan .opt__cta { background: #ffd400; padding: 8px 12px; border: 3px solid #0d0d0c; align-self: flex-start; width: fit-content; }
     .opt--pan .chips i { border-radius: 0; }
 
-    /* Linka */
+    /* Thread */
     .opt--lin { background: #f4f5f6; color: #121316; box-shadow: inset 0 0 0 1px rgba(18,19,22,0.16); }
     .opt--lin .opt__word { font: italic 400 clamp(5rem, 10vw, 10rem)/0.85 'Instrument Serif', serif; letter-spacing: -0.03em; position: relative; }
     .opt--lin .opt__word svg { position: absolute; left: 0; bottom: -0.12em; width: 100%; height: 0.3em; overflow: visible; }
@@ -126,9 +126,9 @@
 
   <main>
   <section class="deck" aria-label="Návrhy A až C">
-    <a class="opt opt--lom" href="lom/index.html">
-      <div class="opt__top"><span>Návrh A</span><span>Kameň a&nbsp;svetlo</span></div>
-      <p class="opt__word" aria-hidden="true">LOM</p>
+    <a class="opt opt--lom" href="quarry/index.html">
+      <div class="opt__top"><span>Návrh A, EN</span><span>Kameň a&nbsp;svetlo</span></div>
+      <p class="opt__word" aria-hidden="true">QUARRY</p>
       <div class="opt__info">
         <h2 class="opt__concept">Text je vytesaný do kameňa a&nbsp;čítaš ho tak, že naň posvietiš.</h2>
         <dl class="opt__specs">
@@ -137,12 +137,12 @@
           <dt>Materiál</dt><dd>fotografická textúra kameňa s&nbsp;normálovou mapou</dd>
         </dl>
         <div class="chips" aria-label="Paleta"><i style="background:#121314"></i><i style="background:#9d978b"></i><i style="background:#e9e6de"></i><i style="background:#c4b872"></i></div>
-        <span class="opt__cta">Otvoriť návrh LOM</span>
+        <span class="opt__cta">Otvoriť návrh QUARRY</span>
       </div>
     </a>
 
     <a class="opt opt--sup" href="suplik/index.html">
-      <div class="opt__top"><span>Návrh B</span><span>Risografický zin</span></div>
+      <div class="opt__top"><span>Návrh B, SK</span><span>Risografický zin</span></div>
       <p class="opt__word" aria-hidden="true"><span>Šuplík</span><span>Šuplík</span></p>
       <div class="opt__info">
         <h2 class="opt__concept">Blog vytlačený dvoma farbami, ktoré na seba nikdy presne nesadnú.</h2>
@@ -157,7 +157,7 @@
     </a>
 
     <a class="opt opt--mod" href="odtlacok/index.html">
-      <div class="opt__top"><span>Návrh C</span><span>Odtlačky na čiernom</span></div>
+      <div class="opt__top"><span>Návrh C, SK</span><span>Odtlačky na čiernom</span></div>
       <p class="opt__word" aria-hidden="true">odtlačok</p>
       <div class="opt__info">
         <h2 class="opt__concept">Biele odtlačky na čiernej látke. Tlačiarenskú formu držíš v&nbsp;ruke ty.</h2>
@@ -167,43 +167,43 @@
           <dt>Materiál</dt><dd>generované odtlačky s&nbsp;chybami ručnej tlače</dd>
         </dl>
         <div class="chips" aria-label="Paleta"><i style="background:#0b0b0c"></i><i style="background:#1e1e20"></i><i style="background:#8e9bff"></i><i style="background:#ecebe6"></i></div>
-        <span class="opt__cta">Otvoriť návrh odtlačok</span>
+        <span class="opt__cta">Otvoriť návrh Odtlačok</span>
       </div>
     </a>
   </section>
   <section class="deck" aria-label="Návrhy D až F">
-    <a class="opt opt--pan" href="panel/index.html">
-      <div class="opt__top"><span>Návrh D</span><span>Brutalizmus</span></div>
-      <p class="opt__word" aria-hidden="true"><span>PANEL</span></p>
+    <a class="opt opt--pan" href="block/index.html">
+      <div class="opt__top"><span>Návrh D, EN</span><span>Brutalizmus</span></div>
+      <p class="opt__word" aria-hidden="true"><span>BLOCK</span></p>
       <div class="opt__info">
-        <h2 class="opt__concept">Blog postavený ako panelák: surový betón, viditeľná mriežka, písmo ako stavebný prvok.</h2>
+        <h2 class="opt__concept">Blog postavený ako panelový blok: surový betón, viditeľná mriežka, písmo ako stavebný prvok.</h2>
         <dl class="opt__specs">
           <dt>Interakcia</dt><dd>písmená sa pod kurzorom rozťahujú a&nbsp;ostatné im ustupujú, výťah s&nbsp;poschodiami</dd>
           <dt>Písmo</dt><dd>Archivo (variabilná šírka 62 až 125), IBM Plex Mono</dd>
           <dt>Materiál</dt><dd>betón generovaný šumom, debnenie s&nbsp;otvormi po spínačoch</dd>
         </dl>
         <div class="chips" aria-label="Paleta"><i style="background:#c9c8c2"></i><i style="background:#0d0d0c"></i><i style="background:#ffd400"></i></div>
-        <span class="opt__cta">Otvoriť návrh PANEL</span>
+        <span class="opt__cta">Otvoriť návrh BLOCK</span>
       </div>
     </a>
 
-    <a class="opt opt--lin" href="linka/index.html">
-      <div class="opt__top"><span>Návrh E</span><span>Jednoduchý, čiarový</span></div>
-      <p class="opt__word" aria-hidden="true">Linka<svg viewBox="0 0 300 30" preserveAspectRatio="none" fill="none"><path d="M2 20C60 4 120 28 180 14S270 6 298 16" stroke="#ff4b1f" stroke-width="2" stroke-linecap="round" pathLength="1"/></svg></p>
+    <a class="opt opt--lin" href="thread/index.html">
+      <div class="opt__top"><span>Návrh E, EN</span><span>Jednoduchý, čiarový</span></div>
+      <p class="opt__word" aria-hidden="true">Thread<svg viewBox="0 0 300 30" preserveAspectRatio="none" fill="none"><path d="M2 20C60 4 120 28 180 14S270 6 298 16" stroke="#ff4b1f" stroke-width="2" stroke-linecap="round" pathLength="1"/></svg></p>
       <div class="opt__info">
-        <h2 class="opt__concept">Tichá stránka a&nbsp;jedna čiara, ktorá čitateľa vedie od loga až po pätu.</h2>
+        <h2 class="opt__concept">Tichá stránka a&nbsp;jedna niť, ktorá čitateľa vedie od loga až po pätu.</h2>
         <dl class="opt__specs">
           <dt>Interakcia</dt><dd>linka sa kreslí so scrollom, konštrukčná kresba loga, čiary pri hoveri</dd>
           <dt>Písmo</dt><dd>Instrument Serif, Geist</dd>
           <dt>Materiál</dt><dd>vlasové čiary, SVG ťahy, bez knižníc</dd>
         </dl>
         <div class="chips" aria-label="Paleta"><i style="background:#f4f5f6"></i><i style="background:#121316"></i><i style="background:#ff4b1f"></i></div>
-        <span class="opt__cta">Otvoriť návrh Linka</span>
+        <span class="opt__cta">Otvoriť návrh Thread</span>
       </div>
     </a>
 
     <a class="opt opt--per" href="peron/index.html">
-      <div class="opt__top"><span>Návrh F</span><span>Odchodová tabuľa</span></div>
+      <div class="opt__top"><span>Návrh F, SK</span><span>Odchodová tabuľa</span></div>
       <p class="opt__word" aria-hidden="true"><span>P</span><span>E</span><span>R</span><span>Ó</span><span>N</span></p>
       <div class="opt__info">
         <h2 class="opt__concept">Blog ako staničná tabuľa. Každý článok je spoj, ktorý práve odchádza.</h2>

@@ -1,4 +1,4 @@
-/* Linka: quiet page, one line that leads the reader through it. */
+/* Thread: quiet page, one line that leads the reader through it. */
 :root {
   --bg: #f4f5f6;
   --ink: #121316;
@@ -80,7 +80,7 @@ main, footer, header { position: relative; z-index: 1; }
 
 @keyframes draw-stroke { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @keyframes draw-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes pop { from { transform: scale(0); transform-origin: 38px 40px; } to { transform: scale(1); transform-origin: 38px 40px; } }
+@keyframes pop { from { transform: scale(0); transform-origin: 38px 41px; } to { transform: scale(1); transform-origin: 38px 41px; } }
 @keyframes rise { from { opacity: 0; transform: translateY(0.25em); } to { opacity: 1; transform: none; } }
 
 /* ---------- hero ---------- */

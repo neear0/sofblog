@@ -1,4 +1,4 @@
-/* LOM hero: the word is carved into a stone slab, the pointer is a lantern.
+/* QUARRY hero: the word is carved into a stone slab, the pointer is a lantern.
    Plain WebGL1, two photographic textures (albedo + normal) and one height map
    rasterised from the real <h1> so the carving sits exactly where the text is. */
 (() => {
@@ -151,10 +151,12 @@
     if ('letterSpacing' in sc) sc.letterSpacing = cs.letterSpacing === 'normal' ? '0px' : `${parseFloat(cs.letterSpacing) * dpr}px`;
     const m = sc.measureText(title.textContent);
     const cx = (r.left - hr.left + r.width / 2) * dpr;
-    const glyphH = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
+    // place the baseline the way CSS does: half-leading above the font's ascent
+    const fA = m.fontBoundingBoxAscent || m.actualBoundingBoxAscent;
+    const fD = m.fontBoundingBoxDescent || m.actualBoundingBoxDescent;
     const contentTop = (r.top - hr.top) * dpr + parseFloat(cs.paddingTop) * dpr;
     const contentH = (r.height - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)) * dpr;
-    const baseline = contentTop + (contentH - glyphH) / 2 + m.actualBoundingBoxAscent;
+    const baseline = contentTop + (contentH - (fA + fD)) / 2 + fA;
     sc.fillText(title.textContent, cx, baseline);
     // Marcellus is a light face; widen the cut so the chisel has something to bite
     sc.strokeStyle = '#fff';
