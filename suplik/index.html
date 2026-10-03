@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Šuplík — texty, ktoré ležali v šuplíku príliš dlho</title>
+  <meta name="description" content="Šuplík je osobný blog vo forme zinu. Krátke texty o malých veciach, tlačené dvoma farbami, ktoré na seba nikdy presne nesadnú.">
+  <meta name="theme-color" content="#E7E8E0">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="top">
+    <a class="brand" href="index.html" aria-label="Šuplík, domov">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="4" y="9" width="40" height="32" fill="var(--pink)"/>
+        <g class="mis" style="mix-blend-mode:multiply">
+          <path d="M16 19.5L24 26.5L32 19.5" fill="none" stroke="var(--blue)" stroke-width="4.5" stroke-linecap="square"/>
+          <rect x="4" y="9" width="40" height="32" fill="none" stroke="var(--blue)" stroke-width="2"/>
+        </g>
+      </svg>
+      <span class="brand__word">Šuplík</span>
+    </a>
+    <p class="top__issue">Číslo 07<span aria-hidden="true"> / </span><br class="br-m">Malé veci</p>
+    <nav class="top__nav" aria-label="Hlavná navigácia">
+      <a href="#obsah-cisla">Obsah</a>
+      <a href="#archiv">Archív</a>
+      <a href="#list">Napíš</a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <section class="cover" aria-labelledby="mast">
+      <h1 id="mast" class="mast">
+        <span class="sr-only">Šuplík</span>
+        <span class="mast__ink mast__ink--blue" aria-hidden="true">ŠUPLÍK</span>
+        <span class="mast__ink mast__ink--pink" aria-hidden="true">ŠUPLÍK</span>
+      </h1>
+
+      <div class="cover__grid">
+        <div class="cover__intro">
+          <p class="cover__lead">Texty, ktoré ležali v&nbsp;šuplíku príliš dlho. Krátke, osobné a&nbsp;trochu nedokonalé, ako všetko, čo sa tlačí doma.</p>
+          <p class="cover__note mono">Vychádza nepravidelne. Dve farby. Žiadne algoritmy.</p>
+        </div>
+
+        <div class="drawer" data-drawer>
+          <div class="drawer__cards">
+            <a class="card" href="clanok.html" style="--r:-3deg; --x:-30%" data-i="0"><span class="mono">s. 03</span><span class="card__t">Zoznam vecí, ktoré si pamätám z&nbsp;babkinej kuchyne</span></a>
+            <a class="card card--pink" href="clanok.html" style="--r:2deg; --x:-8%" data-i="1"><span class="mono">s. 08</span><span class="card__t">Prečo si stále kupujem papierové lístky</span></a>
+            <a class="card" href="clanok.html" style="--r:-1deg; --x:12%" data-i="2"><span class="mono">s. 12</span><span class="card__t">Malý manuál k&nbsp;nudeniu sa</span></a>
+            <a class="card card--pink" href="clanok.html" style="--r:4deg; --x:30%" data-i="3"><span class="mono">s. 22</span><span class="card__t">Kino, ktoré už neexistuje</span></a>
+          </div>
+          <div class="drawer__front" aria-hidden="true">
+            <svg class="drawer__handle" viewBox="0 0 64 24"><path d="M6 4L32 20L58 4" fill="none" stroke="currentColor" stroke-width="5"/></svg>
+            <span class="drawer__label mono">texty / 2026</span>
+          </div>
+          <button class="pull" type="button" hidden><span class="pull__a">Vytiahni náhodný text</span><span class="pull__b" aria-hidden="true">Vytiahni náhodný text</span></button>
+          <p class="sr-only" aria-live="polite" data-drawer-status></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="obsah-cisla" class="toc" aria-labelledby="toc-title">
+      <header class="sec-head">
+        <h2 id="toc-title" class="riso" data-text="V tomto čísle">V tomto čísle</h2>
+        <p class="mono">Číslo 07, Malé veci. Šesť textov na jedno popoludnie.</p>
+      </header>
+      <ol class="toc__list">
+        <li><a href="clanok.html"><span class="toc__p mono">s. 03</span><span class="toc__t">Zoznam vecí, ktoré si pamätám z&nbsp;babkinej kuchyne</span><span class="toc__d">Smalt, rasca, rádio na chladničke a&nbsp;jedno pravidlo o&nbsp;chlebe.</span></a></li>
+        <li><a href="clanok.html"><span class="toc__p mono">s. 08</span><span class="toc__t">Prečo si stále kupujem papierové lístky</span><span class="toc__d">O&nbsp;malých kúskoch papiera, ktoré dokazujú, že sme niekam išli.</span></a></li>
+        <li><a href="clanok.html"><span class="toc__p mono">s. 12</span><span class="toc__t">Malý manuál k&nbsp;nudeniu sa</span><span class="toc__d">Päť krokov, ako nerobiť nič a&nbsp;nemať pri tom výčitky.</span></a></li>
+        <li><a href="clanok.html"><span class="toc__p mono">s. 17</span><span class="toc__t">Sused, ktorý opravuje rádiá</span><span class="toc__d">Rozhovor cez otvorené okno a&nbsp;vôňa cínu na schodoch.</span></a></li>
+        <li><a href="clanok.html"><span class="toc__p mono">s. 22</span><span class="toc__t">Kino, ktoré už neexistuje</span><span class="toc__d">Sedadlá sme si pamätali podľa toho, ktoré vŕzgalo.</span></a></li>
+        <li><a href="clanok.html"><span class="toc__p mono">s. 26</span><span class="toc__t">Recept na nedeľné popoludnie</span><span class="toc__d">Žiadne suroviny. Len čas, deka a&nbsp;okno na juh.</span></a></li>
+      </ol>
+    </section>
+
+    <section class="spread" aria-labelledby="spread-title">
+      <div class="spread__page spread__page--art">
+        <canvas class="ht" data-art="tickets" aria-hidden="true"></canvas>
+        <p class="spread__cap mono">Obr. 1: Lístky z&nbsp;jednej zimy, zoradené podľa farby.</p>
+      </div>
+      <div class="spread__page">
+        <p class="mono spread__kick">s. 08 / Esej</p>
+        <h2 id="spread-title" class="spread__title riso" data-text="Prečo si stále kupujem papierové lístky">Prečo si stále kupujem papierové lístky</h2>
+        <p class="spread__text">Aplikácia v&nbsp;telefóne by to zvládla rýchlejšie. Lenže lístok z&nbsp;automatu má váhu. Dá sa prehnúť, zabudnúť vo vrecku kabáta a&nbsp;o&nbsp;rok neskôr nájsť. Je to jediný suvenír, ktorý si nevyberám. Vyberie si mňa.</p>
+        <a class="pull pull--link" href="clanok.html"><span class="pull__a">Čítať celý text</span><span class="pull__b" aria-hidden="true">Čítať celý text</span></a>
+      </div>
+    </section>
+
+    <section id="archiv" class="archive" aria-labelledby="arch-title">
+      <header class="sec-head">
+        <h2 id="arch-title" class="riso" data-text="Archív">Archív</h2>
+        <p class="mono">Staršie čísla. Každé má vlastnú tému a&nbsp;vlastnú obálku.</p>
+      </header>
+      <ul class="archive__grid">
+        <li><a class="issue" href="clanok.html"><canvas class="ht" data-art="sun" aria-hidden="true"></canvas><span class="issue__n">07</span><span class="issue__t">Malé veci</span></a></li>
+        <li><a class="issue" href="clanok.html"><canvas class="ht" data-art="waves" aria-hidden="true"></canvas><span class="issue__n">06</span><span class="issue__t">Nočné autobusy</span></a></li>
+        <li><a class="issue" href="clanok.html"><canvas class="ht" data-art="moon" aria-hidden="true"></canvas><span class="issue__n">05</span><span class="issue__t">Veci po starých rodičoch</span></a></li>
+        <li><a class="issue" href="clanok.html"><canvas class="ht" data-art="blocks" aria-hidden="true"></canvas><span class="issue__n">04</span><span class="issue__t">Leto bez plánu</span></a></li>
+        <li><a class="issue" href="clanok.html"><canvas class="ht" data-art="rings" aria-hidden="true"></canvas><span class="issue__n">03</span><span class="issue__t">Susedia</span></a></li>
+        <li><a class="issue" href="clanok.html"><canvas class="ht" data-art="hill" aria-hidden="true"></canvas><span class="issue__n">02</span><span class="issue__t">Návraty</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="list" class="foot">
+    <div class="foot__grid">
+      <div>
+        <h2 class="foot__h riso" data-text="Napíš do šuplíka">Napíš do šuplíka</h2>
+        <p class="foot__p">Nové číslo ti príde e‑mailom. Raz za pár týždňov, keď je čo tlačiť.</p>
+      </div>
+      <form class="sub" novalidate>
+        <label class="sub__label mono" for="sup-email">Tvoj e‑mail</label>
+        <div class="sub__row">
+          <input id="sup-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="pull" type="submit"><span class="pull__a">Prihlásiť</span><span class="pull__b" aria-hidden="true">Prihlásiť</span></button>
+        </div>
+        <p class="sub__msg mono" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <p class="foot__word" aria-hidden="true"><span class="mast__ink mast__ink--blue">ŠUPLÍK</span><span class="mast__ink mast__ink--pink">ŠUPLÍK</span></p>
+    <div class="foot__meta mono">
+      <span>Vytlačené na obrazovke farbami Fluorescent Pink a&nbsp;Medium Blue</span>
+      <a href="../index.html">Späť na návrhy</a>
+    </div>
+  </footer>
+
+  <script src="../vendor/gsap.min.js" defer></script>
+  <script src="../vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../vendor/lenis.min.js" defer></script>
+  <script src="halftone.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

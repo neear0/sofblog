@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <title>LOM</title>
+  <!-- profil lomovej steny: tri terasy a jedna vrstevná škára -->
+  <path d="M4 4H26V12H35V21H44V44H4Z" fill="#E8E6E0"/>
+  <path d="M4 33.5H44" stroke="#121314" stroke-width="2"/>
+  <path d="M15 33.5V44" stroke="#121314" stroke-width="2"/>
+</svg>

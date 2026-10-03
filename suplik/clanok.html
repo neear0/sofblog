@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prečo si stále kupujem papierové lístky — Šuplík</title>
+  <meta name="description" content="Krátka esej o lístkoch z automatu, vreckách kabátov a suveníroch, ktoré si človek nevyberá.">
+  <meta name="theme-color" content="#E7E8E0">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="top">
+    <a class="brand" href="index.html" aria-label="Šuplík, domov">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="4" y="9" width="40" height="32" fill="var(--pink)"/>
+        <g class="mis" style="mix-blend-mode:multiply">
+          <path d="M16 19.5L24 26.5L32 19.5" fill="none" stroke="var(--blue)" stroke-width="4.5" stroke-linecap="square"/>
+          <rect x="4" y="9" width="40" height="32" fill="none" stroke="var(--blue)" stroke-width="2"/>
+        </g>
+      </svg>
+      <span class="brand__word">Šuplík</span>
+    </a>
+    <p class="top__issue">Číslo 07<span aria-hidden="true"> / </span>Malé veci</p>
+    <nav class="top__nav" aria-label="Hlavná navigácia">
+      <a href="index.html#obsah-cisla">Obsah</a>
+      <a href="index.html#archiv">Archív</a>
+      <a href="#list">Napíš</a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <article class="art">
+      <header class="art__head">
+        <p class="art__kick mono">Číslo 07 / s. 08 / Esej</p>
+        <h1 class="art__title riso" data-text="Prečo si stále kupujem papierové lístky">Prečo si stále kupujem papierové lístky</h1>
+        <p class="art__meta mono"><time datetime="2026-09-28">28. 9. 2026</time><span>4 minúty čítania</span></p>
+      </header>
+
+      <figure class="art__fig">
+        <canvas class="ht" data-art="tickets" aria-hidden="true"></canvas>
+        <figcaption class="mono">Obr. 1: Lístky z&nbsp;jednej zimy, zoradené podľa farby. Niektoré už vybledli, niektoré ešte voňajú vreckom.</figcaption>
+      </figure>
+
+      <div class="art__body">
+        <p class="lede">Aplikácia v&nbsp;telefóne by to zvládla rýchlejšie. Lenže lístok z&nbsp;automatu má váhu. Dá sa prehnúť, zabudnúť vo vrecku kabáta a&nbsp;o&nbsp;rok neskôr nájsť.</p>
+        <p>Každú jeseň, keď z&nbsp;vešiaka zložím zimný kabát, robím rovnakú vec. Prejdem všetky vrecká. Nájdem v&nbsp;nich gaštan, gumičku do vlasov, ktorá nie je moja, a&nbsp;zopár lístkov. Električka, vlak, raz dokonca lanovka. Každý z&nbsp;nich je malý dôkaz cesty: niekam sa išlo a&nbsp;potom sa zase vracalo domov.</p>
+        <p>Je to jediný suvenír, ktorý si nevyberám. Vyberie si mňa.</p>
+
+        <h2>Čo všetko sa zmestí na kúsok papiera</h2>
+        <p>Na lístku je dátum, čas a&nbsp;niekedy aj zastávka. Viac nie. Zvyšok si doplní pamäť, a&nbsp;to je na tom to najkrajšie. Lístok z&nbsp;februára mi pripomenie, že v&nbsp;to ráno snežilo, vlak meškal a&nbsp;čaj zo staničného bufetu bol príliš horúci.</p>
+        <ol>
+          <li>Lístok sa nedá vypnúť. Nepotrebuje batériu ani signál.</li>
+          <li>Lístok sa dá požičať. Stačí ho podať cez uličku.</li>
+          <li>Lístok starne. Vybledne, zmäkne a&nbsp;to je v&nbsp;poriadku.</li>
+        </ol>
+
+        <h2>Malá zbierka bez systému</h2>
+        <p>Nemám na ne album ani krabičku. Ležia v&nbsp;šuplíku, kde je všetko ostatné, čo nemá svoje miesto. Občas ich vytiahnem, rozložím na stôl a&nbsp;usporiadam podľa farby. Nikdy nie podľa dátumu. Dátum by z&nbsp;nich spravil archív, farba z&nbsp;nich robí obrázok.</p>
+        <p>Možno o&nbsp;to celé ide aj v&nbsp;tomto blogu. Nechať veci trochu neupratané, aby sa k&nbsp;nim dalo vracať.</p>
+      </div>
+
+      <footer class="art__end mono">
+        <a href="index.html#obsah-cisla">Späť na obsah čísla</a>
+        <span>Ďalej v&nbsp;čísle: Malý manuál k&nbsp;nudeniu sa</span>
+      </footer>
+    </article>
+  </main>
+
+  <footer id="list" class="foot">
+    <div class="foot__grid">
+      <div>
+        <h2 class="foot__h riso" data-text="Napíš do šuplíka">Napíš do šuplíka</h2>
+        <p class="foot__p">Nové číslo ti príde e‑mailom. Raz za pár týždňov, keď je čo tlačiť.</p>
+      </div>
+      <form class="sub" novalidate>
+        <label class="sub__label mono" for="sup-email">Tvoj e‑mail</label>
+        <div class="sub__row">
+          <input id="sup-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="pull" type="submit"><span class="pull__a">Prihlásiť</span><span class="pull__b" aria-hidden="true">Prihlásiť</span></button>
+        </div>
+        <p class="sub__msg mono" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="foot__meta mono">
+      <span>Vytlačené na obrazovke farbami Fluorescent Pink a&nbsp;Medium Blue</span>
+      <a href="../index.html">Späť na návrhy</a>
+    </div>
+  </footer>
+
+  <script src="../vendor/gsap.min.js" defer></script>
+  <script src="../vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../vendor/lenis.min.js" defer></script>
+  <script src="halftone.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

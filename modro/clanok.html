@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Čo ma naučil drevený štočok — modro</title>
+  <meta name="description" content="Esej o tlačiarenskej forme, trpezlivosti a o tom, prečo je chyba v odtlačku niekedy to najlepšie na celom vzore.">
+  <meta name="theme-color" content="#17234A">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="modro, domov">
+      <img class="brand__mark" src="assets/logo.svg" alt="" width="34" height="34">
+      <span class="brand__word">modro</span>
+    </a>
+    <nav class="bar__nav" aria-label="Hlavná navigácia">
+      <a href="index.html#dielna">Z dielne</a>
+      <a href="index.html#postup">Modrotlač</a>
+      <a href="#vzor">Odber</a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <article class="art">
+      <header class="art__head">
+        <p class="art__kick">Remeslo</p>
+        <h1 class="art__title">Čo ma naučil drevený štočok</h1>
+        <p class="art__meta"><time datetime="2026-09-14">14. septembra 2026</time><span>7 minút čítania</span></p>
+      </header>
+
+      <canvas class="art__band swatch" data-seed="Čo ma naučil drevený štočok" aria-hidden="true"></canvas>
+
+      <div class="art__body">
+        <p class="lede">Prvý odtlačok bol krivý. Druhý rozmazaný. Pri treťom prišlo pochopenie, že forma nie je nástroj, ktorý poslúcha. Je to partner, ktorý má vlastnú hlavu.</p>
+        <p>Štočok, ktorý ležal na stole, mal za sebou viac rokov než ktokoľvek v&nbsp;dielni. Drevo stmavlo od rokov namáčania, kovové kolíky vbité do jeho tváre boli na niektorých miestach trochu vychýlené. Každý z&nbsp;nich niekto kedysi zatĺkal ručne, jeden po druhom, kým nevznikol kvet.</p>
+        <p>Keď ho prvýkrát pritlačíte na plátno, myslíte si, že rozhoduje sila. Nerozhoduje. Rozhoduje rovnomernosť, a&nbsp;tá sa nedá naučiť z&nbsp;videa. Dá sa iba vyťukať, odtlačok po odtlačku.</p>
+
+        <h2>Chyba ako podpis</h2>
+        <p>Na starých modrotlačových látkach si časom začnete všímať drobnosti. Miesto, kde forma nadväzuje na predošlý odtlačok o&nbsp;kúsok vedľa. Bodku, ktorá chýba, lebo sa rezerva nechytila. Pri strojovej potlači by to bola chyba. Tu je to stopa ruky.</p>
+
+        <blockquote>Stroj opakuje. Ruka sa vracia.</blockquote>
+
+        <p>Možno preto pôsobia tieto látky živo aj po desaťročiach. Raport sa opakuje, ale nikdy úplne rovnako. Je to rytmus, nie kópia.</p>
+
+        <h2>Čo si z&nbsp;toho beriem</h2>
+        <p>Odkedy skúšam tlačiť, inak sa pozerám aj na písanie. Text nemusí byť dokonalý pri prvom odtlačku. Stačí, keď je poctivo pritlačený a&nbsp;keď sa k&nbsp;nemu dá vrátiť. Presne o&nbsp;tom bude aj tento blog: o&nbsp;veciach, ktoré sa robia pomaly, rukami a&nbsp;s&nbsp;chybami, ktoré k&nbsp;nim patria.</p>
+      </div>
+
+      <footer class="art__end">
+        <a href="index.html#dielna">Späť na všetky texty</a>
+        <span>Ďalší text: Indigo, farba, ktorá sa nedá ponáhľať</span>
+      </footer>
+    </article>
+  </main>
+
+  <footer id="vzor" class="foot">
+    <div class="foot__grid">
+      <div>
+        <h2 class="foot__h">Pošli mi vzor.</h2>
+        <p class="foot__p">Nový text z&nbsp;dielne raz za mesiac. Bez reklám, len remeslo.</p>
+      </div>
+      <form class="sub" novalidate>
+        <label class="sub__label" for="mod-email">E‑mail</label>
+        <div class="sub__row">
+          <input id="mod-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="pill" type="submit">Odoberať</button>
+        </div>
+        <p class="sub__msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="foot__meta">
+      <span>modro, blog o&nbsp;remesle</span>
+      <a href="../index.html">Späť na návrhy</a>
+    </div>
+  </footer>
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../vendor/gsap.min.js" defer></script>
+  <script src="../vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../vendor/lenis.min.js" defer></script>
+  <script src="motifs.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

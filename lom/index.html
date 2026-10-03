@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LOM — pomalé texty o krajine a kameni</title>
+  <meta name="description" content="LOM je blog pomalých textov o krajine, kameni a chôdzi. Píše sa nadlho a len vtedy, keď je čo povedať.">
+  <meta name="theme-color" content="#121314">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/marcellus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="preload" href="assets/stone-albedo.jpg" as="image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="LOM, domov">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 4H26V12H35V21H44V44H4Z" fill="currentColor"/><path d="M4 33.5H44M15 33.5V44" stroke="var(--bg)" stroke-width="2"/></svg>
+      <span class="brand__word">LOM</span>
+    </a>
+    <nav class="bar__nav" aria-label="Hlavná navigácia">
+      <a class="link" href="#vrstvy">Texty</a>
+      <a class="link" href="#o-blogu">O blogu</a>
+      <a class="link" href="#odber">Odber</a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas class="hero__gl" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <h1 id="hero-title" class="hero__title" data-carve>LOM</h1>
+        <p class="hero__sub">Pomalé texty o krajine, kameni a&nbsp;chôdzi.</p>
+        <p class="hero__hint" aria-hidden="true">
+          <span class="hint--fine">Posviet si na kameň. Pohni myšou.</span>
+          <span class="hint--coarse">Posviet si na kameň. Ťahaj prstom.</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="o-blogu" class="manifesto" aria-label="O blogu">
+      <p class="manifesto__label">O blogu</p>
+      <p class="manifesto__text" data-words>Kameň sa nikam neponáhľa. Vrstvu po vrstve si pamätá všetko, čo sa nad ním udialo: more, ľad, kroky. Tento blog sa snaží písať rovnako. Pomaly, nadlho a&nbsp;len vtedy, keď je čo povedať.</p>
+    </section>
+
+    <section id="vrstvy" class="strata" aria-labelledby="strata-title">
+      <header class="strata__head">
+        <h2 id="strata-title" class="strata__title">Vrstvy</h2>
+        <p class="strata__note">Najnovší text leží navrchu. Hrúbka vrstvy zodpovedá dĺžke čítania.</p>
+      </header>
+
+      <ol class="strata__list">
+        <li class="stratum" style="--min: 9">
+          <a href="clanok.html">
+            <time datetime="2026-09-21">21. september</time>
+            <span class="stratum__title">Kameň, ktorý sa nikam neponáhľa</span>
+            <span class="stratum__tag">eseje</span>
+            <span class="stratum__len">9 min</span>
+          </a>
+        </li>
+        <li class="stratum" style="--min: 12">
+          <a href="clanok.html">
+            <time datetime="2026-08-30">30. august</time>
+            <span class="stratum__title">Čo zostane po lome</span>
+            <span class="stratum__tag">krajina</span>
+            <span class="stratum__len">12 min</span>
+          </a>
+        </li>
+        <li class="stratum" style="--min: 5">
+          <a href="clanok.html">
+            <time datetime="2026-08-02">2. august</time>
+            <span class="stratum__title">Chôdza ako spôsob písania</span>
+            <span class="stratum__tag">chôdza</span>
+            <span class="stratum__len">5 min</span>
+          </a>
+        </li>
+        <li class="stratum" style="--min: 8">
+          <a href="clanok.html">
+            <time datetime="2026-07-11">11. júl</time>
+            <span class="stratum__title">Ticho v&nbsp;starej štôlni</span>
+            <span class="stratum__tag">podzemie</span>
+            <span class="stratum__len">8 min</span>
+          </a>
+        </li>
+        <li class="stratum" style="--min: 3">
+          <a href="clanok.html">
+            <time datetime="2026-06-19">19. jún</time>
+            <span class="stratum__title">Mach na severnej strane</span>
+            <span class="stratum__tag">drobnosti</span>
+            <span class="stratum__len">3 min</span>
+          </a>
+        </li>
+        <li class="stratum" style="--min: 14">
+          <a href="clanok.html">
+            <time datetime="2026-05-24">24. máj</time>
+            <span class="stratum__title">Hrebeňom bez cieľa</span>
+            <span class="stratum__tag">chôdza</span>
+            <span class="stratum__len">14 min</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="excerpt" aria-labelledby="excerpt-title">
+      <aside class="excerpt__meta">
+        <p class="excerpt__kicker">Z posledného textu</p>
+        <h2 id="excerpt-title" class="excerpt__title">Kameň, ktorý sa nikam neponáhľa</h2>
+        <p class="excerpt__info"><time datetime="2026-09-21">21. septembra 2026</time><br>9 minút čítania</p>
+        <a class="btn" href="clanok.html"><span>Čítať celý text</span></a>
+      </aside>
+      <div class="excerpt__body prose">
+        <p class="dropcap">Na okraji opusteného lomu stojí lavička, ktorú tam niekto kedysi priniesol a&nbsp;potom na ňu zabudol. Sedávam na nej a&nbsp;pozerám na stenu oproti. Nič sa na nej nedeje. Presnejšie, deje sa toho veľa, len v&nbsp;tempe, na ktoré nemáme oči.</p>
+        <p>Každá vrstva v&nbsp;tej stene bola kedysi dnom. Na každú padalo bahno, piesok, schránky drobných živočíchov, a&nbsp;to celé tak dlho, až sa z&nbsp;mäkkého stalo tvrdé. Človek, ktorý stenu rozrezal, videl v&nbsp;nej materiál. Ja v&nbsp;nej dnes vidím archív, ktorý nikto nekatalogizoval.</p>
+        <p>Možno preto sa sem vraciam vždy, keď sa mi zdá, že všetko ide príliš rýchlo. Kameň nie je pomalý z&nbsp;lenivosti. Je pomalý, lebo si môže dovoliť počkať.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="odber" class="foot">
+    <div class="foot__sub">
+      <h2 class="foot__h">Jeden kameň mesačne.</h2>
+      <p class="foot__p">Nový text príde e‑mailom, keď je hotový. Nie skôr, nie častejšie.</p>
+      <form class="sub" novalidate>
+        <label class="sub__label" for="lom-email">E‑mail</label>
+        <div class="sub__row">
+          <input id="lom-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="btn btn--solid" type="submit"><span>Odoberať</span></button>
+        </div>
+        <p class="sub__msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <p class="foot__word" aria-hidden="true">LOM</p>
+    <div class="foot__meta">
+      <span>LOM, blog pomalých textov</span>
+      <span>Textúra kameňa: <a class="link" href="https://github.com/BabylonJS/Assets">Babylon.js Assets</a>, CC&nbsp;BY&nbsp;4.0</span>
+      <a class="link" href="../index.html">Späť na návrhy</a>
+    </div>
+  </footer>
+
+  <script src="../vendor/gsap.min.js" defer></script>
+  <script src="../vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../vendor/lenis.min.js" defer></script>
+  <script src="stone.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

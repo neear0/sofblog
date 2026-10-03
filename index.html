@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sofblog — tri návrhy</title>
+  <meta name="description" content="Tri dizajnové smery pre nový blog: LOM (kameň a svetlo), Šuplík (risografický zin) a modro (modrotlač).">
+  <meta name="theme-color" content="#ebebe7">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='4' y='4' width='12' height='40' fill='%23121314'/%3E%3Crect x='18' y='4' width='12' height='40' fill='%23FF48B0'/%3E%3Crect x='32' y='4' width='12' height='40' fill='%2317234A'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: 'Marcellus'; src: url(fonts/marcellus-latin-400-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Marcellus'; src: url(fonts/marcellus-latin-ext-400-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
+    @font-face { font-family: 'Bricolage Grotesque'; src: url(fonts/bricolage-grotesque-latin-standard-normal.woff2) format('woff2-variations'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Bricolage Grotesque'; src: url(fonts/bricolage-grotesque-latin-ext-standard-normal.woff2) format('woff2-variations'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
+    @font-face { font-family: 'Fraunces'; src: url(fonts/fraunces-latin-full-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Fraunces'; src: url(fonts/fraunces-latin-ext-full-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
+    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-ext-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
+    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-ext-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
+
+    :root {
+      --bg: #ebebe7;
+      --ink: #161615;
+      --ink-2: rgba(22, 22, 21, 0.64);
+      --line: rgba(22, 22, 21, 0.16);
+      --f-text: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+      --gutter: clamp(16px, 3.5vw, 48px);
+      --dur: 0.7s;
+      --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem)/1.55 var(--f-text); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, p { margin: 0; text-wrap: pretty; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+    .head { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: clamp(40px, 6vw, 88px) var(--gutter) clamp(32px, 4vw, 56px); align-items: end; }
+    .head h1 { grid-column: 1 / span 7; font: 500 clamp(2.2rem, 1.4rem + 3.4vw, 4.6rem)/1 var(--f-text); letter-spacing: -0.035em; text-wrap: balance; }
+    .head p { grid-column: 9 / span 4; color: var(--ink-2); }
+    .head small { display: block; grid-column: 1 / -1; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--ink-2); margin-bottom: -8px; }
+    @media (max-width: 860px) { .head h1, .head p { grid-column: 1 / -1; } }
+
+    .deck { display: flex; gap: 12px; padding: 0 var(--gutter) var(--gutter); height: max(640px, calc(100svh - 120px)); }
+    .opt {
+      position: relative; flex: 1; min-width: 0; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: clamp(20px, 2.4vw, 32px);
+      transition: flex-grow var(--dur) var(--ease-io);
+    }
+    .deck:hover .opt { flex-grow: 0.8; }
+    .deck .opt:hover, .deck .opt:focus-visible { flex-grow: 1.6; }
+    .opt__top { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; font-size: 0.8rem; letter-spacing: 0.06em; }
+    .opt__word { position: relative; z-index: 1; line-height: 0.82; white-space: nowrap; }
+    .opt__info { position: relative; z-index: 1; display: grid; gap: 12px; max-width: 40ch; }
+    .opt__concept { font-size: 1.05rem; line-height: 1.4; }
+    .opt__specs { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 0.82rem; opacity: 0.8; }
+    .opt__specs dt { opacity: 0.7; }
+    .opt__specs dd { margin: 0; }
+    .chips { display: flex; gap: 6px; }
+    .chips i { width: 18px; height: 18px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(127,127,127,0.35); }
+    .opt__cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; font-weight: 500; }
+    .opt__cta::after { content: ''; width: 28px; height: 1px; background: currentColor; transition: width var(--dur) var(--ease-out); }
+    .opt:hover .opt__cta::after, .opt:focus-visible .opt__cta::after { width: 56px; }
+
+    /* LOM */
+    .opt--lom { background: #121314 url(lom/assets/stone-albedo.jpg) center / 420px; background-blend-mode: luminosity; color: #e9e6de; }
+    .opt--lom::before { content: ''; position: absolute; inset: 0; background: radial-gradient(90% 60% at 40% 40%, rgba(18,19,20,0.25), rgba(18,19,20,0.92) 75%); }
+    .opt--lom .opt__word { font: 400 clamp(5rem, 11vw, 11rem)/0.8 'Marcellus', serif; letter-spacing: 0.02em; color: transparent; text-shadow: 0 -2px 1px rgba(0,0,0,0.7), 0 2px 1px rgba(255,255,255,0.2); -webkit-text-stroke: 0; background: url(lom/assets/stone-albedo.jpg) center / 420px, #8d887e; background-blend-mode: luminosity; -webkit-background-clip: text; background-clip: text; filter: brightness(1.15); }
+
+    /* Šuplík */
+    .opt--sup { background: #e7e8e0; color: #3255a4; box-shadow: inset 0 0 0 2px #3255a4; }
+    .opt--sup .opt__word { display: grid; font: 800 clamp(4.4rem, 9vw, 9rem)/0.82 'Bricolage Grotesque', sans-serif; font-stretch: 85%; letter-spacing: -0.035em; }
+    .opt--sup .opt__word span { grid-area: 1 / 1; }
+    .opt--sup .opt__word span + span { color: #ff48b0; mix-blend-mode: multiply; transform: translate(6px, 4px); transition: transform var(--dur) var(--ease-out); }
+    .opt--sup:hover .opt__word span + span, .opt--sup:focus-visible .opt__word span + span { transform: translate(14px, 10px); }
+
+    /* modro */
+    .opt--mod { background-color: #17234a; color: #edeff2; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='%23edeff2' fill-opacity='0.85'%3E%3Cg transform='translate(24 24)'%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(45)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(135)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(225)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(270)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(315)'/%3E%3C/g%3E%3Cg transform='translate(72 72)'%3E%3Ccircle r='3'/%3E%3Ccircle cx='8' r='2.2'/%3E%3Ccircle cx='-8' r='2.2'/%3E%3Ccircle cy='8' r='2.2'/%3E%3Ccircle cy='-8' r='2.2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .opt--mod::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,35,74,0.2), rgba(23,35,74,0.94) 62%); }
+    .opt--mod .opt__word { font: 600 clamp(4.6rem, 9.5vw, 9.6rem)/0.82 'Fraunces', serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.03em; }
+
+    @media (max-width: 900px) {
+      .deck { flex-direction: column; height: auto; }
+      .opt { min-height: 78svh; }
+      .deck:hover .opt, .deck .opt:hover { flex-grow: 1; }
+    }
+
+    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 24px var(--gutter) 40px; font-size: 0.8rem; color: var(--ink-2); border-top: 1px solid var(--line); margin: 0 var(--gutter); padding-left: 0; padding-right: 0; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="head">
+    <small>sofblog, október 2026</small>
+    <h1>Tri návrhy pre blog. Tri mená, tri logá, tri spôsoby čítania.</h1>
+    <p>Každý smer stojí na jednom nápade, dotiahnutom do posledného detailu. Otvor ich, poskúšaj interakcie a&nbsp;vyber ten, ktorý znie ako ty.</p>
+  </header>
+
+  <main class="deck">
+    <a class="opt opt--lom" href="lom/index.html">
+      <div class="opt__top"><span>Návrh A</span><span>Kameň a&nbsp;svetlo</span></div>
+      <p class="opt__word" aria-hidden="true">LOM</p>
+      <div class="opt__info">
+        <h2 class="opt__concept">Text je vytesaný do kameňa a&nbsp;čítaš ho tak, že naň posvietiš.</h2>
+        <dl class="opt__specs">
+          <dt>Interakcia</dt><dd>kurzor je lampáš, WebGL nasvecuje reliéf</dd>
+          <dt>Písmo</dt><dd>Marcellus, Instrument Sans</dd>
+          <dt>Materiál</dt><dd>fotografická textúra kameňa s&nbsp;normálovou mapou</dd>
+        </dl>
+        <div class="chips" aria-label="Paleta"><i style="background:#121314"></i><i style="background:#9d978b"></i><i style="background:#e9e6de"></i><i style="background:#c4b872"></i></div>
+        <span class="opt__cta">Otvoriť návrh LOM</span>
+      </div>
+    </a>
+
+    <a class="opt opt--sup" href="suplik/index.html">
+      <div class="opt__top"><span>Návrh B</span><span>Risografický zin</span></div>
+      <p class="opt__word" aria-hidden="true"><span>Šuplík</span><span>Šuplík</span></p>
+      <div class="opt__info">
+        <h2 class="opt__concept">Blog vytlačený dvoma farbami, ktoré na seba nikdy presne nesadnú.</h2>
+        <dl class="opt__specs">
+          <dt>Interakcia</dt><dd>rýchlosť scrollu rozostupuje farby, náhodný text zo šuplíka</dd>
+          <dt>Písmo</dt><dd>Bricolage Grotesque, DM Mono</dd>
+          <dt>Materiál</dt><dd>živý rastrovaný halftone, papierové vlákno</dd>
+        </dl>
+        <div class="chips" aria-label="Paleta"><i style="background:#e7e8e0"></i><i style="background:#ff48b0"></i><i style="background:#3255a4"></i></div>
+        <span class="opt__cta">Otvoriť návrh Šuplík</span>
+      </div>
+    </a>
+
+    <a class="opt opt--mod" href="modro/index.html">
+      <div class="opt__top"><span>Návrh C</span><span>Modrotlač</span></div>
+      <p class="opt__word" aria-hidden="true">modro</p>
+      <div class="opt__info">
+        <h2 class="opt__concept">Biele vzory na indigovej látke. Štočok držíš v&nbsp;ruke ty.</h2>
+        <dl class="opt__specs">
+          <dt>Interakcia</dt><dd>klikaním tlačíš vlastný vzor, každý článok má svoj raport</dd>
+          <dt>Písmo</dt><dd>Fraunces, Familjen Grotesk</dd>
+          <dt>Materiál</dt><dd>generované odtlačky s&nbsp;chybami ručnej tlače</dd>
+        </dl>
+        <div class="chips" aria-label="Paleta"><i style="background:#17234a"></i><i style="background:#26386f"></i><i style="background:#9fb4ea"></i><i style="background:#edeff2"></i></div>
+        <span class="opt__cta">Otvoriť návrh modro</span>
+      </div>
+    </a>
+  </main>
+
+  <footer class="foot">
+    <span>Statické HTML, CSS a&nbsp;JS. GSAP, Lenis, fonty z&nbsp;Fontsource (OFL).</span>
+    <span>Textúra kameňa: Babylon.js Assets, CC&nbsp;BY&nbsp;4.0</span>
+  </footer>
+</body>
+</html>
