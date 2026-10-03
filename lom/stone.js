@@ -1,4 +1,4 @@
-/* QUARRY hero: the word is carved into a stone slab, the pointer is a lantern.
+/* LOM hero: the word is carved into a stone slab, the pointer is a lantern.
    Plain WebGL1, two photographic textures (albedo + normal) and one height map
    rasterised from the real <h1> so the carving sits exactly where the text is. */
 (() => {

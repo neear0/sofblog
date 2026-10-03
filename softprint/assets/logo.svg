@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>softprint</title>
+  <!-- mäkký ružový bod a modrý registračný krížik, ktorý naň nikdy presne nesadne -->
+  <circle cx="21" cy="21" r="15" fill="#FF48B0"/>
+  <g fill="none" stroke="#3255A4" stroke-width="3" style="mix-blend-mode:multiply" transform="translate(1.2 0.8)">
+    <circle cx="23" cy="23" r="10"/>
+    <path d="M23 2V44M2 23H44"/>
+  </g>
+</svg>

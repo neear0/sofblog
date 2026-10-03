@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <title>Thread</title>
+  <title>TRED</title>
   <!-- jedna niť: písmeno T, ktorého driek sa stáča a končí hrotom ihly -->
   <path d="M8 9H40M24 9V32C24 38 27 41 33 41H38" stroke="#121316" stroke-width="3" stroke-linecap="round"/>
   <circle cx="38" cy="41" r="3.5" fill="#FF4B1F"/>

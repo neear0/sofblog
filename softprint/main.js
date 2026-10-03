@@ -21,7 +21,7 @@
       }
       input.removeAttribute('aria-invalid');
       btn.disabled = true;
-      msg.textContent = 'Vkladám do šuplíka…';
+      msg.textContent = 'Tlačím…';
       setTimeout(() => {
         btn.disabled = false;
         msg.textContent = 'Hotovo. (Toto je návrh dizajnu, adresa sa nikam neodoslala.)';

@@ -1,4 +1,4 @@
-/* QUARRY: stone, raking light, slow text */
+/* LOM: stone, raking light, slow text */
 :root {
   --bg: #121314;
   --surface: #191b1c;
@@ -19,7 +19,7 @@
   --step-1: clamp(1.3rem, 1.15rem + 0.6vw, 1.7rem);
   --step-2: clamp(1.8rem, 1.4rem + 1.6vw, 2.9rem);
   --step-3: clamp(2.3rem, 1.6rem + 3vw, 4.6rem);
-  --hero: clamp(3.6rem, 16.5vw, 17rem);
+  --hero: clamp(7rem, 38vw, 32rem);
 
   --space: 8px;
   --gutter: clamp(16px, 4vw, 56px);
@@ -253,7 +253,7 @@ p { margin: 0; text-wrap: pretty; }
 
 .foot__word {
   margin: clamp(64px, 10vw, 140px) 0 0;
-  font: 400 clamp(3.6rem, 17.5vw, 20rem)/0.8 var(--f-display);
+  font: 400 clamp(7rem, 40vw, 44rem)/0.72 var(--f-display);
   letter-spacing: -0.01em; text-align: center;
   color: #9d978b;
   background: url('assets/stone-albedo.jpg') center / 600px, linear-gradient(#a9a397, #6f6b63);
@@ -313,5 +313,4 @@ p { margin: 0; text-wrap: pretty; }
   color: rgba(24, 24, 22, 0.62); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .bp-featured .bp-stone__n { font-size: clamp(4rem, 11vw, 8.5rem); }
-@media (max-width: 720px) { :root { --hero: 21vw; } }
 @media (max-width: 560px) { .brand__word { display: none; } }

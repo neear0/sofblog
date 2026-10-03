@@ -1,4 +1,4 @@
-/* ŠUPLÍK: a two-colour risograph zine that never quite registers */
+/* softprint: a two-colour risograph zine that never quite registers */
 :root {
   --paper: #e7e8e0;
   --paper-2: #dcded4;
@@ -97,10 +97,10 @@ button { font: inherit; }
 .mast {
   position: relative; display: grid; isolation: isolate;
   margin: clamp(8px, 2vw, 24px) 0 0;
-  /* measured: ŠUPLÍK at wdth 85 is ~2.37em wide, so this fills the measure exactly */
-  font-size: calc((100vw - 2 * var(--gutter) - 16px) / 2.4); line-height: 0.84;
+  /* measured: "softprint" at wdth 85 is ~3.01em wide, so this fills the measure exactly */
+  font-size: calc((100vw - 2 * var(--gutter) - 16px) / 3.06); line-height: 0.84;
   font-weight: 800; font-stretch: 85%; letter-spacing: -0.035em;
-  padding-top: 0.12em;
+  padding-top: 0.04em; padding-bottom: 0.16em;
   user-select: none;
 }
 .mast__ink { grid-area: 1 / 1; display: block; white-space: nowrap; }
@@ -261,7 +261,8 @@ button { font: inherit; }
 
 .foot__word {
   display: grid; isolation: isolate; margin-top: clamp(56px, 9vw, 120px);
-  font-size: calc((100vw - 2 * var(--gutter) - 16px) / 2.4); line-height: 0.8; font-weight: 800; font-stretch: 85%; letter-spacing: -0.035em;
+  font-size: calc((100vw - 2 * var(--gutter) - 16px) / 3.06); line-height: 0.8; font-weight: 800; font-stretch: 85%; letter-spacing: -0.035em;
+  padding-bottom: 0.14em;
   user-select: none;
 }
 .foot__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-top: 32px; padding-top: 16px; border-top: 1px dashed var(--line); color: var(--ink-2); }

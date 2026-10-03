@@ -1,4 +1,4 @@
-/* Thread: quiet page, one line that leads the reader through it. */
+/* TRED: quiet page, one line that leads the reader through it. */
 :root {
   --bg: #f4f5f6;
   --ink: #121316;
@@ -67,7 +67,7 @@ main, footer, header { position: relative; z-index: 1; }
 .bar { display: flex; justify-content: space-between; align-items: center; padding: 28px var(--gutter); }
 .brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; }
 .brand__mark { width: 30px; height: 30px; color: var(--ink); }
-.brand__word { font: italic 400 1.7rem/1 var(--f-display); letter-spacing: -0.01em; }
+.brand__word { font: italic 400 1.7rem/1 var(--f-display); letter-spacing: 0.02em; }
 .bar__nav { display: flex; gap: clamp(16px, 3vw, 40px); font-size: var(--step--1); }
 .bar__nav a { padding: 10px 0; }
 .bar::after { content: ''; position: absolute; left: var(--gutter); right: var(--gutter); bottom: 0; height: var(--line); background: var(--rule); transform-origin: left; }
@@ -171,7 +171,7 @@ main, footer, header { position: relative; z-index: 1; }
 .sub__msg { min-height: 1.6em; margin-top: 10px; font-size: var(--step--1); color: var(--ink-2); }
 
 .foot__word { position: relative; margin-top: clamp(64px, 10vw, 140px); }
-.foot__word span { display: block; font: italic 400 clamp(6rem, 30vw, 34rem)/0.8 var(--f-display); letter-spacing: -0.04em; text-align: center; padding-bottom: 0.08em; }
+.foot__word span { display: block; font: italic 400 clamp(6rem, 30vw, 34rem)/0.8 var(--f-display); letter-spacing: -0.01em; text-align: center; padding-bottom: 0.08em; }
 .foot__swash { position: absolute; left: 4%; right: 4%; bottom: 2%; width: 92%; height: 18%; overflow: visible; }
 .foot__swash path { stroke-dasharray: 1; stroke-dashoffset: 0; }
 .js .foot__swash path { stroke-dashoffset: 1; transition: stroke-dashoffset 2s var(--ease-io); }
