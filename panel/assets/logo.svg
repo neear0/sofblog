@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>PANEL</title>
+  <!-- fasáda panelového domu: 3 × 3 okná, jedno svieti -->
+  <rect x="2" y="2" width="44" height="44" fill="#0D0D0C"/>
+  <g fill="#C9C8C2">
+    <rect x="8" y="8" width="8" height="8"/><rect x="20" y="8" width="8" height="8"/><rect x="32" y="8" width="8" height="8"/>
+    <rect x="8" y="20" width="8" height="8"/><rect x="32" y="20" width="8" height="8"/>
+    <rect x="8" y="32" width="8" height="8"/><rect x="20" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/>
+  </g>
+  <rect x="20" y="20" width="8" height="8" fill="#FFD400"/>
+</svg>

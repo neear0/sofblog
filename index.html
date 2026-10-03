@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>sofblog — tri návrhy</title>
-  <meta name="description" content="Tri dizajnové smery pre nový blog: LOM (kameň a svetlo), Šuplík (risografický zin) a modro (modrotlač).">
+  <title>sofblog — návrhy</title>
+  <meta name="description" content="Šesť dizajnových smerov pre nový blog: LOM, Šuplík, modro, PANEL, Linka a Perón.">
   <meta name="theme-color" content="#ebebe7">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='4' y='4' width='12' height='40' fill='%23121314'/%3E%3Crect x='18' y='4' width='12' height='40' fill='%23FF48B0'/%3E%3Crect x='32' y='4' width='12' height='40' fill='%2317234A'/%3E%3C/svg%3E">
   <style>
@@ -18,6 +18,10 @@
     @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-ext-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
     @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
     @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-ext-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
+    @font-face { font-family: 'Archivo'; src: url(fonts/archivo-latin-standard-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Instrument Serif'; font-style: italic; src: url(fonts/instrument-serif-latin-400-italic.woff2) format('woff2'); font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Barlow Condensed'; font-weight: 700; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
+    @font-face { font-family: 'Barlow Condensed'; font-weight: 700; src: url(fonts/barlow-condensed-latin-ext-700-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
 
     :root {
       --bg: #ebebe7;
@@ -42,7 +46,8 @@
     .head small { display: block; grid-column: 1 / -1; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--ink-2); margin-bottom: -8px; }
     @media (max-width: 860px) { .head h1, .head p { grid-column: 1 / -1; } }
 
-    .deck { display: flex; gap: 12px; padding: 0 var(--gutter) var(--gutter); height: max(640px, calc(100svh - 120px)); }
+    .deck { display: flex; gap: 12px; padding: 0 var(--gutter) 12px; height: max(640px, calc(100svh - 120px)); }
+    .deck + .deck { padding-bottom: var(--gutter); }
     .opt {
       position: relative; flex: 1; min-width: 0; overflow: hidden;
       display: flex; flex-direction: column; justify-content: space-between;
@@ -81,6 +86,27 @@
     .opt--mod::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,35,74,0.2), rgba(23,35,74,0.94) 62%); }
     .opt--mod .opt__word { font: 600 clamp(4.6rem, 9.5vw, 9.6rem)/0.82 'Fraunces', serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.03em; }
 
+    /* PANEL */
+    .opt--pan { background: #c9c8c2; color: #0d0d0c; box-shadow: inset 0 0 0 3px #0d0d0c; }
+    .opt--pan .opt__word { font: 900 clamp(4.6rem, 10vw, 10rem)/0.78 'Archivo', sans-serif; font-stretch: 62%; letter-spacing: -0.01em; }
+    .opt--pan .opt__word span { font-stretch: 62%; transition: font-stretch var(--dur) var(--ease-out); }
+    .opt--pan:hover .opt__word span, .opt--pan:focus-visible .opt__word span { font-stretch: 84%; }
+    .opt--pan .opt__cta { background: #ffd400; padding: 8px 12px; border: 3px solid #0d0d0c; align-self: flex-start; width: fit-content; }
+    .opt--pan .chips i { border-radius: 0; }
+
+    /* Linka */
+    .opt--lin { background: #f4f5f6; color: #121316; box-shadow: inset 0 0 0 1px rgba(18,19,22,0.16); }
+    .opt--lin .opt__word { font: italic 400 clamp(5rem, 10vw, 10rem)/0.85 'Instrument Serif', serif; letter-spacing: -0.03em; position: relative; }
+    .opt--lin .opt__word svg { position: absolute; left: 0; bottom: -0.12em; width: 100%; height: 0.3em; overflow: visible; }
+    .opt--lin .opt__word path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease-io); }
+    .opt--lin:hover .opt__word path, .opt--lin:focus-visible .opt__word path { stroke-dashoffset: 0; }
+
+    /* Perón */
+    .opt--per { background: #0e0f11; color: #f1efe8; }
+    .opt--per .opt__word { display: flex; gap: 0.06em; font: 700 clamp(3.6rem, 6.4vw, 6.4rem)/1 'Barlow Condensed', sans-serif; }
+    .opt--per .opt__word span { display: grid; place-items: center; width: 0.78em; height: 1.18em; border-radius: 3px; background: linear-gradient(#26272c 0 49%, #050506 49% 51%, #1e1f23 51%); }
+    .opt--per .opt__top span:last-child { color: #f6c344; }
+
     @media (max-width: 900px) {
       .deck { flex-direction: column; height: auto; }
       .opt { min-height: 78svh; }
@@ -94,11 +120,12 @@
 <body>
   <header class="head">
     <small>sofblog, október 2026</small>
-    <h1>Tri návrhy pre blog. Tri mená, tri logá, tri spôsoby čítania.</h1>
-    <p>Každý smer stojí na jednom nápade, dotiahnutom do posledného detailu. Otvor ich, poskúšaj interakcie a&nbsp;vyber ten, ktorý znie ako ty.</p>
+    <h1>Šesť návrhov pre blog. Každý má vlastné meno, logo a&nbsp;spôsob čítania.</h1>
+    <p>Každý smer stojí na jednom nápade. Texty sú zatiaľ lorem ipsum, aby vynikol dizajn. Otvor ich, poskúšaj interakcie a&nbsp;vyber ten, ktorý znie ako ty.</p>
   </header>
 
-  <main class="deck">
+  <main>
+  <section class="deck" aria-label="Návrhy A až C">
     <a class="opt opt--lom" href="lom/index.html">
       <div class="opt__top"><span>Návrh A</span><span>Kameň a&nbsp;svetlo</span></div>
       <p class="opt__word" aria-hidden="true">LOM</p>
@@ -143,10 +170,57 @@
         <span class="opt__cta">Otvoriť návrh modro</span>
       </div>
     </a>
+  </section>
+  <section class="deck" aria-label="Návrhy D až F">
+    <a class="opt opt--pan" href="panel/index.html">
+      <div class="opt__top"><span>Návrh D</span><span>Brutalizmus</span></div>
+      <p class="opt__word" aria-hidden="true"><span>PANEL</span></p>
+      <div class="opt__info">
+        <h2 class="opt__concept">Blog postavený ako panelák: surový betón, viditeľná mriežka, písmo ako stavebný prvok.</h2>
+        <dl class="opt__specs">
+          <dt>Interakcia</dt><dd>písmená sa pod kurzorom rozťahujú a&nbsp;ostatné im ustupujú, výťah s&nbsp;poschodiami</dd>
+          <dt>Písmo</dt><dd>Archivo (variabilná šírka 62 až 125), IBM Plex Mono</dd>
+          <dt>Materiál</dt><dd>betón generovaný šumom, debnenie s&nbsp;otvormi po spínačoch</dd>
+        </dl>
+        <div class="chips" aria-label="Paleta"><i style="background:#c9c8c2"></i><i style="background:#0d0d0c"></i><i style="background:#ffd400"></i></div>
+        <span class="opt__cta">Otvoriť návrh PANEL</span>
+      </div>
+    </a>
+
+    <a class="opt opt--lin" href="linka/index.html">
+      <div class="opt__top"><span>Návrh E</span><span>Jednoduchý, čiarový</span></div>
+      <p class="opt__word" aria-hidden="true">Linka<svg viewBox="0 0 300 30" preserveAspectRatio="none" fill="none"><path d="M2 20C60 4 120 28 180 14S270 6 298 16" stroke="#ff4b1f" stroke-width="2" stroke-linecap="round" pathLength="1"/></svg></p>
+      <div class="opt__info">
+        <h2 class="opt__concept">Tichá stránka a&nbsp;jedna čiara, ktorá čitateľa vedie od loga až po pätu.</h2>
+        <dl class="opt__specs">
+          <dt>Interakcia</dt><dd>linka sa kreslí so scrollom, konštrukčná kresba loga, čiary pri hoveri</dd>
+          <dt>Písmo</dt><dd>Instrument Serif, Geist</dd>
+          <dt>Materiál</dt><dd>vlasové čiary, SVG ťahy, bez knižníc</dd>
+        </dl>
+        <div class="chips" aria-label="Paleta"><i style="background:#f4f5f6"></i><i style="background:#121316"></i><i style="background:#ff4b1f"></i></div>
+        <span class="opt__cta">Otvoriť návrh Linka</span>
+      </div>
+    </a>
+
+    <a class="opt opt--per" href="peron/index.html">
+      <div class="opt__top"><span>Návrh F</span><span>Odchodová tabuľa</span></div>
+      <p class="opt__word" aria-hidden="true"><span>P</span><span>E</span><span>R</span><span>Ó</span><span>N</span></p>
+      <div class="opt__info">
+        <h2 class="opt__concept">Blog ako staničná tabuľa. Každý článok je spoj, ktorý práve odchádza.</h2>
+        <dl class="opt__specs">
+          <dt>Interakcia</dt><dd>preklápacie písmená (split-flap), živé hodiny, riadok sa pri hoveri prepíše</dd>
+          <dt>Písmo</dt><dd>Barlow Condensed, Barlow</dd>
+          <dt>Materiál</dt><dd>doštičky so štrbinou, CSS 3D preklápanie</dd>
+        </dl>
+        <div class="chips" aria-label="Paleta"><i style="background:#0e0f11"></i><i style="background:#26272c"></i><i style="background:#f1efe8"></i><i style="background:#f6c344"></i></div>
+        <span class="opt__cta">Otvoriť návrh Perón</span>
+      </div>
+    </a>
+  </section>
   </main>
 
   <footer class="foot">
-    <span>Statické HTML, CSS a&nbsp;JS. GSAP, Lenis, fonty z&nbsp;Fontsource (OFL).</span>
+    <span>Statické HTML, CSS a&nbsp;JS. GSAP, Lenis, fonty z&nbsp;Fontsource (OFL). Texty sú lorem ipsum.</span>
     <span>Textúra kameňa: Babylon.js Assets, CC&nbsp;BY&nbsp;4.0</span>
   </footer>
 </body>

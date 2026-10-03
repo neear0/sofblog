@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>Perón</title>
+  <!-- jedna preklápacia doštička s písmenom P; štrbina v strede je os otáčania -->
+  <rect x="6" y="3" width="36" height="42" rx="3" fill="#1F2024"/>
+  <rect x="6" y="3" width="36" height="20.5" rx="3" fill="#2A2B30"/>
+  <path d="M17 12H27.5C32 12 34.5 14.6 34.5 18.5S32 25 27.5 25H22.5V36H17Z M22.5 16.6V20.4H27C28.3 20.4 29 19.6 29 18.5S28.3 16.6 27 16.6Z" fill="#F1EFE8" fill-rule="evenodd"/>
+  <rect x="6" y="23.2" width="36" height="1.6" fill="#0E0F11"/>
+  <rect x="3" y="21.5" width="4" height="5" rx="1" fill="#F6C344"/>
+  <rect x="41" y="21.5" width="4" height="5" rx="1" fill="#F6C344"/>
+</svg>

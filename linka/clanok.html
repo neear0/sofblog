@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lorem ipsum dolor sit amet — Linka</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
+  <meta name="theme-color" content="#f4f5f6">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+  <svg class="thread" aria-hidden="true"><path class="thread__path"/><circle class="thread__pen" r="5"/></svg>
+
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="Linka, domov">
+      <svg class="brand__mark draw" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 6V34C14 38 16 40 20 40H38" stroke="currentColor" stroke-width="3" stroke-linecap="round" pathLength="1"/><circle cx="38" cy="40" r="3.5" fill="var(--accent)"/></svg>
+      <span class="brand__word">Linka</span>
+    </a>
+    <nav class="bar__nav" aria-label="Hlavná navigácia">
+      <a class="u" href="index.html#texty">Texty</a>
+      <a class="u" href="index.html#o-blogu">O blogu</a>
+      <a class="u" href="#odber">Odber</a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <article class="art">
+      <header class="art__head">
+        <span class="anchor" data-anchor="left" aria-hidden="true"></span>
+        <p class="art__meta"><time datetime="2026-10-01">01. 10. 2026</time><span>6 min</span></p>
+        <h1 class="art__title guides">Lorem ipsum dolor sit amet</h1>
+      </header>
+      <hr class="rule">
+      <div class="art__body">
+        <span class="anchor" data-anchor="here" aria-hidden="true" style="margin-bottom: 24px"></span>
+        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus.</p>
+        <h2>Nulla gravida orci</h2>
+        <p>Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+        <blockquote>Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit.</blockquote>
+        <p>Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi.</p>
+        <h2>Duis sapien sem</h2>
+        <p>Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.</p>
+      </div>
+      <footer class="art__end">
+        <a class="u" href="index.html#texty">Späť na texty</a>
+        <span>Ďalej: Consectetur adipiscing elit</span>
+      </footer>
+    </article>
+  </main>
+
+  <footer id="odber" class="foot">
+    <span class="anchor" data-anchor="left" aria-hidden="true"></span>
+    <div class="foot__grid">
+      <h2 class="head__title">Odber</h2>
+      <form class="sub" novalidate>
+        <label class="sub__label" for="lin-email">E‑mail</label>
+        <div class="sub__row">
+          <input id="lin-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="sub__btn" type="submit"><span>Odoberať</span><svg viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H38M32 1L38 6L32 11" pathLength="1"/></svg></button>
+        </div>
+        <p class="sub__msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="foot__meta">
+      <a class="u" href="index.html">Späť na Linku</a>
+      <a class="u" href="../index.html">Späť na návrhy</a>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

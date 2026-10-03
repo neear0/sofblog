@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perón — lorem ipsum</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.">
+  <meta name="theme-color" content="#0e0f11">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="Perón, domov">
+      <img src="assets/logo.svg" alt="" width="36" height="36">
+      <span class="brand__word">Perón</span>
+    </a>
+    <p class="clock" aria-label="Aktuálny čas"><span class="clock__plain">--:--:--</span></p>
+    <nav class="bar__nav" aria-label="Hlavná navigácia">
+      <a href="#odchody">Odchody</a>
+      <a href="#najblizsi">Najbližší</a>
+      <a href="#odber">Odber</a>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <section id="odchody" class="board" aria-labelledby="board-title">
+      <header class="board__head">
+        <h1 id="board-title" class="board__title" data-flap="ODCHODY">Odchody</h1>
+        <p class="board__sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </header>
+
+      <div class="table" role="table" aria-label="Texty">
+        <div class="row row--head" role="row">
+          <span role="columnheader">Čas</span>
+          <span role="columnheader">Smer</span>
+          <span role="columnheader" class="c-rub">Rubrika</span>
+          <span role="columnheader" class="c-pl">Nást.</span>
+          <span role="columnheader" class="c-note">Poznámka</span>
+        </div>
+        <a class="row" role="row" href="clanok.html">
+          <span role="cell" class="c-time" data-flap="08:15">08:15</span>
+          <span role="cell" class="c-dest" data-flap="LOREM IPSUM DOLOR SIT">Lorem ipsum dolor sit</span>
+          <span role="cell" class="c-rub" data-flap="AMET">Amet</span>
+          <span role="cell" class="c-pl" data-flap="1">1</span>
+          <span role="cell" class="c-note is-hot">Nové</span>
+        </a>
+        <a class="row" role="row" href="clanok.html">
+          <span role="cell" class="c-time" data-flap="09:40">09:40</span>
+          <span role="cell" class="c-dest" data-flap="CONSECTETUR ADIPISCING">Consectetur adipiscing</span>
+          <span role="cell" class="c-rub" data-flap="ELIT">Elit</span>
+          <span role="cell" class="c-pl" data-flap="3">3</span>
+          <span role="cell" class="c-note">Lorem ipsum</span>
+        </a>
+        <a class="row" role="row" href="clanok.html">
+          <span role="cell" class="c-time" data-flap="11:05">11:05</span>
+          <span role="cell" class="c-dest" data-flap="SED DO EIUSMOD TEMPOR">Sed do eiusmod tempor</span>
+          <span role="cell" class="c-rub" data-flap="LABORE">Labore</span>
+          <span role="cell" class="c-pl" data-flap="2">2</span>
+          <span role="cell" class="c-note">Dolor sit</span>
+        </a>
+        <a class="row" role="row" href="clanok.html">
+          <span role="cell" class="c-time" data-flap="13:20">13:20</span>
+          <span role="cell" class="c-dest" data-flap="UT ENIM AD MINIM VENIAM">Ut enim ad minim veniam</span>
+          <span role="cell" class="c-rub" data-flap="MAGNA">Magna</span>
+          <span role="cell" class="c-pl" data-flap="4">4</span>
+          <span role="cell" class="c-note">Amet</span>
+        </a>
+        <a class="row" role="row" href="clanok.html">
+          <span role="cell" class="c-time" data-flap="16:45">16:45</span>
+          <span role="cell" class="c-dest" data-flap="QUIS NOSTRUD EXERCITATION">Quis nostrud exercitation</span>
+          <span role="cell" class="c-rub" data-flap="ALIQUA">Aliqua</span>
+          <span role="cell" class="c-pl" data-flap="1">1</span>
+          <span role="cell" class="c-note">Consectetur</span>
+        </a>
+        <a class="row" role="row" href="clanok.html">
+          <span role="cell" class="c-time" data-flap="19:30">19:30</span>
+          <span role="cell" class="c-dest" data-flap="DUIS AUTE IRURE DOLOR">Duis aute irure dolor</span>
+          <span role="cell" class="c-rub" data-flap="VELIT">Velit</span>
+          <span role="cell" class="c-pl" data-flap="5">5</span>
+          <span role="cell" class="c-note">Lorem</span>
+        </a>
+      </div>
+      <p class="board__foot">Lorem ipsum dolor sit amet. Ut enim ad minim veniam.</p>
+    </section>
+
+    <section id="najblizsi" class="next" aria-labelledby="next-title">
+      <div class="next__plate">
+        <p class="next__label">Najbližší</p>
+        <p class="next__time" data-flap="08:15">08:15</p>
+        <p class="next__pl"><span>Nást.</span><span class="tile" data-flap="1">1</span></p>
+      </div>
+      <div class="next__body">
+        <h2 id="next-title" class="next__title">Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
+        <p class="next__text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <a class="board-btn" href="clanok.html">Nastúpiť</a>
+      </div>
+    </section>
+
+    <section class="lines" aria-labelledby="lines-title">
+      <h2 id="lines-title" class="lines__title">Lorem ipsum</h2>
+      <ul class="lines__list">
+        <li><span class="tile tile--sm">1</span><span class="lines__name">Amet</span><span class="lines__n">12</span></li>
+        <li><span class="tile tile--sm">2</span><span class="lines__name">Labore</span><span class="lines__n">08</span></li>
+        <li><span class="tile tile--sm">3</span><span class="lines__name">Elit</span><span class="lines__n">15</span></li>
+        <li><span class="tile tile--sm">4</span><span class="lines__name">Magna</span><span class="lines__n">06</span></li>
+        <li><span class="tile tile--sm">5</span><span class="lines__name">Velit</span><span class="lines__n">10</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="odber" class="foot">
+    <div class="foot__grid">
+      <div>
+        <h2 class="foot__h">Odber</h2>
+        <p class="foot__p">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+      </div>
+      <form class="sub" novalidate>
+        <label class="sub__label" for="per-email">E‑mail</label>
+        <div class="sub__row">
+          <input id="per-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="board-btn" type="submit">Odoberať</button>
+        </div>
+        <p class="sub__msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <p class="foot__word" aria-hidden="true" data-flap="PERÓN">PERÓN</p>
+    <div class="foot__meta">
+      <span>Perón, blog</span>
+      <a href="../index.html">Späť na návrhy</a>
+    </div>
+  </footer>
+
+  <script src="flap.js" defer></script>
+</body>
+</html>
