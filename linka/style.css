@@ -195,3 +195,28 @@ main, footer, header { position: relative; z-index: 1; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; }
 }
+
+/* ---------- blog layout (shared skeleton in ../blog.css) ---------- */
+:root {
+  --bp-fg: var(--ink); --bp-bg: var(--bg); --bp-muted: var(--ink-2); --bp-accent: var(--accent);
+  --bp-rule: 1px solid var(--rule); --bp-title: 400 1em/1.08 var(--f-display); --bp-small: var(--step--1);
+  --bp-r: 0; --bp-tag-r: 999px; --bp-avatar-bg: var(--bg); --bp-avatar-fg: var(--ink);
+  --bp-thumb-bg: var(--bg); --bp-thumb-border: 1px solid var(--rule); --bp-underline: 1.5px; --bp-pad-top: 0;
+}
+.bp-avatar { box-shadow: inset 0 0 0 1.5px var(--accent); font: italic 400 0.95rem/1 var(--f-display); letter-spacing: 0; }
+.bp-avatar--lg { font-size: 1.5rem; }
+.bp-cat { font-weight: 500; letter-spacing: 0.04em; text-transform: none; }
+.bp-popular__n { font-style: italic; }
+.bp-featured__title a, .bp-card__title a { background-image: linear-gradient(var(--accent), var(--accent)); }
+.bp-heading { display: flex; align-items: center; }
+.bp-featured:hover .bp-featured__thumb > *, .bp-card:hover .bp-card__thumb > * { transform: none; }
+/* line drawings: each post gets its own, drawn when it enters and again on hover */
+.bp-lines { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; }
+.bp-lines .soft { stroke: var(--rule); }
+.bp-lines .acc { stroke: var(--accent); stroke-width: 2; }
+.bp-lines .dot { fill: var(--accent); stroke: none; }
+.bp-lines path, .bp-lines circle:not(.dot) { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.js .bp-lines path, .js .bp-lines circle:not(.dot) { stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease-io); }
+.js .bp-lines.is-in path, .js .bp-lines.is-in circle:not(.dot) { stroke-dashoffset: 0; }
+.js .bp-lines .dot { transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform 0.5s var(--ease-out) 1.2s; }
+.js .bp-lines.is-in .dot { transform: scale(1); }

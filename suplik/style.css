@@ -290,3 +290,23 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- blog layout (shared skeleton in ../blog.css) ---------- */
+:root {
+  --bp-fg: var(--blue); --bp-bg: var(--paper); --bp-muted: var(--ink-2); --bp-accent: var(--blue);
+  --bp-rule: 2px solid var(--blue); --bp-rule-soft: 1px dashed var(--line);
+  --bp-title: 800 1em/0.98 var(--f-display); --bp-small: var(--step--1); --bp-r: 0;
+  --bp-avatar-bg: var(--pink); --bp-avatar-fg: var(--blue); --bp-avatar-r: 0;
+  --bp-thumb-bg: var(--paper-2); --bp-thumb-border: 2px solid var(--blue);
+  --bp-widget-bg: var(--paper); --bp-widget-pad: 20px; --bp-widget-border: 2px solid var(--blue);
+  --bp-underline: 0.32em; --bp-pad-top: 0;
+}
+.bp-featured__title, .bp-card__title, .bp-heading, .bp-author__name, .bp-author-box__name, .bp-prevnext strong { font-stretch: 85%; letter-spacing: -0.025em; }
+.bp-cat, .bp-meta, .bp-flag, .bp-widget__title, .bp-count, .bp-tag { font-family: var(--f-mono); font-weight: 400; letter-spacing: 0.02em; text-transform: none; }
+.bp-cat::before { content: ''; display: inline-block; width: 0.75em; height: 0.75em; margin-right: 0.45em; vertical-align: -0.05em; background: var(--pink); }
+/* the hover underline is a pink highlighter pass under the blue type */
+.bp-featured__title a, .bp-card__title a { background-image: linear-gradient(color-mix(in srgb, var(--pink) 70%, transparent), color-mix(in srgb, var(--pink) 70%, transparent)); background-position: 0 88%; }
+.bp-popular__n { font-stretch: 75%; font-size: 2rem; color: var(--pink); }
+.bp-pager [aria-current] { background: var(--blue); color: var(--paper); }
+.bp-card__thumb .ht, .bp-featured__thumb .ht { aspect-ratio: auto; }
+.bp-side { --bp-sticky: 24px; }

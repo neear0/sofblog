@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Šuplík — texty, ktoré ležali v šuplíku príliš dlho</title>
+  <title>Šuplík — lorem ipsum</title>
   <meta name="description" content="Gravida orci a odio nullam varius turpis. Et commodo pharetra est eros, bibendum elit nec, luctus magna felis sollicitudin mauris integer.">
   <meta name="theme-color" content="#E7E8E0">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="preload" href="../fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="../blog.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +28,7 @@
     </a>
     <p class="top__issue">Číslo 07<span aria-hidden="true"> / </span><br class="br-m">Lorem ipsum</p>
     <nav class="top__nav" aria-label="Hlavná navigácia">
-      <a href="#obsah-cisla">Obsah</a>
+      <a href="#clanky">Články</a>
       <a href="#archiv">Archív</a>
       <a href="#list">Napíš</a>
     </nav>
@@ -64,34 +65,44 @@
       </div>
     </section>
 
-    <section id="obsah-cisla" class="toc" aria-labelledby="toc-title">
-      <header class="sec-head">
-        <h2 id="toc-title" class="riso" data-text="Commodo eget consequat">Commodo eget consequat</h2>
-        <p class="mono">Quis 07, Neque aliquam. Faucibus lorem ipsum dolor sit.</p>
-      </header>
-      <ol class="toc__list">
-        <li><a href="clanok.html"><span class="toc__p mono">amet. 03</span><span class="toc__t">Consectetur adipiscing, elit sed do eiusmod&nbsp;tempor incididunt</span><span class="toc__d">Ut, labore, et dolore magna aliqua&nbsp;ut enim ad&nbsp;minim.</span></a></li>
-        <li><a href="clanok.html"><span class="toc__p mono">veniam. 08</span><span class="toc__t">Quis nostrud exercitation ullamco laboris nisi</span><span class="toc__d">Ut&nbsp;aliquip ex ea, commodo consequat, duis aute irure dolor.</span></a></li>
-        <li><a href="clanok.html"><span class="toc__p mono">in. 12</span><span class="toc__t">Reprehenderit in voluptate&nbsp;velit esse</span><span class="toc__d">Cillum dolore, eu fugiat nulla pariatur&nbsp;excepteur sint occaecat cupidatat.</span></a></li>
-        <li><a href="clanok.html"><span class="toc__p mono">non. 17</span><span class="toc__t">Proident, sunt in culpa</span><span class="toc__d">Qui officia deserunt mollit anim&nbsp;id est laborum curabitur.</span></a></li>
-        <li><a href="clanok.html"><span class="toc__p mono">pretium. 22</span><span class="toc__t">Tincidunt, lacus nulla gravida</span><span class="toc__d">Orci a odio nullam varius turpis, et commodo.</span></a></li>
-        <li><a href="clanok.html"><span class="toc__p mono">pharetra. 26</span><span class="toc__t">Est eros bibendum elit</span><span class="toc__d">Nec luctus. Magna felis, sollicitudin mauris&nbsp;integer in mauris.</span></a></li>
-      </ol>
-    </section>
-
-    <section class="spread" aria-labelledby="spread-title">
-      <div class="spread__page spread__page--art">
-        <canvas class="ht" data-art="tickets" aria-hidden="true"></canvas>
-        <p class="spread__cap mono">Eu. 1: Nibh euismod&nbsp;gravida duis, ac tellus et.</p>
-      </div>
-      <div class="spread__page">
-        <p class="mono spread__kick">risus. 08 / Vulputate</p>
-        <h2 id="spread-title" class="spread__title riso" data-text="Vehicula donec lobortis risus a elit">Vehicula donec lobortis risus a elit</h2>
-        <p class="spread__text">Etiam tempor&nbsp;ut ullamcorper ligula eu tempor. Congue eros est&nbsp;euismod turpis id. Tincidunt sapien risus, a quam maecenas fermentum consequat&nbsp;mi&nbsp;donec fermentum pellentesque. Malesuada nulla a mi, duis sapien sem. Aliquet nec commodo.</p>
-        <a class="pull pull--link" href="clanok.html"><span class="pull__a">Čítať celý text</span><span class="pull__b" aria-hidden="true">Čítať celý text</span></a>
-      </div>
-    </section>
-
+    <div id="clanky" class="bp-blog">
+    <div class="bp-feed">
+      <article class="bp-featured">
+        <a class="bp-featured__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="sun" aria-hidden="true"></canvas></a>
+        <div class="bp-featured__body">
+          <p class="bp-kicker"><span class="bp-cat">Lorem</span><span class="bp-flag">Najnovší článok</span></p>
+          <h2 class="bp-featured__title"><a href="clanok.html">Lorem ipsum dolor sit amet consectetur</a></h2>
+          <p class="bp-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p class="bp-meta"><span class="bp-avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><time datetime="2026-10-02">2. 10. 2026</time><span>8 min čítania</span></p>
+        </div>
+      </article>
+      <h2 class="bp-heading">Najnovšie články</h2>
+      <ul class="bp-cards"><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="waves" aria-hidden="true"></canvas></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3><p class="bp-excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p class="bp-meta"><time datetime="2026-09-24">24. 9. 2026</time><span>6 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="moon" aria-hidden="true"></canvas></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3><p class="bp-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p class="bp-meta"><time datetime="2026-09-17">17. 9. 2026</time><span>11 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="blocks" aria-hidden="true"></canvas></a><p class="bp-cat">Lorem</p><h3 class="bp-card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3><p class="bp-excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="bp-meta"><time datetime="2026-09-08">8. 9. 2026</time><span>4 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="rings" aria-hidden="true"></canvas></a><p class="bp-cat">Elit</p><h3 class="bp-card__title"><a href="clanok.html">Excepteur sint occaecat cupidatat</a></h3><p class="bp-excerpt">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, nullam varius turpis et commodo pharetra.</p><p class="bp-meta"><time datetime="2026-08-29">29. 8. 2026</time><span>9 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="hill" aria-hidden="true"></canvas></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Nulla gravida orci a odio nullam</a></h3><p class="bp-excerpt">Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula, donec lobortis risus a elit.</p><p class="bp-meta"><time datetime="2026-08-16">16. 8. 2026</time><span>7 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="ht" data-art="tickets" aria-hidden="true"></canvas></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Integer in mauris eu nibh euismod</a></h3><p class="bp-excerpt">Etiam tempor, ut ullamcorper ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.</p><p class="bp-meta"><time datetime="2026-08-03">3. 8. 2026</time><span>5 min čítania</span></p></article></li></ul>
+      <nav class="bp-pager" aria-label="Stránkovanie">
+        <a href="index.html" aria-current="page">1</a><a href="index.html">2</a><a href="index.html">3</a><span aria-hidden="true">…</span><a href="index.html">8</a>
+        <a class="bp-pager__next" href="index.html">Staršie články</a>
+      </nav>
+    </div>
+    <aside class="bp-side" aria-label="Bočný panel">
+      <section id="o-autorovi" class="bp-widget bp-author" aria-labelledby="w-author">
+        <h2 id="w-author" class="bp-widget__title">O autorovi</h2>
+        <div class="bp-author__head"><span class="bp-avatar bp-avatar--lg" aria-hidden="true">LI</span><p class="bp-author__name">Lorem Ipsum</p></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-cats">
+        <h2 id="w-cats" class="bp-widget__title">Rubriky</h2>
+        <ul class="bp-cats"><li><a href="index.html"><span>Lorem</span><span class="bp-count">14</span></a></li><li><a href="index.html"><span>Dolor</span><span class="bp-count">9</span></a></li><li><a href="index.html"><span>Amet</span><span class="bp-count">11</span></a></li><li><a href="index.html"><span>Elit</span><span class="bp-count">6</span></a></li><li><a href="index.html"><span>Tempor</span><span class="bp-count">4</span></a></li></ul>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-pop">
+        <h2 id="w-pop" class="bp-widget__title">Najčítanejšie</h2>
+        <ol class="bp-popular"><li><a href="clanok.html"><span class="bp-popular__n">1</span><span>Ut enim ad minim veniam quis nostrud</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">2</span><span>Lorem ipsum dolor sit amet consectetur</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">3</span><span>Excepteur sint occaecat cupidatat</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">4</span><span>Nulla gravida orci a odio nullam</span></a></li></ol>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-tags">
+        <h2 id="w-tags" class="bp-widget__title">Štítky</h2>
+        <ul class="bp-tags"><li><a class="bp-tag" href="index.html">lorem</a></li><li><a class="bp-tag" href="index.html">ipsum</a></li><li><a class="bp-tag" href="index.html">dolor</a></li><li><a class="bp-tag" href="index.html">sit amet</a></li><li><a class="bp-tag" href="index.html">consectetur</a></li><li><a class="bp-tag" href="index.html">elit</a></li><li><a class="bp-tag" href="index.html">tempor</a></li><li><a class="bp-tag" href="index.html">magna</a></li></ul>
+      </section>
+    </aside>
+    </div>
     <section id="archiv" class="archive" aria-labelledby="arch-title">
       <header class="sec-head">
         <h2 id="arch-title" class="riso" data-text="Eget">Eget</h2>

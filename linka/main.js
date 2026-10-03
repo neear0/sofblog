@@ -29,6 +29,29 @@
   document.querySelectorAll('.rule, .posts, .foot__word').forEach((el) => io.observe(el));
   document.querySelectorAll('.posts li').forEach((li, i) => li.style.setProperty('--d', `${i * 0.08}s`));
 
+
+  // ---- post thumbnails: a small line drawing per post, seeded so it stays the same ----
+  const NS = 'http://www.w3.org/2000/svg';
+  const rnd = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+  function el(tag, attrs, cls) { const e = document.createElementNS(NS, tag); Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v)); if (cls) e.setAttribute('class', cls); e.setAttribute('pathLength', '1'); return e; }
+  document.querySelectorAll('.bp-lines').forEach((svg) => {
+    const r = rnd(+svg.dataset.seed * 7919 + 13);
+    for (let i = 1; i < 4; i++) svg.appendChild(el('path', { d: `M0 ${i * 75}H400` }, 'soft'));
+    for (let i = 1; i < 5; i++) svg.appendChild(el('path', { d: `M${i * 80} 0V300` }, 'soft'));
+    const cx = 120 + r() * 160, cy = 90 + r() * 120, cr = 40 + r() * 70;
+    svg.appendChild(el('circle', { cx, cy, r: cr }));
+    for (let k = 0; k < 2; k++) {
+      const y0 = 40 + r() * 220, y1 = 40 + r() * 220;
+      svg.appendChild(el('path', { d: `M-10 ${y0}C${120 + r() * 60} ${y0 - 120 + r() * 240} ${220 + r() * 60} ${y1 - 120 + r() * 240} 410 ${y1}` }));
+    }
+    const ax = 60 + r() * 120, ay = 60 + r() * 180, bx = ax + 120 + r() * 120, by = ay + (r() - 0.5) * 140;
+    svg.appendChild(el('path', { d: `M${ax} ${ay}Q${(ax + bx) / 2} ${ay - 80 + r() * 160} ${bx} ${by}` }, 'acc'));
+    const dot = el('circle', { cx: bx, cy: by, r: 6 }, 'dot'); dot.removeAttribute('pathLength'); svg.appendChild(dot);
+    io.observe(svg);
+    const card = svg.closest('.bp-card, .bp-featured');
+    if (card && !reduced) card.addEventListener('pointerenter', () => { svg.classList.remove('is-in'); void svg.getBoundingClientRect(); requestAnimationFrame(() => svg.classList.add('is-in')); });
+  });
+
   // ---- the thread: one line from the top of the page to the footer ----
   const svg = document.querySelector('.thread');
   const path = svg && svg.querySelector('.thread__path');

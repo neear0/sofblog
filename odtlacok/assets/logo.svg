@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>odtlačok</title>
+  <!-- odtlačok ružice mierne mimo osi formy; rámik je hrana štočku -->
+  <rect x="2.5" y="2.5" width="43" height="43" rx="2" fill="none" stroke="#ECEBE6" stroke-opacity="0.45" stroke-width="1.5"/>
+  <g fill="#ECEBE6" transform="rotate(9 24 24)">
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(45 24 24)"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(90 24 24)"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(135 24 24)"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(180 24 24)"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(225 24 24)"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(270 24 24)"/>
+    <ellipse cx="24" cy="13.6" rx="3.3" ry="6.2" transform="rotate(315 24 24)"/>
+  </g>
+  <circle cx="24" cy="24" r="3.4" fill="#8E9BFF"/>
+  <g fill="#0B0B0C"><circle cx="20.5" cy="12.5" r="0.9"/><circle cx="33" cy="27" r="0.8"/><circle cx="17" cy="31.5" r="0.7"/></g>
+</svg>

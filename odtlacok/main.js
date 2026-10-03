@@ -43,7 +43,7 @@
     M.stamp(x, px * 0.75, px * 0.75, 'kvet', px * 0.4, 12, 0, 1);
     M.stamp(x, px * 0.75, px * 0.25, 'hrasok', px * 0.2, 13, 0, 1);
     M.stamp(x, px * 0.25, px * 0.75, 'hrasok', px * 0.2, 14, 0, 1);
-    word.style.backgroundColor = 'var(--indigo-3)';
+    word.style.backgroundColor = 'var(--bg-3)';
     word.style.backgroundImage = `url(${c.toDataURL()})`;
   }
 

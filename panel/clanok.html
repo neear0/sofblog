@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="preload" href="../fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="../blog.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,8 +22,8 @@
     </a>
     <p class="bar__meta mono">Vydanie 01<br>Lorem ipsum</p>
     <nav class="bar__nav" aria-label="Hlavná navigácia">
-      <a href="index.html#texty">Texty</a>
-      <a href="index.html#vyber">Výber</a>
+      <a href="index.html#clanky">Články</a>
+      <a href="index.html#o-autorovi">O autorovi</a>
       <a href="#odber">Odber</a>
     </nav>
   </header>
@@ -33,6 +34,7 @@
         <div class="art__meta mono">
           <p>Č. 014<br>Consectetur</p>
           <p><time datetime="2026-10-02">02.10.26</time><br>08 min</p>
+          <p class="bp-byline"><span class="bp-avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span></p>
         </div>
         <h1 class="art__title">Lorem ipsum dolor sit amet</h1>
       </header>
@@ -51,11 +53,28 @@
         </div>
       </div>
     </article>
+    <section class="bp-after" aria-label="Po článku">
+      <div class="bp-after__narrow">
+        <ul class="bp-tags" aria-label="Štítky"><li><a class="bp-tag" href="index.html">lorem</a></li><li><a class="bp-tag" href="index.html">ipsum</a></li><li><a class="bp-tag" href="index.html">dolor</a></li><li><a class="bp-tag" href="index.html">sit amet</a></li><li><a class="bp-tag" href="index.html">consectetur</a></li></ul>
+        <aside class="bp-author-box" aria-label="O autorovi">
+          <span class="bp-avatar bp-avatar--lg" aria-hidden="true">LI</span>
+          <div><p class="bp-author-box__name">Lorem Ipsum</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+        </aside>
+        <nav class="bp-prevnext" aria-label="Ďalšie články">
+          <a href="clanok.html" rel="prev"><span>Predchádzajúci článok</span><strong>Sed do eiusmod tempor incididunt</strong></a>
+          <a href="clanok.html" rel="next"><span>Ďalší článok</span><strong>Ut enim ad minim veniam quis nostrud</strong></a>
+        </nav>
+      </div>
+      <div class="bp-related">
+        <h2 class="bp-heading">Súvisiace články</h2>
+        <ul class="bp-cards bp-cards--3"><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><span class="bp-slab"><span class="bp-slab__n">013</span></span></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3><p class="bp-excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p class="bp-meta"><time datetime="2026-09-24">24. 9. 2026</time><span>6 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><span class="bp-slab"><span class="bp-slab__n">012</span></span></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3><p class="bp-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p class="bp-meta"><time datetime="2026-09-17">17. 9. 2026</time><span>11 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><span class="bp-slab"><span class="bp-slab__n">011</span></span></a><p class="bp-cat">Lorem</p><h3 class="bp-card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3><p class="bp-excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="bp-meta"><time datetime="2026-09-08">8. 9. 2026</time><span>4 min čítania</span></p></article></li></ul>
+      </div>
+    </section>
   </main>
 
   <footer id="odber" class="foot">
     <header class="sec">
-      <p class="sec__floor mono">3. p.</p>
+      <p class="sec__floor mono">2. p.</p>
       <h2 class="sec__title">Odber</h2>
       <p class="sec__note mono">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </header>

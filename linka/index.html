@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="preload" href="../fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="../blog.css">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -22,8 +23,8 @@
       <span class="brand__word">Linka</span>
     </a>
     <nav class="bar__nav" aria-label="Hlavná navigácia">
-      <a class="u" href="#texty">Texty</a>
-      <a class="u" href="#o-blogu">O blogu</a>
+      <a class="u" href="#clanky">Články</a>
+      <a class="u" href="#o-autorovi">O autorovi</a>
       <a class="u" href="#odber">Odber</a>
     </nav>
   </header>
@@ -38,51 +39,44 @@
       </div>
     </section>
 
-    <section id="texty" class="list" aria-labelledby="list-title">
-      <header class="head">
-        <span class="anchor anchor--inline" data-anchor="here" aria-hidden="true"></span>
-        <h2 id="list-title" class="head__title">Lorem ipsum</h2>
-        <p class="head__note">Duis aute irure dolor in reprehenderit.</p>
-      </header>
-      <hr class="rule">
-      <ol class="posts">
-        <li><a class="post" href="clanok.html"><time datetime="2026-10-01">01. 10.</time><span class="post__t">Lorem ipsum dolor sit amet</span><span class="post__m">6 min</span><svg class="post__arrow" viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H38M32 1L38 6L32 11" pathLength="1"/></svg></a></li>
-        <li><a class="post" href="clanok.html"><time datetime="2026-09-18">18. 09.</time><span class="post__t">Consectetur adipiscing elit sed do</span><span class="post__m">9 min</span><svg class="post__arrow" viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H38M32 1L38 6L32 11" pathLength="1"/></svg></a></li>
-        <li><a class="post" href="clanok.html"><time datetime="2026-09-02">02. 09.</time><span class="post__t">Eiusmod tempor incididunt</span><span class="post__m">4 min</span><svg class="post__arrow" viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H38M32 1L38 6L32 11" pathLength="1"/></svg></a></li>
-        <li><a class="post" href="clanok.html"><time datetime="2026-08-21">21. 08.</time><span class="post__t">Ut labore et dolore magna aliqua</span><span class="post__m">12 min</span><svg class="post__arrow" viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H38M32 1L38 6L32 11" pathLength="1"/></svg></a></li>
-        <li><a class="post" href="clanok.html"><time datetime="2026-08-05">05. 08.</time><span class="post__t">Quis nostrud exercitation ullamco</span><span class="post__m">7 min</span><svg class="post__arrow" viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H38M32 1L38 6L32 11" pathLength="1"/></svg></a></li>
-      </ol>
-    </section>
-
-    <section id="o-blogu" class="about" aria-labelledby="about-title">
-      <figure class="about__fig">
-        <svg class="construct" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-          <g class="construct__grid" stroke="currentColor" stroke-width="0.75">
-            <path d="M40 0V400M120 0V400M200 0V400M280 0V400M360 0V400" pathLength="1"/>
-            <path d="M0 40H400M0 120H400M0 200H400M0 280H400M0 360H400" pathLength="1"/>
-          </g>
-          <g class="construct__aux" stroke="currentColor" stroke-width="1">
-            <circle cx="200" cy="200" r="160" pathLength="1"/>
-            <circle cx="200" cy="200" r="80" pathLength="1"/>
-            <path d="M40 40L360 360M360 40L40 360" pathLength="1"/>
-          </g>
-          <path class="construct__main" d="M120 40V280C120 330 140 360 190 360H320" stroke="currentColor" stroke-width="10" stroke-linecap="round" pathLength="1"/>
-          <circle class="construct__dot" cx="320" cy="360" r="14"/>
-        </svg>
-        <figcaption>Lorem ipsum, dolor sit amet.</figcaption>
-      </figure>
-      <div class="about__text">
-        <span class="anchor anchor--inline" data-anchor="here" aria-hidden="true"></span>
-        <h2 id="about-title" class="head__title">Dolor sit amet</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-      </div>
-    </section>
-
-    <section class="quote" aria-label="Citát">
-      <span class="anchor" data-anchor="center" aria-hidden="true"></span>
-      <blockquote class="quote__text">„Lorem ipsum dolor sit amet, consectetur adipiscing elit.“</blockquote>
-    </section>
+    <div id="clanky" class="bp-blog">
+    <div class="bp-feed">
+      <article class="bp-featured">
+        <a class="bp-featured__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="3" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a>
+        <div class="bp-featured__body">
+          <p class="bp-kicker"><span class="bp-cat">Lorem</span><span class="bp-flag">Najnovší článok</span></p>
+          <h2 class="bp-featured__title"><a href="clanok.html">Lorem ipsum dolor sit amet consectetur</a></h2>
+          <p class="bp-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p class="bp-meta"><span class="bp-avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><time datetime="2026-10-02">2. 10. 2026</time><span>8 min čítania</span></p>
+        </div>
+      </article>
+      <h2 class="bp-heading"><span class="anchor anchor--inline" data-anchor="here" aria-hidden="true"></span>Najnovšie články</h2>
+      <ul class="bp-cards"><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="4" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3><p class="bp-excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p class="bp-meta"><time datetime="2026-09-24">24. 9. 2026</time><span>6 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="5" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3><p class="bp-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p class="bp-meta"><time datetime="2026-09-17">17. 9. 2026</time><span>11 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="6" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a><p class="bp-cat">Lorem</p><h3 class="bp-card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3><p class="bp-excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="bp-meta"><time datetime="2026-09-08">8. 9. 2026</time><span>4 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="7" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a><p class="bp-cat">Elit</p><h3 class="bp-card__title"><a href="clanok.html">Excepteur sint occaecat cupidatat</a></h3><p class="bp-excerpt">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, nullam varius turpis et commodo pharetra.</p><p class="bp-meta"><time datetime="2026-08-29">29. 8. 2026</time><span>9 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="8" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Nulla gravida orci a odio nullam</a></h3><p class="bp-excerpt">Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula, donec lobortis risus a elit.</p><p class="bp-meta"><time datetime="2026-08-16">16. 8. 2026</time><span>7 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><svg class="bp-lines" data-seed="9" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Integer in mauris eu nibh euismod</a></h3><p class="bp-excerpt">Etiam tempor, ut ullamcorper ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.</p><p class="bp-meta"><time datetime="2026-08-03">3. 8. 2026</time><span>5 min čítania</span></p></article></li></ul>
+      <nav class="bp-pager" aria-label="Stránkovanie">
+        <a href="index.html" aria-current="page">1</a><a href="index.html">2</a><a href="index.html">3</a><span aria-hidden="true">…</span><a href="index.html">8</a>
+        <a class="bp-pager__next" href="index.html">Staršie články</a>
+      </nav>
+    </div>
+    <aside class="bp-side" aria-label="Bočný panel">
+      <section id="o-autorovi" class="bp-widget bp-author" aria-labelledby="w-author">
+        <h2 id="w-author" class="bp-widget__title">O autorovi</h2>
+        <div class="bp-author__head"><span class="bp-avatar bp-avatar--lg" aria-hidden="true">LI</span><p class="bp-author__name">Lorem Ipsum</p></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-cats">
+        <h2 id="w-cats" class="bp-widget__title">Rubriky</h2>
+        <ul class="bp-cats"><li><a href="index.html"><span>Lorem</span><span class="bp-count">14</span></a></li><li><a href="index.html"><span>Dolor</span><span class="bp-count">9</span></a></li><li><a href="index.html"><span>Amet</span><span class="bp-count">11</span></a></li><li><a href="index.html"><span>Elit</span><span class="bp-count">6</span></a></li><li><a href="index.html"><span>Tempor</span><span class="bp-count">4</span></a></li></ul>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-pop">
+        <h2 id="w-pop" class="bp-widget__title">Najčítanejšie</h2>
+        <ol class="bp-popular"><li><a href="clanok.html"><span class="bp-popular__n">1</span><span>Ut enim ad minim veniam quis nostrud</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">2</span><span>Lorem ipsum dolor sit amet consectetur</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">3</span><span>Excepteur sint occaecat cupidatat</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">4</span><span>Nulla gravida orci a odio nullam</span></a></li></ol>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-tags">
+        <h2 id="w-tags" class="bp-widget__title">Štítky</h2>
+        <ul class="bp-tags"><li><a class="bp-tag" href="index.html">lorem</a></li><li><a class="bp-tag" href="index.html">ipsum</a></li><li><a class="bp-tag" href="index.html">dolor</a></li><li><a class="bp-tag" href="index.html">sit amet</a></li><li><a class="bp-tag" href="index.html">consectetur</a></li><li><a class="bp-tag" href="index.html">elit</a></li><li><a class="bp-tag" href="index.html">tempor</a></li><li><a class="bp-tag" href="index.html">magna</a></li></ul>
+      </section>
+    </aside>
+    </div>
   </main>
 
   <footer id="odber" class="foot">

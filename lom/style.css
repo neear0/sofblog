@@ -292,3 +292,23 @@ p { margin: 0; text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- blog layout (shared skeleton in ../blog.css) ---------- */
+:root {
+  --bp-fg: var(--ink-1); --bp-bg: var(--bg); --bp-muted: var(--ink-2); --bp-accent: var(--accent);
+  --bp-rule: 1px solid var(--line); --bp-title: 400 1em/1.06 var(--f-display); --bp-small: var(--step--1);
+  --bp-r: 0; --bp-avatar-bg: var(--raised); --bp-avatar-fg: var(--ink-1); --bp-avatar-r: 0;
+  --bp-thumb-bg: #1c1c1b; --bp-widget-bg: var(--surface); --bp-widget-pad: 24px;
+  --bp-hover-bg: var(--ink-1); --bp-hover-fg: var(--dark-ink); --bp-sticky: 100px;
+}
+.hero { height: min(88svh, 860px); }
+.bp-avatar { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.08em; }
+/* each thumbnail is a different cut of the same slab, with the post number carved in */
+.bp-stone { background: #1c1c1b url('assets/stone-albedo.jpg') var(--bx) var(--by) / var(--bs); background-blend-mode: luminosity; }
+.bp-stone::after { content: ''; position: absolute; inset: 0; background: radial-gradient(120% 90% at 30% 25%, rgba(18, 19, 20, 0.05), rgba(18, 19, 20, 0.8)); }
+.bp-stone__n {
+  position: absolute; inset: 0; z-index: 1; display: grid; place-items: center;
+  font: 400 clamp(2.8rem, 7vw, 5.4rem)/1 var(--f-display); letter-spacing: 0.08em;
+  color: rgba(24, 24, 22, 0.62); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.bp-featured .bp-stone__n { font-size: clamp(4rem, 11vw, 8.5rem); }
