@@ -1,4 +1,4 @@
-/* softprint: every illustration is a two-pass halftone, rendered live.
+/* pretlač: every illustration is a two-pass halftone, rendered live.
    Pink and blue are screened at different angles, like a real riso drum,
    and the second pass is printed slightly off register. */
 (() => {
