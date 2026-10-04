@@ -2,7 +2,8 @@
    then every impression gets its own imperfections: a little rotation,
    uneven pressure and specks where the resist did not take. */
 (() => {
-  const PRINT = '#edeff2';
+  const INKS = { white: '#ecebe6', violet: '#a77dff' };
+  const PRINT = INKS.white;
   const TAU = Math.PI * 2;
 
   const rng = (seed) => () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
@@ -49,21 +50,26 @@
       c.beginPath(); c.ellipse(0, -R * 0.86, R * 0.1, R * 0.14, 0, 0, TAU); c.fill();
     },
     hviezda(c, R) {
+      // octagram: eight spikes, each ending in a separate dot
       c.beginPath();
       for (let i = 0; i < 16; i++) {
         const a = (i * TAU) / 16 - TAU / 4;
-        const r = i % 2 ? R * 0.46 : R * 0.95;
+        const r = i % 2 ? R * 0.44 : R * 0.8;
         i ? c.lineTo(Math.cos(a) * r, Math.sin(a) * r) : c.moveTo(Math.cos(a) * r, Math.sin(a) * r);
       }
       c.closePath(); c.fill();
-      c.globalCompositeOperation = 'destination-out';
-      c.beginPath(); c.arc(0, 0, R * 0.3, 0, TAU); c.fill();
       for (let i = 0; i < 8; i++) {
         const a = (i * TAU) / 8 - TAU / 4;
-        c.beginPath(); c.arc(Math.cos(a) * R * 0.62, Math.sin(a) * R * 0.62, R * 0.05, 0, TAU); c.fill();
+        c.beginPath(); c.arc(Math.cos(a) * R * 0.94, Math.sin(a) * R * 0.94, R * 0.065, 0, TAU); c.fill();
+      }
+      c.globalCompositeOperation = 'destination-out';
+      c.beginPath(); c.arc(0, 0, R * 0.28, 0, TAU); c.fill();
+      for (let i = 0; i < 8; i++) {
+        const a = (i * TAU) / 8 - TAU / 4;
+        c.beginPath(); c.arc(Math.cos(a) * R * 0.56, Math.sin(a) * R * 0.56, R * 0.045, 0, TAU); c.fill();
       }
       c.globalCompositeOperation = 'source-over';
-      c.beginPath(); c.arc(0, 0, R * 0.13, 0, TAU); c.fill();
+      c.beginPath(); c.arc(0, 0, R * 0.12, 0, TAU); c.fill();
     },
     hrasok(c, R) {
       c.beginPath(); c.arc(0, 0, R * 0.2, 0, TAU); c.fill();
@@ -77,18 +83,18 @@
       }
     },
   };
-  const TYPES = Object.keys(FACES);
+  const TYPES = ['hviezda'];
 
   // cached clean faces per type/size
   const cache = new Map();
-  function face(type, px) {
-    const key = type + px;
+  function face(type, px, ink = 'white') {
+    const key = type + px + ink;
     if (cache.has(key)) return cache.get(key);
     const cv = document.createElement('canvas');
     cv.width = cv.height = px;
     const c = cv.getContext('2d');
     c.translate(px / 2, px / 2);
-    c.fillStyle = PRINT; c.strokeStyle = PRINT;
+    c.fillStyle = INKS[ink] || ink; c.strokeStyle = INKS[ink] || ink;
     FACES[type](c, px / 2 * 0.96);
     cache.set(key, cv);
     return cv;
@@ -96,15 +102,15 @@
 
   // one impression: pressure, specks, slight bleed
   const tmp = document.createElement('canvas');
-  function impression(type, px, seed) {
+  function impression(type, px, seed, ink = 'white') {
     const r = rng(seed);
     tmp.width = tmp.height = px;
     const c = tmp.getContext('2d');
     c.clearRect(0, 0, px, px);
     c.globalAlpha = 0.92 + r() * 0.08;
-    c.shadowColor = 'rgba(237,239,242,0.5)';
+    c.shadowColor = ink === 'violet' ? 'rgba(167,125,255,0.5)' : 'rgba(236,235,230,0.5)';
     c.shadowBlur = px * 0.008;
-    c.drawImage(face(type, px), 0, 0);
+    c.drawImage(face(type, px, ink), 0, 0);
     c.shadowBlur = 0;
     c.globalAlpha = 1;
     c.globalCompositeOperation = 'destination-out';
@@ -127,8 +133,8 @@
     return tmp;
   }
 
-  function stamp(ctx, x, y, type, px, seed, rot = 0, scale = 1) {
-    const im = impression(type, Math.round(px), seed);
+  function stamp(ctx, x, y, type, px, seed, rot = 0, scale = 1, ink = 'white') {
+    const im = impression(type, Math.round(px), seed, ink);
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot);
@@ -152,7 +158,8 @@
     return out;
   }
 
-  // a swatch for a blog post, deterministic from its title
+  // a swatch for a blog post, deterministic from its title:
+  // big white octagrams, with small violet ones dropped in between
   function swatch(canvas, title) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
@@ -160,15 +167,14 @@
     canvas.width = w; canvas.height = h;
     const c = canvas.getContext('2d');
     const r = rng(hashStr(title));
-    const a = TYPES[Math.floor(r() * TYPES.length)];
-    let b = TYPES[Math.floor(r() * TYPES.length)];
-    if (b === a) b = TYPES[(TYPES.indexOf(a) + 2) % TYPES.length];
-    const size = Math.min(w, h * 1.33) * (0.18 + r() * 0.12);
-    const gap = 1.08 + r() * 0.3;
-    repeat(w, h, size, gap, r() > 0.4 ? [a, b] : [a], hashStr(title) ^ 0x9e37).forEach((s, i) => {
-      stamp(c, s.x, s.y, s.type, (s.type === b && a !== b ? size * 0.62 : size), s.seed, s.rot, s.scale);
+    const size = Math.min(w, h * 1.33) * (0.2 + r() * 0.12);
+    const gap = 1.1 + r() * 0.3;
+    const mixed = r() > 0.3;
+    repeat(w, h, size, gap, mixed ? ['big', 'small'] : ['big'], hashStr(title) ^ 0x9e37).forEach((s) => {
+      const small = s.type === 'small';
+      stamp(c, s.x, s.y, 'hviezda', small ? size * 0.5 : size, s.seed, s.rot, s.scale, small ? 'violet' : 'white');
     });
   }
 
-  window.Modro = { TYPES, stamp, face, repeat, swatch, rng, hashStr };
+  window.Modro = { TYPES, INKS, stamp, face, repeat, swatch, rng, hashStr };
 })();

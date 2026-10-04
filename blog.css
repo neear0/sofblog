@@ -1,5 +1,4 @@
-/* Shared blog skeleton for all six directions.
-   Structure only: every colour, face, rule and radius comes from the design's own --bp-* tokens. */
+/* Blog skeleton: structure only. Every colour, face, rule and radius comes from the --bp-* tokens in style.css. */
 
 .bp-blog {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 340px); gap: var(--bp-gap, 64px);

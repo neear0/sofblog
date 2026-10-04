@@ -3,225 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>sofblog — návrhy</title>
-  <meta name="description" content="Šesť dizajnových smerov pre nový blog: LOM, pretlač, softprint, BLOCK, TRED a Perón.">
-  <meta name="theme-color" content="#ebebe7">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='4' y='4' width='12' height='40' fill='%23121314'/%3E%3Crect x='18' y='4' width='12' height='40' fill='%23FF48B0'/%3E%3Crect x='32' y='4' width='12' height='40' fill='%230B0B0C'/%3E%3C/svg%3E">
-  <style>
-    @font-face { font-family: 'Marcellus'; src: url(fonts/marcellus-latin-400-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Marcellus'; src: url(fonts/marcellus-latin-ext-400-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
-    @font-face { font-family: 'Bricolage Grotesque'; src: url(fonts/bricolage-grotesque-latin-standard-normal.woff2) format('woff2-variations'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Bricolage Grotesque'; src: url(fonts/bricolage-grotesque-latin-ext-standard-normal.woff2) format('woff2-variations'); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
-    @font-face { font-family: 'Fraunces'; src: url(fonts/fraunces-latin-full-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Fraunces'; src: url(fonts/fraunces-latin-ext-full-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
-    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-ext-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
-    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Instrument Sans'; src: url(fonts/instrument-sans-latin-ext-500-normal.woff2) format('woff2'); font-weight: 500; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
-    @font-face { font-family: 'Archivo'; src: url(fonts/archivo-latin-standard-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Instrument Serif'; font-style: italic; src: url(fonts/instrument-serif-latin-400-italic.woff2) format('woff2'); font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Barlow Condensed'; font-weight: 700; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC; }
-    @font-face { font-family: 'Barlow Condensed'; font-weight: 700; src: url(fonts/barlow-condensed-latin-ext-700-normal.woff2) format('woff2'); font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F; }
-
-    :root {
-      --bg: #ebebe7;
-      --ink: #161615;
-      --ink-2: rgba(22, 22, 21, 0.64);
-      --line: rgba(22, 22, 21, 0.16);
-      --f-text: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
-      --gutter: clamp(16px, 3.5vw, 48px);
-      --dur: 0.7s;
-      --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem)/1.55 var(--f-text); -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-    h1, h2, p { margin: 0; text-wrap: pretty; }
-    :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-
-    .head { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: clamp(40px, 6vw, 88px) var(--gutter) clamp(32px, 4vw, 56px); align-items: end; }
-    .head h1 { grid-column: 1 / span 7; font: 500 clamp(2.2rem, 1.4rem + 3.4vw, 4.6rem)/1 var(--f-text); letter-spacing: -0.035em; text-wrap: balance; }
-    .head p { grid-column: 9 / span 4; color: var(--ink-2); }
-    .head small { display: block; grid-column: 1 / -1; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--ink-2); margin-bottom: -8px; }
-    @media (max-width: 860px) { .head h1, .head p { grid-column: 1 / -1; } }
-
-    .deck { display: flex; gap: 12px; padding: 0 var(--gutter) 12px; height: max(640px, calc(100svh - 120px)); }
-    .deck + .deck { padding-bottom: var(--gutter); }
-    .opt {
-      position: relative; flex: 1; min-width: 0; overflow: hidden;
-      display: flex; flex-direction: column; justify-content: space-between;
-      padding: clamp(20px, 2.4vw, 32px);
-      transition: flex-grow var(--dur) var(--ease-io);
-    }
-    .deck:hover .opt { flex-grow: 0.8; }
-    .deck .opt:hover, .deck .opt:focus-visible { flex-grow: 1.6; }
-    .opt__top { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 16px; font-size: 0.8rem; letter-spacing: 0.06em; }
-    .opt__word { position: relative; z-index: 1; line-height: 0.82; white-space: nowrap; }
-    .opt__info { position: relative; z-index: 1; display: grid; gap: 12px; max-width: 40ch; }
-    .opt__concept { font-size: 1.05rem; line-height: 1.4; }
-    .opt__specs { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 0.82rem; opacity: 0.8; }
-    .opt__specs dt { opacity: 0.7; }
-    .opt__specs dd { margin: 0; }
-    .chips { display: flex; gap: 6px; }
-    .chips i { width: 18px; height: 18px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(127,127,127,0.35); }
-    .opt__cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; font-weight: 500; }
-    .opt__cta::after { content: ''; width: 28px; height: 1px; background: currentColor; transition: width var(--dur) var(--ease-out); }
-    .opt:hover .opt__cta::after, .opt:focus-visible .opt__cta::after { width: 56px; }
-
-    /* LOM */
-    .opt--lom { background: #121314 url(lom/assets/stone-albedo.jpg) center / 420px; background-blend-mode: luminosity; color: #e9e6de; }
-    .opt--lom::before { content: ''; position: absolute; inset: 0; background: radial-gradient(90% 60% at 40% 40%, rgba(18,19,20,0.25), rgba(18,19,20,0.92) 75%); }
-    .opt--lom .opt__word { font: 400 clamp(5rem, 11vw, 11rem)/0.8 'Marcellus', serif; letter-spacing: 0.02em; color: transparent; text-shadow: 0 -2px 1px rgba(0,0,0,0.7), 0 2px 1px rgba(255,255,255,0.2); -webkit-text-stroke: 0; background: url(lom/assets/stone-albedo.jpg) center / 420px, #8d887e; background-blend-mode: luminosity; -webkit-background-clip: text; background-clip: text; filter: brightness(1.15); }
-
-    /* Šuplík */
-    .opt--sup { background: #e7e8e0; color: #3255a4; box-shadow: inset 0 0 0 2px #3255a4; }
-    .opt--sup .opt__word { display: grid; font: 800 clamp(4rem, 8vw, 8rem)/0.9 'Bricolage Grotesque', sans-serif; font-stretch: 85%; letter-spacing: -0.035em; }
-    .opt--sup .opt__word span { grid-area: 1 / 1; }
-    .opt--sup .opt__word span + span { color: #ff48b0; mix-blend-mode: multiply; transform: translate(6px, 4px); transition: transform var(--dur) var(--ease-out); }
-    .opt--sup:hover .opt__word span + span, .opt--sup:focus-visible .opt__word span + span { transform: translate(14px, 10px); }
-
-    /* softprint */
-    .opt--mod { background-color: #0b0b0c; color: #ecebe6; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='%23ecebe6' fill-opacity='0.85'%3E%3Cg transform='translate(24 24)'%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(45)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(135)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(225)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(270)'/%3E%3Cellipse cx='0' cy='-7' rx='2.6' ry='5' transform='rotate(315)'/%3E%3C/g%3E%3Cg transform='translate(72 72)'%3E%3Ccircle r='3'/%3E%3Ccircle cx='8' r='2.2'/%3E%3Ccircle cx='-8' r='2.2'/%3E%3Ccircle cy='8' r='2.2'/%3E%3Ccircle cy='-8' r='2.2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-    .opt--mod::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,12,0.25), rgba(11,11,12,0.95) 62%); }
-    .opt--mod .opt__word { font: 600 clamp(3.2rem, 5.6vw, 5.8rem)/0.9 'Fraunces', serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.03em; }
-
-    /* BLOCK */
-    .opt--pan { background: #c9c8c2; color: #0d0d0c; box-shadow: inset 0 0 0 3px #0d0d0c; }
-    .opt--pan .opt__word { font: 900 clamp(4.6rem, 10vw, 10rem)/0.78 'Archivo', sans-serif; font-stretch: 62%; letter-spacing: -0.01em; }
-    .opt--pan .opt__word span { font-stretch: 62%; transition: font-stretch var(--dur) var(--ease-out); }
-    .opt--pan:hover .opt__word span, .opt--pan:focus-visible .opt__word span { font-stretch: 84%; }
-    .opt--pan .opt__cta { background: #ffd400; padding: 8px 12px; border: 3px solid #0d0d0c; align-self: flex-start; width: fit-content; }
-    .opt--pan .chips i { border-radius: 0; }
-
-    /* Thread */
-    .opt--lin { background: #f4f5f6; color: #121316; box-shadow: inset 0 0 0 1px rgba(18,19,22,0.16); }
-    .opt--lin .opt__word { font: italic 400 clamp(5rem, 10vw, 10rem)/0.85 'Instrument Serif', serif; letter-spacing: -0.03em; position: relative; }
-    .opt--lin .opt__word svg { position: absolute; left: 0; bottom: -0.12em; width: 100%; height: 0.3em; overflow: visible; }
-    .opt--lin .opt__word path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--ease-io); }
-    .opt--lin:hover .opt__word path, .opt--lin:focus-visible .opt__word path { stroke-dashoffset: 0; }
-
-    /* Perón */
-    .opt--per { background: #0e0f11; color: #f1efe8; }
-    .opt--per .opt__word { display: flex; gap: 0.06em; font: 700 clamp(3.6rem, 6.4vw, 6.4rem)/1 'Barlow Condensed', sans-serif; }
-    .opt--per .opt__word span { display: grid; place-items: center; width: 0.78em; height: 1.18em; border-radius: 3px; background: linear-gradient(#26272c 0 49%, #050506 49% 51%, #1e1f23 51%); }
-    .opt--per .opt__top span:last-child { color: #f6c344; }
-
-    @media (max-width: 900px) {
-      .deck { flex-direction: column; height: auto; }
-      .opt { min-height: 78svh; }
-      .deck:hover .opt, .deck .opt:hover { flex-grow: 1; }
-    }
-
-    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding: 24px var(--gutter) 40px; font-size: 0.8rem; color: var(--ink-2); border-top: 1px solid var(--line); margin: 0 var(--gutter); padding-left: 0; padding-right: 0; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
-  </style>
+  <title>softprint — lorem ipsum</title>
+  <meta name="description" content="eget consequat quis neque aliquam, faucibus lorem ipsum dolor sit. Amet consectetur: adipiscing elit sed, do eiusmod tempor incididunt.">
+  <meta name="theme-color" content="#0B0B0C">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="head">
-    <small>sofblog, október 2026</small>
-    <h1>Šesť návrhov pre blog. Každý má vlastné meno, logo a&nbsp;spôsob čítania.</h1>
-    <p>Každý smer stojí na jednom nápade a&nbsp;má klasické blogové rozloženie. Texty sú zatiaľ lorem ipsum, aby vynikol dizajn. Otvor ich, poskúšaj interakcie a&nbsp;vyber ten, ktorý znie ako ty.</p>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="bar">
+    <a class="brand" href="index.html" aria-label="softprint, domov">
+      <img class="brand__mark" src="assets/logo.svg" alt="" width="34" height="34">
+      <span class="brand__word">softprint</span>
+    </a>
+    <nav class="bar__nav" aria-label="Hlavná navigácia">
+      <a href="#clanky">Články</a>
+      <a href="#o-autorovi">O autorovi</a>
+      <a href="#vzor">Odber</a>
+    </nav>
   </header>
 
-  <main>
-  <section class="deck" aria-label="Návrhy A až C">
-    <a class="opt opt--lom" href="lom/index.html">
-      <div class="opt__top"><span>Návrh A, SK</span><span>Kameň a&nbsp;svetlo</span></div>
-      <p class="opt__word" aria-hidden="true">LOM</p>
-      <div class="opt__info">
-        <h2 class="opt__concept">Text je vytesaný do kameňa a&nbsp;čítaš ho tak, že naň posvietiš.</h2>
-        <dl class="opt__specs">
-          <dt>Interakcia</dt><dd>kurzor je lampáš, WebGL nasvecuje reliéf</dd>
-          <dt>Písmo</dt><dd>Marcellus, Instrument Sans</dd>
-          <dt>Materiál</dt><dd>fotografická textúra kameňa s&nbsp;normálovou mapou</dd>
-        </dl>
-        <div class="chips" aria-label="Paleta"><i style="background:#121314"></i><i style="background:#9d978b"></i><i style="background:#e9e6de"></i><i style="background:#c4b872"></i></div>
-        <span class="opt__cta">Otvoriť návrh LOM</span>
-      </div>
-    </a>
+  <main id="obsah">
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas class="cloth" aria-hidden="true"></canvas>
+      <div class="ghost" aria-hidden="true"></div>
 
-    <a class="opt opt--sup" href="pretlac/index.html">
-      <div class="opt__top"><span>Návrh B, SK</span><span>Risografický zin</span></div>
-      <p class="opt__word" aria-hidden="true"><span>pretlač</span><span>pretlač</span></p>
-      <div class="opt__info">
-        <h2 class="opt__concept">Blog vytlačený dvoma farbami, ktoré na seba nikdy presne nesadnú.</h2>
-        <dl class="opt__specs">
-          <dt>Interakcia</dt><dd>rýchlosť scrollu rozostupuje farby, náhodný text jedným klikom</dd>
-          <dt>Písmo</dt><dd>Bricolage Grotesque, DM Mono</dd>
-          <dt>Materiál</dt><dd>živý rastrovaný halftone, papierové vlákno</dd>
-        </dl>
-        <div class="chips" aria-label="Paleta"><i style="background:#e7e8e0"></i><i style="background:#ff48b0"></i><i style="background:#3255a4"></i></div>
-        <span class="opt__cta">Otvoriť návrh pretlač</span>
+      <div class="label">
+        <p class="label__kick">Ut labore&nbsp;et dolore&nbsp;magna aliqua ut</p>
+        <h1 id="hero-title" class="label__title">Enim ad minim.</h1>
+        <p class="label__text">Veniam quis&nbsp;nostrud, exercitation ullamco&nbsp;laboris. Nisi&nbsp;ut&nbsp;aliquip, ex ea commodo consequat duis aute irure, dolor in reprehenderit.</p>
+        <p class="label__hint js-only">Klikni na látku a&nbsp;vytlač vlastný vzor.</p>
       </div>
-    </a>
 
-    <a class="opt opt--mod" href="softprint/index.html">
-      <div class="opt__top"><span>Návrh C, EN</span><span>Odtlačky na čiernom</span></div>
-      <p class="opt__word" aria-hidden="true">softprint</p>
-      <div class="opt__info">
-        <h2 class="opt__concept">Biele odtlačky na čiernej látke. Tlačiarenskú formu držíš v&nbsp;ruke ty.</h2>
-        <dl class="opt__specs">
-          <dt>Interakcia</dt><dd>klikaním tlačíš vlastný vzor, každý článok má svoj raport</dd>
-          <dt>Písmo</dt><dd>Fraunces, Familjen Grotesk</dd>
-          <dt>Materiál</dt><dd>generované odtlačky s&nbsp;chybami ručnej tlače</dd>
-        </dl>
-        <div class="chips" aria-label="Paleta"><i style="background:#0b0b0c"></i><i style="background:#1e1e20"></i><i style="background:#8e9bff"></i><i style="background:#ecebe6"></i></div>
-        <span class="opt__cta">Otvoriť návrh softprint</span>
+      <div class="press js-only" role="group" aria-label="Tlač">
+        <p class="press__title" id="press-title">Farba</p>
+        <div class="press__blocks" role="radiogroup" aria-labelledby="press-title">
+          <button class="block is-on" type="button" role="radio" aria-checked="true" data-ink="white" aria-label="Biela"><canvas aria-hidden="true"></canvas></button>
+          <button class="block" type="button" role="radio" aria-checked="false" data-ink="violet" aria-label="Fialová"><canvas aria-hidden="true"></canvas></button>
+        </div>
+        <div class="press__actions">
+          <button class="pill" type="button" data-act="repeat">Vytlač raport</button>
+          <button class="pill pill--ghost" type="button" data-act="wash">Vyprať</button>
+        </div>
       </div>
-    </a>
-  </section>
-  <section class="deck" aria-label="Návrhy D až F">
-    <a class="opt opt--pan" href="block/index.html">
-      <div class="opt__top"><span>Návrh D, EN</span><span>Brutalizmus</span></div>
-      <p class="opt__word" aria-hidden="true"><span>BLOCK</span></p>
-      <div class="opt__info">
-        <h2 class="opt__concept">Blog postavený ako panelový blok: surový betón, viditeľná mriežka, písmo ako stavebný prvok.</h2>
-        <dl class="opt__specs">
-          <dt>Interakcia</dt><dd>písmená sa pod kurzorom rozťahujú a&nbsp;ostatné im ustupujú, výťah s&nbsp;poschodiami</dd>
-          <dt>Písmo</dt><dd>Archivo (variabilná šírka 62 až 125), IBM Plex Mono</dd>
-          <dt>Materiál</dt><dd>betón generovaný šumom, debnenie s&nbsp;otvormi po spínačoch</dd>
-        </dl>
-        <div class="chips" aria-label="Paleta"><i style="background:#c9c8c2"></i><i style="background:#0d0d0c"></i><i style="background:#ffd400"></i></div>
-        <span class="opt__cta">Otvoriť návrh BLOCK</span>
-      </div>
-    </a>
+    </section>
 
-    <a class="opt opt--lin" href="tred/index.html">
-      <div class="opt__top"><span>Návrh E, EN</span><span>Jednoduchý, čiarový</span></div>
-      <p class="opt__word" aria-hidden="true">TRED<svg viewBox="0 0 300 30" preserveAspectRatio="none" fill="none"><path d="M2 20C60 4 120 28 180 14S270 6 298 16" stroke="#ff4b1f" stroke-width="2" stroke-linecap="round" pathLength="1"/></svg></p>
-      <div class="opt__info">
-        <h2 class="opt__concept">Tichá stránka a&nbsp;jedna niť, ktorá čitateľa vedie od loga až po pätu.</h2>
-        <dl class="opt__specs">
-          <dt>Interakcia</dt><dd>linka sa kreslí so scrollom, konštrukčná kresba loga, čiary pri hoveri</dd>
-          <dt>Písmo</dt><dd>Instrument Serif, Geist</dd>
-          <dt>Materiál</dt><dd>vlasové čiary, SVG ťahy, bez knižníc</dd>
-        </dl>
-        <div class="chips" aria-label="Paleta"><i style="background:#f4f5f6"></i><i style="background:#121316"></i><i style="background:#ff4b1f"></i></div>
-        <span class="opt__cta">Otvoriť návrh TRED</span>
-      </div>
-    </a>
-
-    <a class="opt opt--per" href="peron/index.html">
-      <div class="opt__top"><span>Návrh F, SK</span><span>Odchodová tabuľa</span></div>
-      <p class="opt__word" aria-hidden="true"><span>P</span><span>E</span><span>R</span><span>Ó</span><span>N</span></p>
-      <div class="opt__info">
-        <h2 class="opt__concept">Blog ako staničná tabuľa. Každý článok je spoj, ktorý práve odchádza.</h2>
-        <dl class="opt__specs">
-          <dt>Interakcia</dt><dd>preklápacie písmená (split-flap), živé hodiny, riadok sa pri hoveri prepíše</dd>
-          <dt>Písmo</dt><dd>Barlow Condensed, Barlow</dd>
-          <dt>Materiál</dt><dd>doštičky so štrbinou, CSS 3D preklápanie</dd>
-        </dl>
-        <div class="chips" aria-label="Paleta"><i style="background:#0e0f11"></i><i style="background:#26272c"></i><i style="background:#f1efe8"></i><i style="background:#f6c344"></i></div>
-        <span class="opt__cta">Otvoriť návrh Perón</span>
-      </div>
-    </a>
-  </section>
+    <div id="clanky" class="bp-blog">
+    <div class="bp-feed">
+      <article class="bp-featured">
+        <a class="bp-featured__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Lorem ipsum dolor sit amet consectetur 0" aria-hidden="true"></canvas></a>
+        <div class="bp-featured__body">
+          <p class="bp-kicker"><span class="bp-cat">Lorem</span><span class="bp-flag">Najnovší článok</span></p>
+          <h2 class="bp-featured__title"><a href="clanok.html">Lorem ipsum dolor sit amet consectetur</a></h2>
+          <p class="bp-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p class="bp-meta"><span class="bp-avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><time datetime="2026-10-02">2. 10. 2026</time><span>8 min čítania</span></p>
+        </div>
+      </article>
+      <h2 class="bp-heading">Najnovšie články</h2>
+      <ul class="bp-cards"><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Sed do eiusmod tempor incididunt 1" aria-hidden="true"></canvas></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3><p class="bp-excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p class="bp-meta"><time datetime="2026-09-24">24. 9. 2026</time><span>6 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Ut enim ad minim veniam quis nostrud 2" aria-hidden="true"></canvas></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3><p class="bp-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p class="bp-meta"><time datetime="2026-09-17">17. 9. 2026</time><span>11 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Duis aute irure dolor in reprehenderit 3" aria-hidden="true"></canvas></a><p class="bp-cat">Lorem</p><h3 class="bp-card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3><p class="bp-excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="bp-meta"><time datetime="2026-09-08">8. 9. 2026</time><span>4 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Excepteur sint occaecat cupidatat 4" aria-hidden="true"></canvas></a><p class="bp-cat">Elit</p><h3 class="bp-card__title"><a href="clanok.html">Excepteur sint occaecat cupidatat</a></h3><p class="bp-excerpt">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, nullam varius turpis et commodo pharetra.</p><p class="bp-meta"><time datetime="2026-08-29">29. 8. 2026</time><span>9 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Nulla gravida orci a odio nullam 5" aria-hidden="true"></canvas></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Nulla gravida orci a odio nullam</a></h3><p class="bp-excerpt">Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula, donec lobortis risus a elit.</p><p class="bp-meta"><time datetime="2026-08-16">16. 8. 2026</time><span>7 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Integer in mauris eu nibh euismod 6" aria-hidden="true"></canvas></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Integer in mauris eu nibh euismod</a></h3><p class="bp-excerpt">Etiam tempor, ut ullamcorper ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.</p><p class="bp-meta"><time datetime="2026-08-03">3. 8. 2026</time><span>5 min čítania</span></p></article></li></ul>
+      <nav class="bp-pager" aria-label="Stránkovanie">
+        <a href="index.html" aria-current="page">1</a><a href="index.html">2</a><a href="index.html">3</a><span aria-hidden="true">…</span><a href="index.html">8</a>
+        <a class="bp-pager__next" href="index.html">Staršie články</a>
+      </nav>
+    </div>
+    <aside class="bp-side" aria-label="Bočný panel">
+      <section id="o-autorovi" class="bp-widget bp-author" aria-labelledby="w-author">
+        <h2 id="w-author" class="bp-widget__title">O autorovi</h2>
+        <div class="bp-author__head"><span class="bp-avatar bp-avatar--lg" aria-hidden="true">LI</span><p class="bp-author__name">Lorem Ipsum</p></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-cats">
+        <h2 id="w-cats" class="bp-widget__title">Rubriky</h2>
+        <ul class="bp-cats"><li><a href="index.html"><span>Lorem</span><span class="bp-count">14</span></a></li><li><a href="index.html"><span>Dolor</span><span class="bp-count">9</span></a></li><li><a href="index.html"><span>Amet</span><span class="bp-count">11</span></a></li><li><a href="index.html"><span>Elit</span><span class="bp-count">6</span></a></li><li><a href="index.html"><span>Tempor</span><span class="bp-count">4</span></a></li></ul>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-pop">
+        <h2 id="w-pop" class="bp-widget__title">Najčítanejšie</h2>
+        <ol class="bp-popular"><li><a href="clanok.html"><span class="bp-popular__n">1</span><span>Ut enim ad minim veniam quis nostrud</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">2</span><span>Lorem ipsum dolor sit amet consectetur</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">3</span><span>Excepteur sint occaecat cupidatat</span></a></li><li><a href="clanok.html"><span class="bp-popular__n">4</span><span>Nulla gravida orci a odio nullam</span></a></li></ol>
+      </section>
+      <section class="bp-widget" aria-labelledby="w-tags">
+        <h2 id="w-tags" class="bp-widget__title">Štítky</h2>
+        <ul class="bp-tags"><li><a class="bp-tag" href="index.html">lorem</a></li><li><a class="bp-tag" href="index.html">ipsum</a></li><li><a class="bp-tag" href="index.html">dolor</a></li><li><a class="bp-tag" href="index.html">sit amet</a></li><li><a class="bp-tag" href="index.html">consectetur</a></li><li><a class="bp-tag" href="index.html">elit</a></li><li><a class="bp-tag" href="index.html">tempor</a></li><li><a class="bp-tag" href="index.html">magna</a></li></ul>
+      </section>
+    </aside>
+    </div>
   </main>
 
-  <footer class="foot">
-    <span>Statické HTML, CSS a&nbsp;JS. GSAP, Lenis, fonty z&nbsp;Fontsource (OFL). Texty sú lorem ipsum.</span>
-    <span>Textúra kameňa: Babylon.js Assets, CC&nbsp;BY&nbsp;4.0</span>
+  <footer id="vzor" class="foot">
+    <div class="foot__grid">
+      <div>
+        <h2 class="foot__h">In culpa qui.</h2>
+        <p class="foot__p">Officia deserunt mollit&nbsp;anim id est laborum. Curabitur pretium, tincidunt lacus.</p>
+      </div>
+      <form class="sub" novalidate>
+        <label class="sub__label" for="mod-email">E‑mail</label>
+        <div class="sub__row">
+          <input id="mod-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="pill" type="submit">Odoberať</button>
+        </div>
+        <p class="sub__msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <p class="foot__word" aria-hidden="true">softprint</p>
+    <div class="foot__meta">
+      <span>softprint, blog</span>
+    </div>
   </footer>
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script src="motifs.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

@@ -39,10 +39,10 @@
     const px = 280, c = document.createElement('canvas');
     c.width = c.height = px;
     const x = c.getContext('2d');
-    M.stamp(x, px * 0.25, px * 0.25, 'kvet', px * 0.4, 11, 0, 1);
-    M.stamp(x, px * 0.75, px * 0.75, 'kvet', px * 0.4, 12, 0, 1);
-    M.stamp(x, px * 0.75, px * 0.25, 'hrasok', px * 0.2, 13, 0, 1);
-    M.stamp(x, px * 0.25, px * 0.75, 'hrasok', px * 0.2, 14, 0, 1);
+    M.stamp(x, px * 0.25, px * 0.25, 'hviezda', px * 0.42, 11, 0, 1, 'white');
+    M.stamp(x, px * 0.75, px * 0.75, 'hviezda', px * 0.42, 12, 0, 1, 'white');
+    M.stamp(x, px * 0.75, px * 0.25, 'hviezda', px * 0.22, 13, 0, 1, 'violet');
+    M.stamp(x, px * 0.25, px * 0.75, 'hviezda', px * 0.22, 14, 0, 1, 'violet');
     word.style.backgroundColor = 'var(--bg-3)';
     word.style.backgroundImage = `url(${c.toDataURL()})`;
   }
@@ -54,58 +54,15 @@
     swatches.forEach((s) => ro.observe(s));
   }
 
-  // ---- process illustrations ----
-  function tinted(w, h, draw, color) {
-    const c = document.createElement('canvas'); c.width = w; c.height = h;
-    const x = c.getContext('2d');
-    draw(x);
-    if (color) { x.globalCompositeOperation = 'source-in'; x.fillStyle = color; x.fillRect(0, 0, w, h); }
-    return c;
-  }
-  function stepArt(canvas) {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
-    if (!w || !h) return;
-    canvas.width = w; canvas.height = h;
-    const c = canvas.getContext('2d');
-    const s = Math.min(w, h);
-    const n = +canvas.dataset.step;
-    const pattern = (x) => M.repeat(w, h, s * 0.26, 1.2, ['kvet', 'hrasok'], 77).forEach((p) =>
-      M.stamp(x, p.x, p.y, p.type, p.type === 'kvet' ? s * 0.26 : s * 0.13, p.seed, p.rot, p.scale));
-    if (n === 1) { // the block: one face, on a plate
-      c.strokeStyle = 'rgba(237,239,242,0.5)'; c.lineWidth = 1.5 * dpr;
-      c.setLineDash([6 * dpr, 6 * dpr]);
-      c.strokeRect(w / 2 - s * 0.36, h / 2 - s * 0.36, s * 0.72, s * 0.72);
-      c.setLineDash([]);
-      c.drawImage(M.face('kvet', Math.round(s * 0.6)), w / 2 - s * 0.3, h / 2 - s * 0.3);
-    } else if (n === 2) { // resist paste on undyed linen
-      c.fillStyle = '#dfe0da'; c.fillRect(0, 0, w, h);
-      c.drawImage(tinted(w, h, pattern, '#a8a48c'), 0, 0);
-    } else if (n === 3) { // out of the vat: green, then blue as it oxidises
-      const g = c.createLinearGradient(0, 0, w, 0);
-      g.addColorStop(0, '#7f9a6b'); g.addColorStop(0.45, '#3f6a7a'); g.addColorStop(1, '#1d2b59');
-      c.fillStyle = g; c.fillRect(0, 0, w, h);
-      c.globalAlpha = 0.7;
-      c.drawImage(tinted(w, h, pattern, '#a8a48c'), 0, 0);
-      c.globalAlpha = 1;
-    } else { // washed: white on indigo
-      pattern(c);
-    }
-  }
-  const steps = [...document.querySelectorAll('.step__art')];
-  if (steps.length) {
-    const ro = new ResizeObserver((es) => es.forEach((e) => stepArt(e.target)));
-    steps.forEach((s) => ro.observe(s));
-  }
-
   // ---- the cloth: you hold the block ----
   const hero = document.querySelector('.hero');
   const cloth = hero && hero.querySelector('.cloth');
   if (cloth) {
     const ctx = cloth.getContext('2d');
     const ghost = hero.querySelector('.ghost');
-    const blocks = [...hero.querySelectorAll('.block')];
-    let motif = 'kvet';
+    const inks = [...hero.querySelectorAll('.block')];
+    const motif = 'hviezda';
+    let ink = 'white';
     let stamps = [];
     let dpr = 1, size = 100;
     let seedN = 1;
@@ -120,33 +77,33 @@
       drawGhost();
     }
     function paint(s) {
-      M.stamp(ctx, s.x * dpr, s.y * dpr, s.type, s.size * dpr, s.seed, s.rot, s.scale);
+      M.stamp(ctx, s.x * dpr, s.y * dpr, s.type, s.size * dpr, s.seed, s.rot, s.scale, s.ink || 'white');
     }
     function redraw() { ctx.clearRect(0, 0, cloth.width, cloth.height); stamps.forEach(paint); }
     function add(x, y, type, sz = size, extra = {}) {
-      const s = { x, y, type, size: sz, seed: seedN++ * 7919, rot: (Math.random() - 0.5) * 0.08, scale: 0.97 + Math.random() * 0.06, ...extra };
+      const s = { x, y, type, size: sz, ink, seed: seedN++ * 7919, rot: (Math.random() - 0.5) * 0.08, scale: 0.97 + Math.random() * 0.06, ...extra };
       stamps.push(s); paint(s);
       return s;
     }
 
-    // block previews
-    blocks.forEach((b) => {
+    // ink picker: the octagram in each ink
+    inks.forEach((b) => {
       const cv = b.querySelector('canvas');
       cv.width = cv.height = 88;
-      cv.getContext('2d').drawImage(M.face(b.dataset.motif, 88), 0, 0);
+      cv.getContext('2d').drawImage(M.face(motif, 88, b.dataset.ink), 0, 0);
     });
     function select(b) {
-      blocks.forEach((o) => { const on = o === b; o.classList.toggle('is-on', on); o.setAttribute('aria-checked', on); o.tabIndex = on ? 0 : -1; });
-      motif = b.dataset.motif; drawGhost();
+      inks.forEach((o) => { const on = o === b; o.classList.toggle('is-on', on); o.setAttribute('aria-checked', on); o.tabIndex = on ? 0 : -1; });
+      ink = b.dataset.ink; drawGhost();
     }
-    blocks.forEach((b, i) => {
+    inks.forEach((b, i) => {
       b.tabIndex = i ? -1 : 0;
       b.addEventListener('click', () => select(b));
       b.addEventListener('keydown', (e) => {
         const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
         if (!d) return;
         e.preventDefault();
-        const n = blocks[(i + d + blocks.length) % blocks.length];
+        const n = inks[(i + d + inks.length) % inks.length];
         select(n); n.focus();
       });
     });
@@ -157,7 +114,7 @@
     function drawGhost() {
       const px = Math.round(size * dpr);
       ghostCanvas.width = ghostCanvas.height = px;
-      ghostCanvas.getContext('2d').drawImage(M.face(motif, px), 0, 0);
+      ghostCanvas.getContext('2d').drawImage(M.face(motif, px, ink), 0, 0);
     }
     const g = { x: 0, y: 0, tx: 0, ty: 0, on: false, raf: 0 };
     function ghostLoop() {
@@ -209,8 +166,9 @@
       const rects = blockedBy();
       const w = hero.clientWidth, h = hero.clientHeight;
       const skip = (x, y, s) => rects.some((q) => x > q.l - s * 0.55 && x < q.r + s * 0.55 && y > q.t - s * 0.55 && y < q.b + s * 0.55);
-      const list = M.repeat(w, h, size, 1.16, [motif, 'hrasok'], (Math.random() * 1e9) | 0, skip)
-        .map((s) => ({ ...s, size: s.type === 'hrasok' && motif !== 'hrasok' ? size * 0.5 : size }))
+      // big white octagrams with small violet ones dropped between them
+      const list = M.repeat(w, h, size, 1.16, ['big', 'small'], (Math.random() * 1e9) | 0, skip)
+        .map((s) => (s.type === 'small' ? { ...s, type: motif, size: size * 0.5, ink: 'violet' } : { ...s, type: motif, size, ink: 'white' }))
         .sort((a, b) => (a.x + a.y * 0.5) - (b.x + b.y * 0.5));
       if (!animated) { list.forEach((s) => add(s.x, s.y, s.type, s.size, s)); return Promise.resolve(); }
       return new Promise((done) => {
