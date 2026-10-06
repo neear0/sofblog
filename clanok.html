@@ -4,104 +4,149 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lorem ipsum dolor sit amet — softprint</title>
-  <meta name="description" content="Aliquip ex ea commodo, consequat duis aute irure, dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.">
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
   <meta name="theme-color" content="#0B0B0C">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="blog.css">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip" href="#obsah">Preskočiť na obsah</a>
-
-  <header class="bar">
-    <a class="brand" href="index.html" aria-label="softprint, domov">
-      <img class="brand__mark" src="assets/logo.svg" alt="" width="34" height="34">
-      <span class="brand__word">softprint</span>
-    </a>
-    <nav class="bar__nav" aria-label="Hlavná navigácia">
-      <a href="index.html#clanky">Články</a>
-      <a href="index.html#o-autorovi">O autorovi</a>
-      <a href="#vzor">Odber</a>
-    </nav>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <header class="site-head">
+    <div class="wrap site-head__in">
+      <a class="brand" href="index.html" aria-label="softprint, domov">
+        <img class="brand__mark" src="assets/logo.svg" alt="" width="32" height="32">
+        <span class="brand__word">softprint</span>
+      </a>
+      <nav class="nav" aria-label="Hlavná navigácia">
+        <a href="index.html">Domov</a>
+        <a href="index.html#clanky">Články</a>
+        <a href="index.html#rubriky">Rubriky</a>
+        <a href="index.html#o-autorovi">O autorovi</a>
+      </nav>
+      <a class="btn btn--sm" href="#odber">Odoberať</a>
+    </div>
   </header>
 
   <main id="obsah">
-    <article class="art">
-      <header class="art__head">
-        <p class="art__kick">Nulla</p>
-        <h1 class="art__title">Pariatur excepteur sint occaecat cupidatat</h1>
-        <p class="bp-byline"><span class="bp-avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span></p>
-        <p class="art__meta"><time datetime="2026-09-14">14. septembra 2026</time><span>7 non proident</span></p>
-      </header>
-
-      <canvas class="art__band swatch" data-seed="Čo ma naučil drevený štočok" aria-hidden="true"></canvas>
-
-      <div class="art__body">
-        <p class="lede">Sunt in culpa qui. Officia deserunt. Mollit anim id est, laborum curabitur pretium tincidunt lacus, nulla gravida. Orci a odio, nullam varius turpis et.</p>
-        <p>Commodo, pharetra est eros bibendum, elit nec luctus magna felis sollicitudin mauris integer&nbsp;in. Mauris eu nibh euismod gravida, duis ac tellus et risus vulputate vehicula donec lobortis risus a elit. Etiam tempor&nbsp;ut ullamcorper ligula eu tempor, congue eros est, euismod turpis id.</p>
-        <p>Tincidunt sapien risus a quam maecenas, fermentum consequat, mi donec fermentum. Pellentesque. Malesuada nulla, a&nbsp;mi duis sapien sem aliquet&nbsp;nec. Commodo eget consequat quis, neque aliquam faucibus.</p>
-
-        <h2>Lorem ipsum dolor</h2>
-        <p>Sit amet consectetur adipiscing elit sed do eiusmod tempor. Incididunt, ut labore et dolore magna aliqua ut&nbsp;enim ad. Minim, veniam quis, nostrud exercitation ullamco laboris. Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
-
-        <blockquote>Reprehenderit in. Voluptate velit esse.</blockquote>
-
-        <p>Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat. Cupidatat non proident, sunt in culpa qui. Officia deserunt mollit, anim id.</p>
-
-        <h2>Est laborum curabitur&nbsp;pretium tincidunt</h2>
-        <p>Lacus nulla gravida, orci a odio nullam varius turpis. Et commodo pharetra est eros bibendum elit. Nec, luctus magna felis sollicitudin mauris&nbsp;integer in mauris&nbsp;eu nibh euismod. Gravida duis&nbsp;ac tellus et risus vulputate: vehicula&nbsp;donec, lobortis risus a elit, etiam tempor&nbsp;ut&nbsp;ullamcorper, ligula eu&nbsp;tempor congue.</p>
-      </div>
-
-      <footer class="art__end">
-        <a href="index.html#clanky">Eros est euismod turpis</a>
-        <span>Id tincidunt: Sapien, risus, a quam maecenas fermentum</span>
-      </footer>
-    </article>
-    <section class="bp-after" aria-label="Po článku">
-      <div class="bp-after__narrow">
-        <ul class="bp-tags" aria-label="Štítky"><li><a class="bp-tag" href="index.html">lorem</a></li><li><a class="bp-tag" href="index.html">ipsum</a></li><li><a class="bp-tag" href="index.html">dolor</a></li><li><a class="bp-tag" href="index.html">sit amet</a></li><li><a class="bp-tag" href="index.html">consectetur</a></li></ul>
-        <aside class="bp-author-box" aria-label="O autorovi">
-          <span class="bp-avatar bp-avatar--lg" aria-hidden="true">LI</span>
-          <div><p class="bp-author-box__name">Lorem Ipsum</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+    <div class="wrap layout layout--article">
+      <article class="article">
+        <nav class="crumbs" aria-label="Omrvinková navigácia"><a href="index.html">Domov</a><span aria-hidden="true">/</span><a href="index.html">Lorem</a><span aria-hidden="true">/</span><span aria-current="page">Lorem ipsum dolor sit amet</span></nav>
+        <header class="article__head">
+          <a class="cat" href="index.html">Lorem</a>
+          <h1 class="article__title">Lorem ipsum dolor sit amet</h1>
+          <p class="meta"><span class="avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><span class="dot" aria-hidden="true"></span><time datetime="2026-10-02">2. októbra 2026</time><span class="dot" aria-hidden="true"></span><span>8 min čítania</span></p>
+        </header>
+        <figure class="article__figure">
+          <canvas class="swatch" data-seed="Lorem ipsum dolor sit amet consectetur 0" aria-hidden="true"></canvas>
+          <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</figcaption>
+        </figure>
+        <div class="prose">
+          <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+          <h2>Duis ac tellus et risus</h2>
+          <p>Vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi.</p>
+          <blockquote><p>Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget.</p></blockquote>
+          <p>Consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.</p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Sed do eiusmod tempor incididunt ut labore et dolore.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
+          </ul>
+          <h2>Aliquam faucibus elit</h2>
+          <p>Aenean vel erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.</p>
+          <p>At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam.</p>
+        </div>
+        <ul class="tags article__tags" aria-label="Štítky"><li><a class="tag" href="index.html">lorem</a></li><li><a class="tag" href="index.html">ipsum</a></li><li><a class="tag" href="index.html">dolor</a></li><li><a class="tag" href="index.html">sit amet</a></li><li><a class="tag" href="index.html">consectetur</a></li></ul>
+        <aside class="author-box" aria-label="O autorovi">
+          <span class="avatar avatar--lg" aria-hidden="true">LI</span>
+          <div><p class="author-box__name">Lorem Ipsum</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
         </aside>
-        <nav class="bp-prevnext" aria-label="Ďalšie články">
+        <nav class="prevnext" aria-label="Ďalšie články">
           <a href="clanok.html" rel="prev"><span>Predchádzajúci článok</span><strong>Sed do eiusmod tempor incididunt</strong></a>
           <a href="clanok.html" rel="next"><span>Ďalší článok</span><strong>Ut enim ad minim veniam quis nostrud</strong></a>
         </nav>
-      </div>
-      <div class="bp-related">
-        <h2 class="bp-heading">Súvisiace články</h2>
-        <ul class="bp-cards bp-cards--3"><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Sed do eiusmod tempor incididunt 1" aria-hidden="true"></canvas></a><p class="bp-cat">Dolor</p><h3 class="bp-card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3><p class="bp-excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p class="bp-meta"><time datetime="2026-09-24">24. 9. 2026</time><span>6 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Ut enim ad minim veniam quis nostrud 2" aria-hidden="true"></canvas></a><p class="bp-cat">Amet</p><h3 class="bp-card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3><p class="bp-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p class="bp-meta"><time datetime="2026-09-17">17. 9. 2026</time><span>11 min čítania</span></p></article></li><li><article class="bp-card"><a class="bp-card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Duis aute irure dolor in reprehenderit 3" aria-hidden="true"></canvas></a><p class="bp-cat">Lorem</p><h3 class="bp-card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3><p class="bp-excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="bp-meta"><time datetime="2026-09-08">8. 9. 2026</time><span>4 min čítania</span></p></article></li></ul>
-      </div>
+      </article>
+    <aside class="side" aria-label="Bočný panel">
+      <form class="widget search" role="search" action="index.html">
+        <label class="sr-only" for="q">Hľadať v článkoch</label>
+        <input id="q" class="search__input" type="search" name="q" placeholder="Hľadať v článkoch…">
+        <button class="search__btn" type="submit" aria-label="Hľadať"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></button>
+      </form>
+      <section id="o-autorovi" class="widget about" aria-labelledby="w-about">
+        <h2 id="w-about" class="widget__title">O autorovi</h2>
+        <div class="about__head"><span class="avatar avatar--lg" aria-hidden="true">LI</span><div><p class="about__name">Lorem Ipsum</p><p class="about__role">Autor blogu</p></div></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </section>
+      <section id="odber" class="widget widget--news" aria-labelledby="w-news">
+        <h2 id="w-news" class="widget__title">Newsletter</h2>
+        <p>Nové články raz za mesiac priamo do schránky. Lorem ipsum dolor sit amet.</p>
+        <form class="sub" novalidate>
+          <label class="sr-only" for="sub-email">E‑mail</label>
+          <input id="sub-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
+          <button class="btn" type="submit">Odoberať</button>
+          <p class="sub__msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section id="rubriky" class="widget" aria-labelledby="w-cats">
+        <h2 id="w-cats" class="widget__title">Rubriky</h2>
+        <ul class="cats"><li><a href="index.html"><span>Lorem</span><span class="count">14</span></a></li><li><a href="index.html"><span>Dolor</span><span class="count">9</span></a></li><li><a href="index.html"><span>Amet</span><span class="count">11</span></a></li><li><a href="index.html"><span>Elit</span><span class="count">6</span></a></li><li><a href="index.html"><span>Tempor</span><span class="count">4</span></a></li></ul>
+      </section>
+      <section class="widget" aria-labelledby="w-pop">
+        <h2 id="w-pop" class="widget__title">Najčítanejšie</h2>
+        <ol class="popular"><li><a href="clanok.html"><span class="popular__n">1</span><span>Ut enim ad minim veniam quis nostrud</span></a></li><li><a href="clanok.html"><span class="popular__n">2</span><span>Lorem ipsum dolor sit amet consectetur</span></a></li><li><a href="clanok.html"><span class="popular__n">3</span><span>Excepteur sint occaecat cupidatat</span></a></li><li><a href="clanok.html"><span class="popular__n">4</span><span>Nulla gravida orci a odio nullam</span></a></li></ol>
+      </section>
+      <section class="widget" aria-labelledby="w-tags">
+        <h2 id="w-tags" class="widget__title">Štítky</h2>
+        <ul class="tags"><li><a class="tag" href="index.html">lorem</a></li><li><a class="tag" href="index.html">ipsum</a></li><li><a class="tag" href="index.html">dolor</a></li><li><a class="tag" href="index.html">sit amet</a></li><li><a class="tag" href="index.html">consectetur</a></li><li><a class="tag" href="index.html">elit</a></li><li><a class="tag" href="index.html">tempor</a></li><li><a class="tag" href="index.html">magna</a></li></ul>
+      </section>
+    </aside>
+    </div>
+
+    <section class="wrap related" aria-labelledby="rel-title">
+      <h2 id="rel-title" class="section-title">Súvisiace články</h2>
+      <ul class="cards">
+        <li><article class="card">
+          <a class="card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Sed do eiusmod tempor incididunt 1" aria-hidden="true"></canvas></a>
+          <a class="cat" href="index.html">Dolor</a>
+          <h3 class="card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3>
+          <p class="meta"><time datetime="2026-09-24">24. septembra 2026</time><span class="dot" aria-hidden="true"></span><span>6 min čítania</span></p>
+        </article></li>
+        <li><article class="card">
+          <a class="card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Ut enim ad minim veniam quis nostrud 2" aria-hidden="true"></canvas></a>
+          <a class="cat" href="index.html">Amet</a>
+          <h3 class="card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3>
+          <p class="meta"><time datetime="2026-09-17">17. septembra 2026</time><span class="dot" aria-hidden="true"></span><span>11 min čítania</span></p>
+        </article></li>
+        <li><article class="card">
+          <a class="card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Duis aute irure dolor in reprehenderit 3" aria-hidden="true"></canvas></a>
+          <a class="cat" href="index.html">Lorem</a>
+          <h3 class="card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3>
+          <p class="meta"><time datetime="2026-09-08">8. septembra 2026</time><span class="dot" aria-hidden="true"></span><span>4 min čítania</span></p>
+        </article></li>
+      </ul>
     </section>
   </main>
 
-  <footer id="vzor" class="foot">
-    <div class="foot__grid">
-      <div>
-        <h2 class="foot__h">Consequat mi donec.</h2>
-        <p class="foot__p">Fermentum pellentesque malesuada&nbsp;nulla a mi duis. Sapien sem, aliquet nec.</p>
+  <footer class="site-foot">
+    <div class="wrap site-foot__grid">
+      <div class="site-foot__about">
+        <a class="brand" href="index.html" aria-label="softprint, domov"><img class="brand__mark" src="assets/logo.svg" alt="" width="32" height="32"><span class="brand__word">softprint</span></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
       </div>
-      <form class="sub" novalidate>
-        <label class="sub__label" for="mod-email">E‑mail</label>
-        <div class="sub__row">
-          <input id="mod-email" class="sub__input" type="email" name="email" autocomplete="email" placeholder="meno@domena.sk" required>
-          <button class="pill" type="submit">Odoberať</button>
-        </div>
-        <p class="sub__msg" role="status" aria-live="polite"></p>
-      </form>
+      <nav aria-labelledby="f-nav"><h2 id="f-nav" class="site-foot__h">Navigácia</h2><ul><li><a href="index.html">Domov</a></li><li><a href="index.html#clanky">Články</a></li><li><a href="index.html#o-autorovi">O autorovi</a></li><li><a href="#odber">Newsletter</a></li></ul></nav>
+      <nav aria-labelledby="f-cats"><h2 id="f-cats" class="site-foot__h">Rubriky</h2><ul><li><a href="index.html">Lorem</a></li><li><a href="index.html">Dolor</a></li><li><a href="index.html">Amet</a></li><li><a href="index.html">Elit</a></li><li><a href="index.html">Tempor</a></li></ul></nav>
     </div>
-    <div class="foot__meta">
-      <span>softprint, blog</span>
+    <div class="wrap site-foot__bar">
+      <span>© 2026 softprint</span>
+      <a href="#obsah">Späť hore</a>
     </div>
   </footer>
 
-  <script>document.documentElement.classList.add('js');</script>
-  <script src="vendor/gsap.min.js" defer></script>
-  <script src="vendor/ScrollTrigger.min.js" defer></script>
-  <script src="vendor/lenis.min.js" defer></script>
   <script src="motifs.js" defer></script>
   <script src="main.js" defer></script>
 </body>

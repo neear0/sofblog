@@ -2,8 +2,7 @@
    then every impression gets its own imperfections: a little rotation,
    uneven pressure and specks where the resist did not take. */
 (() => {
-  const INKS = { white: '#ecebe6', violet: '#a77dff' };
-  const PRINT = INKS.white;
+  const INKS = { white: '#ecebe6' };
   const TAU = Math.PI * 2;
 
   const rng = (seed) => () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
@@ -108,7 +107,7 @@
     const c = tmp.getContext('2d');
     c.clearRect(0, 0, px, px);
     c.globalAlpha = 0.92 + r() * 0.08;
-    c.shadowColor = ink === 'violet' ? 'rgba(167,125,255,0.5)' : 'rgba(236,235,230,0.5)';
+    c.shadowColor = 'rgba(236,235,230,0.5)';
     c.shadowBlur = px * 0.008;
     c.drawImage(face(type, px, ink), 0, 0);
     c.shadowBlur = 0;
@@ -158,8 +157,7 @@
     return out;
   }
 
-  // a swatch for a blog post, deterministic from its title:
-  // big white octagrams, with small violet ones dropped in between
+  // a swatch for a blog post, deterministic from its title: white octagrams only
   function swatch(canvas, title) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
@@ -168,11 +166,9 @@
     const c = canvas.getContext('2d');
     const r = rng(hashStr(title));
     const size = Math.min(w, h * 1.33) * (0.2 + r() * 0.12);
-    const gap = 1.1 + r() * 0.3;
-    const mixed = r() > 0.3;
-    repeat(w, h, size, gap, mixed ? ['big', 'small'] : ['big'], hashStr(title) ^ 0x9e37).forEach((s) => {
-      const small = s.type === 'small';
-      stamp(c, s.x, s.y, 'hviezda', small ? size * 0.5 : size, s.seed, s.rot, s.scale, small ? 'violet' : 'white');
+    const gap = 1.15 + r() * 0.35;
+    repeat(w, h, size, gap, ['hviezda'], hashStr(title) ^ 0x9e37).forEach((s) => {
+      stamp(c, s.x, s.y, 'hviezda', size, s.seed, s.rot, s.scale);
     });
   }
 
