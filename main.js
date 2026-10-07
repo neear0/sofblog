@@ -2,6 +2,12 @@
   const M = window.Modro;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // the masthead fills the screen below the sticky header
+  const siteHead = document.querySelector('.site-head');
+  const setHeadH = () => siteHead && document.documentElement.style.setProperty('--head-h', siteHead.offsetHeight + 'px');
+  setHeadH();
+  addEventListener('resize', setHeadH);
+
   // ---- newsletter form (prototype: validates, never sends) ----
   document.querySelectorAll('.sub').forEach((form) => {
     const input = form.querySelector('input');
@@ -70,7 +76,7 @@
 
   function layout() {
     const hr = head.getBoundingClientRect();
-    const keep = [label, btn].filter((el) => el && el.offsetParent !== null).map((el) => {
+    const keep = [label, btn, head.querySelector('.scroll-cue')].filter((el) => el && el.offsetParent !== null).map((el) => {
       const r = el.getBoundingClientRect();
       return { l: r.left - hr.left, t: r.top - hr.top, r: r.right - hr.left, b: r.bottom - hr.top };
     });
