@@ -19,16 +19,16 @@
       if (!input.value || !input.checkValidity()) {
         input.setAttribute('aria-invalid', 'true');
         msg.classList.add('is-error');
-        msg.textContent = 'Táto adresa nevyzerá ako e‑mail.';
+        msg.textContent = 'That doesn’t look like an email address.';
         input.focus();
         return;
       }
       input.removeAttribute('aria-invalid');
       btn.disabled = true;
-      msg.textContent = 'Odosielam…';
+      msg.textContent = 'Sending…';
       setTimeout(() => {
         btn.disabled = false;
-        msg.textContent = 'Hotovo. (Toto je návrh dizajnu, adresa sa nikam neodoslala.)';
+        msg.textContent = 'Done. (This is a design prototype, nothing was sent.)';
         form.reset();
       }, 700);
     });

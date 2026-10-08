@@ -187,5 +187,25 @@
     }
   }
 
-  window.Modro = { TYPES, INKS, stamp, face, repeat, swatch, band, rng, hashStr };
+
+  // a cover for a post without a picture: one large violet print, cropped and turned
+  // differently for every title, with a few small white ones as overspray
+  function cover(canvas, title) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
+    if (!w || !h) return;
+    canvas.width = w; canvas.height = h;
+    const c = canvas.getContext('2d');
+    const r = rng(hashStr(title));
+    const big = Math.max(w, h) * (0.62 + r() * 0.3);
+    const x = w * (0.62 + r() * 0.3), y = h * (0.3 + r() * 0.5);
+    stamp(c, x, y, 'hviezda', big, hashStr(title), r() * Math.PI, 1, 'violet');
+    const n = 2 + Math.floor(r() * 3);
+    for (let i = 0; i < n; i++) {
+      const s = Math.min(w, h) * (0.08 + r() * 0.08);
+      stamp(c, w * (0.6 + r() * 0.34), h * (0.08 + r() * 0.3), 'hviezda', s, (r() * 1e9) | 0, r() * Math.PI, 1, 'white');
+    }
+  }
+
+  window.Modro = { TYPES, INKS, stamp, face, repeat, swatch, band, cover, rng, hashStr };
 })();
