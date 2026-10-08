@@ -1,24 +1,16 @@
-/* softprint: a blog on dyed cloth. White octagram prints; violet leads, each category has its own dye. */
+/* softprint: black cloth. White prints on the intro, violet prints on the posts; nothing else is coloured. */
 :root {
-  /* neutrals tinted toward the violet dye, never pure grey */
-  --bg: #0d0b12;
-  --bg-2: #16121e;
-  --bg-3: #221b2e;
-  --white: #f1ecf7;
-  --ink-1: rgba(241, 236, 247, 0.95);
-  --ink-2: rgba(241, 236, 247, 0.68);
-  --ink-3: rgba(241, 236, 247, 0.44);
-  --line: rgba(196, 170, 255, 0.14);
-  --line-strong: rgba(196, 170, 255, 0.32);
+  --bg: #0b0b0c;
+  --bg-2: #131314;
+  --bg-3: #1d1d1f;
+  --white: #ecebe6;
+  --ink-1: rgba(236, 235, 230, 0.95);
+  --ink-2: rgba(236, 235, 230, 0.66);
+  --ink-3: rgba(236, 235, 230, 0.42);
+  --line: rgba(236, 235, 230, 0.12);
+  --line-strong: rgba(236, 235, 230, 0.28);
   --accent: #a77dff;      /* violet: the lead colour */
-  --accent-soft: #d3c0ff; /* lavender: text on dark violet */
 
-  /* the dye vat: one deep cloth colour and one light ink per category */
-  --dye-violet: #231938;  --ink-violet: #b9a0f0;
-  --dye-plum:   #2e1a2b;  --ink-plum:   #e0a3c8;
-  --dye-indigo: #1a1f38;  --ink-indigo: #a3b3e6;
-  --dye-teal:   #172b2c;  --ink-teal:   #94cfc4;
-  --dye-rust:   #2e1f19;  --ink-rust:   #e6b297;
 
   --f-display: 'Fraunces', Georgia, serif;
   --f-text: 'Familjen Grotesk', 'Helvetica Neue', Arial, sans-serif;
@@ -75,7 +67,7 @@ button, input { font: inherit; color: inherit; }
 .btn--sm { min-height: 38px; padding: 0 16px; }
 .btn[disabled] { opacity: 0.6; cursor: progress; }
 .kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
-.cat { font-size: var(--step--1); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hue-ink, var(--accent)); width: fit-content; }
+.cat { font-size: var(--step--1); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); width: fit-content; }
 .cat:hover { text-decoration: underline; text-underline-offset: 3px; }
 .flag { color: var(--ink-3); text-transform: none; letter-spacing: 0.02em; }
 .excerpt { color: var(--ink-2); }
@@ -159,7 +151,7 @@ button, input { font: inherit; color: inherit; }
 .featured { display: grid; gap: 22px; }
 .featured__thumb, .post__thumb, .card__thumb, .article__figure canvas {
   position: relative; display: block; overflow: hidden; border-radius: var(--r);
-  background: var(--hue-dye, var(--dye-violet));
+  background: var(--bg-2);
 }
 .featured__thumb { aspect-ratio: 16 / 8; }
 .featured__thumb canvas, .post__thumb canvas, .card__thumb canvas { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform 0.9s var(--ease-out); }
@@ -278,14 +270,7 @@ button, input { font: inherit; color: inherit; }
 .feed .section-title { margin-bottom: -16px; }
 .sub__msg:empty { display: none; }
 
-/* ---------- category dyes ---------- */
-[data-hue='lorem']  { --hue-dye: var(--dye-violet); --hue-ink: var(--ink-violet); }
-[data-hue='dolor']  { --hue-dye: var(--dye-plum);   --hue-ink: var(--ink-plum); }
-[data-hue='amet']   { --hue-dye: var(--dye-indigo); --hue-ink: var(--ink-indigo); }
-[data-hue='elit']   { --hue-dye: var(--dye-teal);   --hue-ink: var(--ink-teal); }
-[data-hue='tempor'] { --hue-dye: var(--dye-rust);   --hue-ink: var(--ink-rust); }
-.swatch-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--hue-ink, var(--accent)); vertical-align: 0.05em; }
-.chips a[data-hue]:hover { border-color: var(--hue-ink); }
-.cats a[data-hue]:hover span:first-child { color: var(--hue-ink); }
 .widget--news { border-color: var(--line-strong); }
 .masthead .scroll-cue, .masthead .reprint { background: #0b0b0c; border-color: rgba(236, 235, 230, 0.28); color: #ecebe6; }
+/* the same cloth weave as the intro, over every printed thumbnail */
+.featured__thumb::after, .post__thumb::after, .card__thumb::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--weave); mix-blend-mode: multiply; }
