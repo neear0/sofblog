@@ -56,6 +56,13 @@
     swatches.forEach((s) => ro.observe(s));
   }
 
+  // ---- printed bands (posts without a picture) ----
+  const bands = [...document.querySelectorAll('.printband')];
+  if (bands.length) {
+    const ro = new ResizeObserver((es) => es.forEach((e) => M.band(e.target)));
+    bands.forEach((b) => ro.observe(b));
+  }
+
   // ---- masthead: the cloth prints itself on load, and again on request ----
   const head = document.querySelector('.masthead');
   const cloth = head && head.querySelector('.cloth');

@@ -172,5 +172,20 @@
     });
   }
 
-  window.Modro = { TYPES, INKS, stamp, face, repeat, swatch, rng, hashStr };
+
+  // a narrow printed band: one row of octagrams, used where a post has no picture
+  function band(canvas) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
+    if (!w || !h) return;
+    canvas.width = w; canvas.height = h;
+    const c = canvas.getContext('2d');
+    const size = h * 0.72, step = size * 1.35;
+    const r = rng(7);
+    for (let x = size * 0.6, i = 0; x < w + size; x += step, i++) {
+      stamp(c, x, h / 2, 'hviezda', i % 2 ? size * 0.62 : size, (r() * 1e9) | 0, (r() - 0.5) * 0.06, 1, 'violet');
+    }
+  }
+
+  window.Modro = { TYPES, INKS, stamp, face, repeat, swatch, band, rng, hashStr };
 })();

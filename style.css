@@ -274,3 +274,12 @@ button, input { font: inherit; color: inherit; }
 .masthead .scroll-cue, .masthead .reprint { background: #0b0b0c; border-color: rgba(236, 235, 230, 0.28); color: #ecebe6; }
 /* the same cloth weave as the intro, over every printed thumbnail */
 .featured__thumb::after, .post__thumb::after, .card__thumb::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--weave); mix-blend-mode: multiply; }
+
+/* ---------- version switch ---------- */
+.vswitch { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line-strong); border-radius: var(--r-pill); font-size: var(--step--1); }
+.vswitch__label { padding: 0 8px 0 10px; color: var(--ink-3); }
+.vswitch a { display: inline-grid; place-items: center; min-width: 30px; height: 30px; border-radius: var(--r-pill); color: var(--ink-2); }
+.vswitch a:hover, .vswitch a:focus-visible { color: var(--white); background: var(--bg-3); }
+.vswitch a[aria-current] { background: var(--white); color: var(--bg); }
+.site-head .vswitch { margin-left: 8px; }
+@media (max-width: 820px) { .site-head .vswitch { margin-left: auto; } .site-head .vswitch + .btn { margin-left: 8px; } .vswitch__label { display: none; } }

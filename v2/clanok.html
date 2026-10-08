@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lorem ipsum dolor sit amet — softprint</title>
+  <title>Lorem ipsum dolor sit amet — softprint (verzia 2)</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
   <meta name="theme-color" content="#0B0B0C">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="v2.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -18,7 +19,7 @@
   <header class="site-head">
     <div class="wrap site-head__in">
       <a class="brand" href="index.html" aria-label="softprint, domov">
-        <img class="brand__mark" src="assets/logo.svg" alt="" width="32" height="32">
+        <img class="brand__mark" src="../assets/logo.svg" alt="" width="32" height="32">
         <span class="brand__word">softprint</span>
       </a>
       <nav class="nav" aria-label="Hlavná navigácia">
@@ -27,7 +28,7 @@
         <a href="index.html#rubriky">Rubriky</a>
         <a href="index.html#o-autorovi">O autorovi</a>
       </nav>
-      <nav class="vswitch" aria-label="Verzia webu"><span class="vswitch__label">Verzia</span><a href="clanok.html" aria-current="true">1</a><a href="v2/clanok.html">2</a></nav>
+      <nav class="vswitch" aria-label="Verzia webu"><span class="vswitch__label">Verzia</span><a href="../clanok.html">1</a><a href="clanok.html" aria-current="true">2</a></nav>
       <a class="btn btn--sm" href="#odber">Odoberať</a>
     </div>
   </header>
@@ -36,16 +37,14 @@
     <div class="wrap layout layout--article">
       <article class="article">
         <nav class="crumbs" aria-label="Omrvinková navigácia"><a href="index.html">Domov</a><span aria-hidden="true">/</span><a href="index.html">Lorem</a><span aria-hidden="true">/</span><span aria-current="page">Lorem ipsum dolor sit amet</span></nav>
-        <header class="article__head">
-          <a class="cat" href="index.html">Lorem</a>
+        <header class="article__head article__head--text">
+          <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Lorem</a>
           <h1 class="article__title">Lorem ipsum dolor sit amet</h1>
+          <p class="standfirst">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <p class="meta"><span class="avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><span class="dot" aria-hidden="true"></span><time datetime="2026-10-02">2. októbra 2026</time><span class="dot" aria-hidden="true"></span><span>8 min čítania</span></p>
+          <canvas class="printband printband--rule" aria-hidden="true"></canvas>
         </header>
-        <figure class="article__figure">
-          <canvas class="swatch" data-seed="Lorem ipsum dolor sit amet consectetur 0" aria-hidden="true"></canvas>
-          <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</figcaption>
-        </figure>
-        <div class="prose">
+        <div class="prose prose--drop">
           <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
@@ -110,24 +109,34 @@
 
     <section class="wrap related" aria-labelledby="rel-title">
       <h2 id="rel-title" class="section-title">Súvisiace články</h2>
-      <ul class="cards">
-        <li><article class="card">
-          <a class="card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Sed do eiusmod tempor incididunt 1" aria-hidden="true"></canvas></a>
-          <a class="cat" href="index.html">Dolor</a>
-          <h3 class="card__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3>
-          <p class="meta"><time datetime="2026-09-24">24. septembra 2026</time><span class="dot" aria-hidden="true"></span><span>6 min čítania</span></p>
+      <ul class="entries entries--related">
+        <li><article class="entry entry--img">
+          <p class="entry__date" aria-hidden="true"><span class="entry__day">24</span><span class="entry__mon">sep</span></p>
+          <div class="entry__body">
+            <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Dolor</a>
+            <h3 class="entry__title"><a href="clanok.html">Sed do eiusmod tempor incididunt</a></h3>
+            <p class="excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="meta"><time class="sr-only" datetime="2026-09-24">24. septembra 2026</time><span>6 min čítania</span></p>
+          </div>
+            <a class="entry__img" href="clanok.html" tabindex="-1" aria-hidden="true"><img src="img/foto-1.jpg" alt="" width="1200" height="800" loading="lazy"></a>
         </article></li>
-        <li><article class="card">
-          <a class="card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Ut enim ad minim veniam quis nostrud 2" aria-hidden="true"></canvas></a>
-          <a class="cat" href="index.html">Amet</a>
-          <h3 class="card__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3>
-          <p class="meta"><time datetime="2026-09-17">17. septembra 2026</time><span class="dot" aria-hidden="true"></span><span>11 min čítania</span></p>
+        <li><article class="entry">
+          <p class="entry__date" aria-hidden="true"><span class="entry__day">17</span><span class="entry__mon">sep</span></p>
+          <div class="entry__body">
+            <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Amet</a>
+            <h3 class="entry__title"><a href="clanok.html">Ut enim ad minim veniam quis nostrud</a></h3>
+            <p class="excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p class="meta"><time class="sr-only" datetime="2026-09-17">17. septembra 2026</time><span>11 min čítania</span></p>
+          </div>
         </article></li>
-        <li><article class="card">
-          <a class="card__thumb" href="clanok.html" tabindex="-1" aria-hidden="true"><canvas class="swatch" data-seed="Duis aute irure dolor in reprehenderit 3" aria-hidden="true"></canvas></a>
-          <a class="cat" href="index.html">Lorem</a>
-          <h3 class="card__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3>
-          <p class="meta"><time datetime="2026-09-08">8. septembra 2026</time><span class="dot" aria-hidden="true"></span><span>4 min čítania</span></p>
+        <li><article class="entry">
+          <p class="entry__date" aria-hidden="true"><span class="entry__day">8</span><span class="entry__mon">sep</span></p>
+          <div class="entry__body">
+            <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Lorem</a>
+            <h3 class="entry__title"><a href="clanok.html">Duis aute irure dolor in reprehenderit</a></h3>
+            <p class="excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="meta"><time class="sr-only" datetime="2026-09-08">8. septembra 2026</time><span>4 min čítania</span></p>
+          </div>
         </article></li>
       </ul>
     </section>
@@ -136,7 +145,7 @@
   <footer class="site-foot">
     <div class="wrap site-foot__grid">
       <div class="site-foot__about">
-        <a class="brand" href="index.html" aria-label="softprint, domov"><img class="brand__mark" src="assets/logo.svg" alt="" width="32" height="32"><span class="brand__word">softprint</span></a>
+        <a class="brand" href="index.html" aria-label="softprint, domov"><img class="brand__mark" src="../assets/logo.svg" alt="" width="32" height="32"><span class="brand__word">softprint</span></a>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
       </div>
       <nav aria-labelledby="f-nav"><h2 id="f-nav" class="site-foot__h">Navigácia</h2><ul><li><a href="index.html">Domov</a></li><li><a href="index.html#clanky">Články</a></li><li><a href="index.html#o-autorovi">O autorovi</a></li><li><a href="#odber">Newsletter</a></li></ul></nav>
@@ -148,7 +157,7 @@
     </div>
   </footer>
 
-  <script src="motifs.js" defer></script>
-  <script src="main.js" defer></script>
+  <script src="../motifs.js" defer></script>
+  <script src="../main.js" defer></script>
 </body>
 </html>
