@@ -15,7 +15,7 @@
   const save = (list) => { try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) { /* storage blocked: stamps just won't persist */ } };
   const markRead = (id) => { const l = load(); if (!l.includes(id)) { l.push(id); save(l); } };
   const read = load();
-  document.querySelectorAll('.tile[data-post]').forEach((t) => {
+  document.querySelectorAll('[data-post]:not(a)').forEach((t) => {
     if (read.includes(t.dataset.post)) t.classList.add('is-read');
   });
   // opening a post from the index counts as reading it

@@ -3,6 +3,11 @@
    uneven pressure and specks where the resist did not take. */
 (() => {
   const INKS = { white: '#ecebe6', violet: '#a77dff' };
+  // a page can re-ink the prints: --print-white / --print-violet on :root override the defaults
+  const inkColor = (ink) => {
+    const v = getComputedStyle(document.documentElement).getPropertyValue('--print-' + ink).trim();
+    return v || INKS[ink] || ink;
+  };
   const TAU = Math.PI * 2;
 
   const rng = (seed) => () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
@@ -87,13 +92,14 @@
   // cached clean faces per type/size
   const cache = new Map();
   function face(type, px, ink = 'white') {
-    const key = type + px + ink;
+    const col = inkColor(ink);
+    const key = type + px + col;
     if (cache.has(key)) return cache.get(key);
     const cv = document.createElement('canvas');
     cv.width = cv.height = px;
     const c = cv.getContext('2d');
     c.translate(px / 2, px / 2);
-    c.fillStyle = INKS[ink] || ink; c.strokeStyle = INKS[ink] || ink;
+    c.fillStyle = col; c.strokeStyle = col;
     FACES[type](c, px / 2 * 0.96);
     cache.set(key, cv);
     return cv;
@@ -107,7 +113,8 @@
     const c = tmp.getContext('2d');
     c.clearRect(0, 0, px, px);
     c.globalAlpha = 0.92 + r() * 0.08;
-    c.shadowColor = ink === 'violet' ? 'rgba(167,125,255,0.5)' : 'rgba(236,235,230,0.5)';
+    const col = inkColor(ink);
+    c.shadowColor = /^#[0-9a-f]{6}$/i.test(col) ? col + '80' : col;
     c.shadowBlur = px * 0.008;
     c.drawImage(face(type, px, ink), 0, 0);
     c.shadowBlur = 0;
