@@ -78,7 +78,8 @@
     cloth.height = Math.round(head.clientHeight * dpr);
     size = Math.max(64, Math.min(120, head.clientWidth * 0.07));
   }
-  const paint = (s) => M.stamp(ctx, s.x * dpr, s.y * dpr, 'hviezda', s.size * dpr, s.seed, s.rot, s.scale);
+  const motifs = (head.dataset.motifs || 'hviezda').split(/\s+/);
+  const paint = (s) => M.stamp(ctx, s.x * dpr, s.y * dpr, s.type || 'hviezda', s.size * dpr, s.seed, s.rot, s.scale);
   const redraw = () => { ctx.clearRect(0, 0, cloth.width, cloth.height); stamps.forEach(paint); };
 
   function layout() {
@@ -88,7 +89,7 @@
       return { l: r.left - hr.left, t: r.top - hr.top, r: r.right - hr.left, b: r.bottom - hr.top };
     });
     const skip = (x, y, s) => keep.some((q) => x > q.l - s * 0.5 && x < q.r + s * 0.5 && y > q.t - s * 0.5 && y < q.b + s * 0.5);
-    return M.repeat(head.clientWidth, head.clientHeight, size, 1.22, ['hviezda'], (Math.random() * 1e9) | 0, skip)
+    return M.repeat(head.clientWidth, head.clientHeight, size, 1.22, motifs, (Math.random() * 1e9) | 0, skip)
       .map((s) => ({ ...s, size }))
       .sort((a, b) => (a.x + a.y * 0.5) - (b.x + b.y * 0.5));
   }
