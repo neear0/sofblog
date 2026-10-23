@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="v3">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>softprint (version 3) — lorem ipsum</title>
   <meta name="description" content="softprint is a blog. Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-  <meta name="theme-color" content="#EFEEF2">
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0B0B0C">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="preload" href="../fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../fonts.css">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../v2/v2.css">
+  <link rel="stylesheet" href="../blog.css">
   <link rel="stylesheet" href="v3.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -20,7 +20,7 @@
   <header class="site-head">
     <div class="wrap site-head__in">
       <a class="brand" href="index.html" aria-label="softprint, home">
-        <img class="brand__mark" src="logo.svg" alt="" width="32" height="32">
+        <img class="brand__mark" src="../assets/logo.svg" alt="" width="32" height="32">
         <span class="brand__word">softprint</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
@@ -35,7 +35,7 @@
   </header>
 
   <main id="content">
-    <section class="masthead" aria-labelledby="site-title">
+    <section class="masthead" aria-labelledby="site-title" data-motifs="hviezda kriz">
       <canvas class="cloth" aria-hidden="true"></canvas>
       <div class="wrap masthead__in">
         <div class="masthead__label masthead__label--word">
@@ -53,128 +53,96 @@
       <ul><li><a href="index.html" aria-current="page">All</a></li><li><a href="index.html">Lorem</a></li><li><a href="index.html">Dolor</a></li><li><a href="index.html">Amet</a></li><li><a href="index.html">Elit</a></li><li><a href="index.html">Tempor</a></li></ul>
     </nav>
 
-    <section id="posts" class="wrap front" aria-labelledby="front-title">
-      <header class="front__bar">
-        <p>No. 07</p>
-        <h2 id="front-title" class="front__name">The front page</h2>
-        <p>7 posts, 3 with pictures</p>
+    <section id="posts" class="wrap index2" aria-labelledby="posts-title">
+      <header class="index2__head">
+        <h2 id="posts-title" class="index2__title">Latest posts</h2>
+        <p class="index2__note">Seven posts, three with pictures. The rest are printed.</p>
       </header>
-
-      <div class="front__grid">
-        <article class="lead3" data-post="p0">
-          <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          <a class="lead3__cover" href="post.html" tabindex="-1" aria-hidden="true"><canvas class="cover" data-seed="Lorem ipsum dolor sit amet consectetur"></canvas></a>
-          <div class="lead3__body">
-            <p class="kicker"><a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Lorem</a><span class="flag">Latest post</span></p>
-            <h3 class="lead3__title"><a href="post.html" data-post="p0">Lorem ipsum dolor sit amet consectetur</a></h3>
-            <p class="lead3__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <p class="meta"><span class="avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><span class="dot" aria-hidden="true"></span><time datetime="2026-10-02">Oct 2, 2026</time><span class="dot" aria-hidden="true"></span><span>8 min read</span></p>
-          </div>
-        </article>
-
-        <aside class="also" aria-labelledby="also-title">
-          <h2 id="also-title" class="front__label">Also in this issue</h2>
-          <ol class="also__list">
-          <li><article class="also__item" data-post="p2">
+      <ul class="bento">
+        <li class="tile tile--lead span-12" data-post="p0">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-            <p class="also__no" aria-hidden="true">05</p>
-            <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Amet</a>
-            <h3 class="also__title"><a href="post.html" data-post="p2">Ut enim ad minim veniam quis nostrud</a></h3>
-            <p class="excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <p class="meta"><time datetime="2026-09-17">Sep 17, 2026</time><span class="dot" aria-hidden="true"></span><span>11 min read</span></p>
-          </article></li>
-          <li><article class="also__item" data-post="p3">
+            <canvas class="cover" data-seed="Lorem ipsum dolor sit amet consectetur" aria-hidden="true"></canvas>
+            <div class="tile__body">
+              <p class="kicker"><a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Lorem</a><span class="flag">Latest post</span></p>
+              <h3 class="tile__title tile__title--lead"><a href="post.html" data-post="p0">Lorem ipsum dolor sit amet consectetur</a></h3>
+              <p class="lead__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p class="meta"><span class="avatar" aria-hidden="true">LI</span><span>Lorem Ipsum</span><span class="dot" aria-hidden="true"></span><time datetime="2026-10-02">Oct 2, 2026</time><span class="dot" aria-hidden="true"></span><span>8 min read</span></p>
+            </div>
+          </article>
+        </li>
+        <li class="tile tile--photo span-7" data-post="p1">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-            <p class="also__no" aria-hidden="true">04</p>
-            <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Lorem</a>
-            <h3 class="also__title"><a href="post.html" data-post="p3">Duis aute irure dolor in reprehenderit</a></h3>
-            <p class="excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p class="meta"><time datetime="2026-09-08">Sep 8, 2026</time><span class="dot" aria-hidden="true"></span><span>4 min read</span></p>
-          </article></li>
-          <li><article class="also__item" data-post="p5">
-            <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-            <p class="also__no" aria-hidden="true">02</p>
-            <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Dolor</a>
-            <h3 class="also__title"><a href="post.html" data-post="p5">Nulla gravida orci a odio nullam</a></h3>
-            <p class="excerpt">Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula, donec lobortis risus a elit.</p>
-            <p class="meta"><time datetime="2026-08-16">Aug 16, 2026</time><span class="dot" aria-hidden="true"></span><span>7 min read</span></p>
-          </article></li>
-          </ol>
-        </aside>
-      </div>
-
-      <section class="ledger" aria-labelledby="ledger-title">
-        <h2 id="ledger-title" class="front__label">Every post</h2>
-        <ol class="ledger__list">
-          <li><article class="ledger__row" data-post="p1">
-            <p class="ledger__no" aria-hidden="true">06</p>
-            <a class="ledger__img" href="post.html" tabindex="-1" aria-hidden="true"><img src="../v2/img/foto-1.jpg" alt="" width="1200" height="800" loading="lazy"></a>
-            <div class="ledger__body">
+            <a class="tile__img" href="post.html" tabindex="-1" aria-hidden="true"><img src="../img/foto-1.jpg" alt="" width="1200" height="800" loading="lazy"></a>
+            <div class="tile__body">
               <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Dolor</a>
-              <h3 class="ledger__title"><a href="post.html" data-post="p1">Sed do eiusmod tempor incididunt</a></h3>
+              <h3 class="tile__title"><a href="post.html" data-post="p1">Sed do eiusmod tempor incididunt</a></h3>
               <p class="excerpt">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="meta"><time datetime="2026-09-24">Sep 24, 2026</time><span class="dot" aria-hidden="true"></span><span>6 min read</span></p>
             </div>
-            <p class="ledger__meta"><time datetime="2026-09-24">Sep 24, 2026</time><span>6 min read</span></p>
+          </article>
+        </li>
+        <li class="tile tile--quote span-5" data-post="p2">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          </article></li>
-          <li><article class="ledger__row" data-post="p2">
-            <p class="ledger__no" aria-hidden="true">05</p>
-            <span class="ledger__img ledger__img--none" aria-hidden="true"><span class="mark"></span></span>
-            <div class="ledger__body">
+            <div class="tile__body">
               <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Amet</a>
-              <h3 class="ledger__title"><a href="post.html" data-post="p2">Ut enim ad minim veniam quis nostrud</a></h3>
-              <p class="excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <blockquote class="tile__quote"><p>“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.”</p></blockquote>
+              <p class="tile__from">From <span class="tile__fromtitle"><a href="post.html" data-post="p2">Ut enim ad minim veniam quis nostrud</a></span></p>
+              <p class="meta"><time datetime="2026-09-17">Sep 17, 2026</time><span class="dot" aria-hidden="true"></span><span>11 min read</span></p>
             </div>
-            <p class="ledger__meta"><time datetime="2026-09-17">Sep 17, 2026</time><span>11 min read</span></p>
+          </article>
+        </li>
+        <li class="tile tile--text span-4" data-post="p3">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          </article></li>
-          <li><article class="ledger__row" data-post="p3">
-            <p class="ledger__no" aria-hidden="true">04</p>
-            <span class="ledger__img ledger__img--none" aria-hidden="true"><span class="mark"></span></span>
-            <div class="ledger__body">
+            <div class="tile__body">
+              <p class="tile__num" aria-hidden="true">04</p>
               <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Lorem</a>
-              <h3 class="ledger__title"><a href="post.html" data-post="p3">Duis aute irure dolor in reprehenderit</a></h3>
+              <h3 class="tile__title"><a href="post.html" data-post="p3">Duis aute irure dolor in reprehenderit</a></h3>
               <p class="excerpt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="meta"><time datetime="2026-09-08">Sep 8, 2026</time><span class="dot" aria-hidden="true"></span><span>4 min read</span></p>
             </div>
-            <p class="ledger__meta"><time datetime="2026-09-08">Sep 8, 2026</time><span>4 min read</span></p>
+          </article>
+        </li>
+        <li class="tile tile--photo span-4" data-post="p4">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          </article></li>
-          <li><article class="ledger__row" data-post="p4">
-            <p class="ledger__no" aria-hidden="true">03</p>
-            <a class="ledger__img" href="post.html" tabindex="-1" aria-hidden="true"><img src="../v2/img/foto-2.jpg" alt="" width="1200" height="800" loading="lazy"></a>
-            <div class="ledger__body">
+            <a class="tile__img" href="post.html" tabindex="-1" aria-hidden="true"><img src="../img/foto-2.jpg" alt="" width="1200" height="800" loading="lazy"></a>
+            <div class="tile__body">
               <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Elit</a>
-              <h3 class="ledger__title"><a href="post.html" data-post="p4">Excepteur sint occaecat cupidatat</a></h3>
+              <h3 class="tile__title"><a href="post.html" data-post="p4">Excepteur sint occaecat cupidatat</a></h3>
               <p class="excerpt">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, nullam varius turpis et commodo pharetra.</p>
+              <p class="meta"><time datetime="2026-08-29">Aug 29, 2026</time><span class="dot" aria-hidden="true"></span><span>9 min read</span></p>
             </div>
-            <p class="ledger__meta"><time datetime="2026-08-29">Aug 29, 2026</time><span>9 min read</span></p>
+          </article>
+        </li>
+        <li class="tile tile--cover span-4" data-post="p5">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          </article></li>
-          <li><article class="ledger__row" data-post="p5">
-            <p class="ledger__no" aria-hidden="true">02</p>
-            <span class="ledger__img ledger__img--none" aria-hidden="true"><span class="mark"></span></span>
-            <div class="ledger__body">
+            <canvas class="cover" data-seed="Nulla gravida orci a odio nullam" aria-hidden="true"></canvas>
+            <div class="tile__body">
               <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Dolor</a>
-              <h3 class="ledger__title"><a href="post.html" data-post="p5">Nulla gravida orci a odio nullam</a></h3>
+              <h3 class="tile__title"><a href="post.html" data-post="p5">Nulla gravida orci a odio nullam</a></h3>
               <p class="excerpt">Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula, donec lobortis risus a elit.</p>
+              <p class="meta"><time datetime="2026-08-16">Aug 16, 2026</time><span class="dot" aria-hidden="true"></span><span>7 min read</span></p>
             </div>
-            <p class="ledger__meta"><time datetime="2026-08-16">Aug 16, 2026</time><span>7 min read</span></p>
+          </article>
+        </li>
+        <li class="tile tile--photo span-12" data-post="p6">
+          <article>
             <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          </article></li>
-          <li><article class="ledger__row" data-post="p6">
-            <p class="ledger__no" aria-hidden="true">01</p>
-            <a class="ledger__img" href="post.html" tabindex="-1" aria-hidden="true"><img src="../v2/img/foto-3.jpg" alt="" width="1200" height="800" loading="lazy"></a>
-            <div class="ledger__body">
+            <a class="tile__img" href="post.html" tabindex="-1" aria-hidden="true"><img src="../img/foto-3.jpg" alt="" width="1200" height="800" loading="lazy"></a>
+            <div class="tile__body">
               <a class="cat" href="index.html"><span class="mark" aria-hidden="true"></span>Amet</a>
-              <h3 class="ledger__title"><a href="post.html" data-post="p6">Integer in mauris eu nibh euismod</a></h3>
+              <h3 class="tile__title"><a href="post.html" data-post="p6">Integer in mauris eu nibh euismod</a></h3>
               <p class="excerpt">Etiam tempor, ut ullamcorper ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.</p>
+              <p class="meta"><time datetime="2026-08-03">Aug 3, 2026</time><span class="dot" aria-hidden="true"></span><span>5 min read</span></p>
             </div>
-            <p class="ledger__meta"><time datetime="2026-08-03">Aug 3, 2026</time><span>5 min read</span></p>
-            <span class="readstamp" aria-hidden="true"><span class="mark"></span>Read</span>
-          </article></li>
-        </ol>
-      </section>
-
+          </article>
+        </li>
+      </ul>
       <nav class="pager" aria-label="Pagination">
         <a href="index.html" aria-current="page">1</a><a href="index.html">2</a><a href="index.html">3</a><span aria-hidden="true">…</span><a href="index.html">8</a>
         <a class="pager__next" href="index.html">Older posts</a>
@@ -213,7 +181,7 @@
   <footer class="site-foot">
     <div class="wrap site-foot__grid">
       <div class="site-foot__about">
-        <a class="brand" href="index.html" aria-label="softprint, home"><img class="brand__mark" src="logo.svg" alt="" width="32" height="32"><span class="brand__word">softprint</span></a>
+        <a class="brand" href="index.html" aria-label="softprint, home"><img class="brand__mark" src="../assets/logo.svg" alt="" width="32" height="32"><span class="brand__word">softprint</span></a>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
       </div>
       <nav aria-labelledby="f-nav"><h2 id="f-nav" class="site-foot__h">Navigate</h2><ul><li><a href="index.html">Home</a></li><li><a href="index.html#posts">Posts</a></li><li><a href="index.html#about">About</a></li><li><a href="#subscribe">Newsletter</a></li></ul></nav>
@@ -227,6 +195,6 @@
 
   <script src="../motifs.js" defer></script>
   <script src="../main.js" defer></script>
-  <script src="../v2/v2.js" defer></script>
+  <script src="../blog.js" defer></script>
 </body>
 </html>
