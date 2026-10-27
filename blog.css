@@ -165,3 +165,4 @@
 .prose blockquote { border-left: 2px solid transparent; border-image: linear-gradient(180deg, var(--accent), var(--blue)) 1; }
 .site-foot { border-top: 1px solid transparent; border-image: linear-gradient(90deg, transparent, var(--accent) 35%, var(--blue) 65%, transparent) 1; }
 .tile article:hover { border-color: rgba(167, 125, 255, 0.45); }
+@media (pointer: coarse) { .toc a { padding-top: 12px; padding-bottom: 12px; } }

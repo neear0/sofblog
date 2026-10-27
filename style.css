@@ -276,3 +276,19 @@ button, input { font: inherit; color: inherit; }
 .featured__thumb::after, .post__thumb::after, .card__thumb::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--weave); mix-blend-mode: multiply; }
 
 /* ---------- version switch ---------- */
+
+/* anchor targets stop below the sticky header */
+[id] { scroll-margin-top: calc(var(--head-h, 69px) + 12px); }
+
+/* ---------- touch: every link and button gets a finger-sized target ---------- */
+@media (pointer: coarse) {
+  .nav a, .chips a { display: inline-flex; align-items: center; min-height: 44px; }
+  .btn--sm { min-height: 44px; }
+  .tag { display: inline-flex; align-items: center; min-height: 40px; }
+  .crumbs a { padding: 12px 0; margin: -12px 0; }
+  .site-foot ul { gap: 0; }
+  .site-foot ul a, .site-foot__bar a { display: inline-flex; align-items: center; min-height: 44px; }
+  .site-foot__bar { padding-top: 8px; padding-bottom: 16px; align-items: center; }
+}
+/* narrow screens: a meta line that wraps would leave a dot hanging at its end, so drop the dots */
+@media (max-width: 480px) { .meta .dot { display: none; } .meta { column-gap: 14px; } }
