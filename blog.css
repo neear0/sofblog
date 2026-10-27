@@ -142,3 +142,28 @@
   .tile--lead article { min-height: 520px; }
   .post2__head::before { background: linear-gradient(0deg, rgba(11, 11, 12, 0.97) 0%, rgba(11, 11, 12, 0.85) 60%, rgba(11, 11, 12, 0.4) 100%), var(--weave); }
 }
+
+/* ---------- colour: black cloth deepening into violet, a periwinkle only on the lines ---------- */
+:root {
+  --ombre-violet: #4a2896;
+  --ombre-deep: #22124a;
+  --blue: #6c7cff;
+  /* the cloth and its lines cool very slightly */
+  --bg-2: #131318;
+  --bg-3: #1d1d24;
+  --line: rgba(206, 208, 255, 0.12);
+  --line-strong: rgba(206, 208, 255, 0.27);
+}
+.masthead { background: linear-gradient(180deg, #0e0e0f 0%, #0e0e0f 30%, var(--ombre-deep) 78%, var(--ombre-violet) 100%); }
+.tile--lead article, .tile--cover article { background: linear-gradient(200deg, var(--ombre-violet) 0%, var(--ombre-deep) 38%, #0b0b0c 78%); }
+.post2__head { background: linear-gradient(200deg, var(--ombre-violet) 0%, var(--ombre-deep) 40%, #0b0b0c 80%); }
+.shelf { background: linear-gradient(180deg, var(--bg-2) 0%, var(--ombre-deep) 140%); }
+
+/* lines run from violet into periwinkle; buttons and marks stay one violet */
+.progress span { background: linear-gradient(90deg, var(--accent), var(--blue)); }
+.index2__head { border-bottom: 1px solid transparent; border-image: linear-gradient(90deg, var(--line-strong) 0%, var(--line-strong) 55%, var(--accent) 85%, var(--blue) 100%) 1; }
+.toc a.is-on { border-image: linear-gradient(180deg, var(--accent), var(--blue)) 1; }
+@media (max-width: 900px) { .toc a.is-on { border-image: linear-gradient(90deg, var(--accent), var(--blue)) 1; } }
+.prose blockquote { border-left: 2px solid transparent; border-image: linear-gradient(180deg, var(--accent), var(--blue)) 1; }
+.site-foot { border-top: 1px solid transparent; border-image: linear-gradient(90deg, transparent, var(--accent) 35%, var(--blue) 65%, transparent) 1; }
+.tile article:hover { border-color: rgba(167, 125, 255, 0.45); }

@@ -1,7 +1,0 @@
-/* version 1: black cloth that deepens into ink blue */
-:root { --ombre-blue: #1a2f86; --ombre-deep: #0f1a4d; }
-.masthead { background: linear-gradient(180deg, #0e0e0f 0%, #0e0e0f 30%, var(--ombre-deep) 78%, var(--ombre-blue) 100%); }
-.tile--lead article, .tile--cover article { background: linear-gradient(200deg, var(--ombre-blue) 0%, var(--ombre-deep) 38%, #0b0b0c 78%); }
-.post2__head { background: linear-gradient(200deg, var(--ombre-blue) 0%, var(--ombre-deep) 40%, #0b0b0c 80%); }
-.shelf { background: linear-gradient(180deg, var(--bg-2) 0%, var(--ombre-deep) 140%); }
-.index2__head { border-bottom: 1px solid transparent; border-image: linear-gradient(90deg, var(--line-strong), var(--ombre-blue)) 1; }

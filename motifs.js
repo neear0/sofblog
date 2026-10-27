@@ -54,7 +54,7 @@
       c.beginPath(); c.ellipse(0, -R * 0.86, R * 0.1, R * 0.14, 0, 0, TAU); c.fill();
     },
     kriz(c, R) {
-      // companion to the octagram: a four-point star, dots on its tips and between them
+      // companion to the octagram: a plain four-point star with an open centre
       c.beginPath();
       for (let i = 0; i < 8; i++) {
         const a = (i * TAU) / 8 - TAU / 4;
@@ -62,15 +62,9 @@
         i ? c.lineTo(Math.cos(a) * r, Math.sin(a) * r) : c.moveTo(Math.cos(a) * r, Math.sin(a) * r);
       }
       c.closePath(); c.fill();
-      for (let i = 0; i < 8; i++) {
-        const a = (i * TAU) / 8 - TAU / 4;
-        const r = i % 2 ? R * 0.6 : R * 0.94;
-        c.beginPath(); c.arc(Math.cos(a) * r, Math.sin(a) * r, i % 2 ? R * 0.055 : R * 0.075, 0, TAU); c.fill();
-      }
       c.globalCompositeOperation = 'destination-out';
       c.beginPath(); c.arc(0, 0, R * 0.17, 0, TAU); c.fill();
       c.globalCompositeOperation = 'source-over';
-      c.beginPath(); c.arc(0, 0, R * 0.07, 0, TAU); c.fill();
     },
     hviezda(c, R) {
       // octagram: eight spikes, each ending in a separate dot
@@ -215,7 +209,7 @@
 
 
   // a cover for a post without a picture: one large violet print, cropped and turned
-  // differently for every title, with a few small white ones as overspray
+  // differently for every title
   function cover(canvas, title) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
@@ -226,38 +220,6 @@
     const big = Math.max(w, h) * (0.62 + r() * 0.3);
     const x = w * (0.62 + r() * 0.3), y = h * (0.3 + r() * 0.5);
     stamp(c, x, y, 'hviezda', big, hashStr(title), r() * Math.PI, 1, 'violet');
-    // a version can ask for a second ink to bleed into the violet print (--print-tint); only the print takes it
-    const tint = getComputedStyle(canvas).getPropertyValue('--print-tint').trim();
-    if (tint) {
-      c.fillStyle = tint; const hex = c.fillStyle; // normalised to #rrggbb
-      const clear = `rgba(${parseInt(hex.slice(1, 3), 16)}, ${parseInt(hex.slice(3, 5), 16)}, ${parseInt(hex.slice(5, 7), 16)}, 0)`;
-      const g = c.createLinearGradient(x - big / 2, y + big / 2, x + big / 2, y - big / 2);
-      g.addColorStop(0.1, tint); g.addColorStop(0.6, clear);
-      c.globalCompositeOperation = 'source-atop'; c.fillStyle = g; c.fillRect(0, 0, w, h);
-      c.globalCompositeOperation = 'source-over';
-    }
-    // overspray: a few small prints, alternating octagram and star. Each one lands on bare cloth
-    // (checked against the pixels already printed) and right of the text shading, so none is dimmed or cut.
-    const ink = c.getImageData(0, 0, w, h).data;
-    const bare = (px, py, rad) => {
-      for (let i = -4; i <= 4; i++) for (let j = -4; j <= 4; j++) {
-        const sx = Math.round(px + (i / 4) * rad), sy = Math.round(py + (j / 4) * rad);
-        if (Math.hypot(sx - px, sy - py) > rad) continue;
-        if (ink[(sy * w + sx) * 4 + 3] > 8) return false;
-      }
-      return true;
-    };
-    const placed = [];
-    const want = 2 + Math.floor(r() * 3);
-    for (let tries = 0; tries < 200 && placed.length < want; tries++) {
-      const s = Math.min(w, h) * (0.1 + r() * 0.06);
-      const px = w * (0.66 + r() * 0.32), py = h * (0.06 + r() * 0.5);
-      if (px - s * 0.6 < 0 || py - s * 0.6 < 0 || px + s * 0.6 > w || py + s * 0.6 > h) continue;
-      if (placed.some((q) => Math.hypot(px - q.x, py - q.y) < (s + q.s) * 0.75)) continue;
-      if (!bare(px, py, s * 0.62)) continue;
-      placed.push({ x: px, y: py, s });
-    }
-    placed.forEach((q, i) => stamp(c, q.x, q.y, i % 2 ? 'kriz' : 'hviezda', q.s, (r() * 1e9) | 0, r() * Math.PI, 1, 'white'));
   }
 
 
