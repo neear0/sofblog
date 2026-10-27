@@ -143,10 +143,10 @@
   .post2__head::before { background: linear-gradient(0deg, rgba(11, 11, 12, 0.97) 0%, rgba(11, 11, 12, 0.85) 60%, rgba(11, 11, 12, 0.4) 100%), var(--weave); }
 }
 
-/* ---------- colour: black cloth deepening into violet, a periwinkle only on the lines ---------- */
+/* ---------- colour: black cloth with a soft violet ombre on the intro (covers stay plain black), a periwinkle only on the lines ---------- */
 :root {
-  --ombre-violet: #4a2896;
-  --ombre-deep: #22124a;
+  --ombre-violet: #2b1a5c;
+  --ombre-deep: #171030;
   --blue: #6c7cff;
   /* the cloth and its lines cool very slightly */
   --bg-2: #131318;
@@ -154,10 +154,8 @@
   --line: rgba(206, 208, 255, 0.12);
   --line-strong: rgba(206, 208, 255, 0.27);
 }
-.masthead { background: linear-gradient(180deg, #0e0e0f 0%, #0e0e0f 30%, var(--ombre-deep) 78%, var(--ombre-violet) 100%); }
-.tile--lead article, .tile--cover article { background: linear-gradient(200deg, var(--ombre-violet) 0%, var(--ombre-deep) 38%, #0b0b0c 78%); }
-.post2__head { background: linear-gradient(200deg, var(--ombre-violet) 0%, var(--ombre-deep) 40%, #0b0b0c 80%); }
-.shelf { background: linear-gradient(180deg, var(--bg-2) 0%, var(--ombre-deep) 140%); }
+.masthead { background: linear-gradient(180deg, #0e0e0f 0%, #0e0e0f 45%, var(--ombre-deep) 82%, var(--ombre-violet) 100%); }
+.shelf { background: linear-gradient(180deg, var(--bg-2) 0%, var(--ombre-deep) 180%); }
 
 /* lines run from violet into periwinkle; buttons and marks stay one violet */
 .progress span { background: linear-gradient(90deg, var(--accent), var(--blue)); }
